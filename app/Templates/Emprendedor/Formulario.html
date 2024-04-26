@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGLAIA - Formulario</title>
+    <link rel="stylesheet" href="/app/Static/css/styleFem.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/submit_form" method="post" enctype="multipart/form-data">
+            <header>
+                <h1>AGLAIA - EMPRENDEDOR</h1>
+            </header>
+            <label for="name">Nombre del emprendedor:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="info">Información del emprendimiento:</label><br>
+            <textarea id="info" name="info" required></textarea><br>
+
+            <label for="slogan">Eslogan del emprendimiento:</label><br>
+            <input type="text" id="slogan" name="slogan" required><br>
+
+            <label for="logo">Logo:</label><br>
+            <input type="file" id="logo" name="logo" accept="image/*" required><br>
+
+            <label for="product-images">Imágenes del producto o servicio:</label><br>
+            <input type="file" id="product-images" name="product-images" accept="image/*" multiple required><br>
+
+            <label for="participants">Participantes del emprendimiento:</label><br>
+            <textarea id="participants" name="participants" required></textarea><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>
