@@ -12,6 +12,13 @@ CREATE TABLE Usuarios (
     contraseña VARCHAR(45) NOT NULL unique
 );
 
+CREATE TABLE Categorias (
+    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_categoria VARCHAR(45) NOT NULL,
+    descripcion TEXT,
+    imagen VARCHAR(255)
+);
+
 CREATE TABLE Emprendimientos (
     id_emprendimiento INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(45) NOT NULL unique,
@@ -66,13 +73,6 @@ CREATE TABLE Anuncios (
     imagen VARCHAR(255),
     FOREIGN KEY (usuario_id) REFERENCES Usuarios(id_usuario),
     FOREIGN KEY (categoria_id) REFERENCES Categorias(id_categoria)
-);
-
-CREATE TABLE Categorias (
-    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_categoria VARCHAR(45) NOT NULL,
-    descripcion TEXT,
-    imagen VARCHAR(255)
 );
 
 show tables;
