@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_mysqldb import MySQL
 
@@ -63,3 +64,6 @@ def autocomplete():
 
 if __name__ == '__main__':
     app.run(debug=True)
+=======
+print("Hola mundo :)")
+>>>>>>> b8b1bc5b5d7f050e24dedc1acde53b89af26749c
