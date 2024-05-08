@@ -2,43 +2,44 @@
     box-sizing: border-box;
     margin: 0;
 }
-body{
+
+body {
     height: 100vh;
     width: 100vw;
     --morado: #7a00dc;
-    --verde:#2CF8C1;
+    --verde: #2CF8C1;
     --naranja: #ff4321;
-    --gris:#1e1c1b;
-    --blanco:rgb(252, 247, 247);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-
+    --gris: #1e1c1b;
+    --blanco: rgb(252, 247, 247);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.container{
+
+.container {
     height: 100%;
     width: 100%;
     background-color: var(--gris);
     display: flex;
-    justify-content: space-around;
-    text-align: center;
+    justify-content: space-around; 
     align-items: center;
     gap: 20px;
     padding: 30px;
 }
 
-.GestionP,.AprobarA,.AprobarP,.Editor,.Premium{
+.GestionP, .AprobarA, .AprobarP, .Editor, .Premium {
     background-color: var(--verde);
-    width: 54%;
-    height: 40%;
+    width: 20%; 
+    height: 200px; 
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0px 11px 5px #030517cf;
-    
 }
-.GestionP:hover,.AprobarA:hover,.Aprobar:hover,.Editor:hover,.Premium:hover{
+
+.GestionP:hover, .AprobarA:hover, .AprobarP:hover, .Editor:hover, .Premium:hover {
     background-color: var(--morado);
 }
+
 
 /* .GestionP{
     background-color: var(--verde);
