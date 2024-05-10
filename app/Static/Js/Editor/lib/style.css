@@ -15,7 +15,7 @@ body {
 
 .toolbar {
   line-height: 0;
-  background-color: #7A00DC;
+  background-color: #2CF8C1;
   box-shadow: 0 0 3px 0 rgba(50, 50, 50, .25);
   display: flex;
   justify-content: space-between;
@@ -70,13 +70,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1e1c1b;
+  background: #4d4b4b;
 }
 
 .canvas-container {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHUlEQVQ4jWNgYGAQIYAJglEDhoUBg9+FowbQ2gAARjwKARjtnN8AAAAASUVORK5CYII=");
   background-size: 30px 30px;
-  border: 1px solid #ccc;
+  border: 1px solid #2CF8C1;
   margin: auto;
 }
 
@@ -162,6 +162,7 @@ body {
   margin: 9px;
 }
 
+
 #background-panel .canvas-size-setting input {
   width: 60px;
   background-color: #fff;
@@ -238,7 +239,7 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background: #3333;
+  background: #7900dc2d;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -48,6 +48,9 @@ def pago():
 def regtemporal():
     return render_template('General/registro.html')
 
+@app.route('/Interaccion')
+def interaccion():
+    return render_template('General/interaccion.html')
 
 
 

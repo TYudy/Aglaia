@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interacción Patrocinador - Emprendimientos</title>
-    <link rel="stylesheet" href="/app/Static/css/cinta.css">
-</head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/General/interaccion.css') }}" >
+</head> 
 <body>
     <header>
+        
         <div class="container">
-            <img src="/app/Static/img/image-removebg-preview.png" alt="Logo" class="logo">
+            <img src="{{ url_for('static', filename='img/log.png') }}" alt="Logo" class="logo">
             <h1>Bienvenido Patrocinador</h1>
             <nav>
                 <ul>
