@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/General/Pago.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/General/premium.css') }}">
     <title>Document</title>
 </head>
 <body>
@@ -53,19 +53,20 @@
                     <tr><td>Seleccione metodo de pago: </td>
                         <td><div class='dropdown' id='card-dropdown'></td></tr>
                             <select>
-                                <option value="visa">Nequi</option>
-                                <option value="nequi">Visa</option>
+                                <option value="nequi">Nequi</option>
+                                <option value="visa">Visa</option>
                                 <option value="pse">Pse</option>
                             </select>
                         </div>
                       <div class='dropdown-select'>
                   </table>
-                  <img src='nequi-logo.webp' height='80' class='credit-card-image' id='credit-card-image'></img>
-                  Numero Tarjeta
+                  <img src="{{ url_for('static', filename='img/nequi.png') }}" height='80' class='credit-card-image' id='credit-card-image'>
+                  <p>Numero Tarjeta</p>
                   <input class='input-field'></input>
-                 Nombre en la tarjeta
+                  <p>Nombre en la tarjeta</p>
+                 
                   <input class='input-field'></input>
-                  <table class='half-input-table'>
+                  <table class='half-input-table'> 
                     <tr>
                       <td> Fecha de vencimiento
                         <input class='input-field'></input>

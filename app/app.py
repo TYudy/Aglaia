@@ -36,11 +36,19 @@ def editor():
 
 @app.route('/Premium')
 def premium():
-    return render_template('General/Premium.html')
+    return render_template('General/versionPremium.html')
 
 @app.route('/Plantillas')
 def plantillas():
     return render_template('Emprendedor/Plantillas.html')
+@app.route('/Pago')
+def pago():
+    return render_template('General/pago.html')
+@app.route('/regtemp')
+def regtemporal():
+    return render_template('General/registro.html')
+
+
 
 
 
@@ -54,7 +62,7 @@ def registro_usuario():
         contraseña = request.form['contraseña']
       
         cur = db.cursor()
-        cur.execute("INSERT INTO Usuarios (nombre, apellido, email, contraseña) VALUES (%s, %s, %s, %s)", (nombre, apellido, email, contraseña))
+        cur.execute("INSERT INTO Usuarios (nombre, apellido, email, contrasena) VALUES (%s, %s, %s, %s)", (nombre, apellido, email, contraseña))
         db.commit()
         cur.close()
         return redirect(url_for('index'))
