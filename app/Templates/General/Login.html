@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -23,7 +23,8 @@
 
         <button id="button">Login</button>
     </form>
-    <img class="emp" src="/app/Static/img/foto.png"  width="520px" height="530px" >
+    <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }} "  width="520px" height="530px" >
+    
             
     <script src="/app/Static/Js/main.js"></script>
 </body>

@@ -35,7 +35,7 @@ body {
 .toolbar button.active,
 .toolbar button:hover {
   opacity: 1;
-  border-left: 1px solid #ccc;
+  border-left: 1px solid #292929;
   border-right: 1px solid #ccc;
   box-shadow: inset 5px 0 10px 0 rgba(50, 50, 50, .1);
 }
@@ -55,7 +55,7 @@ body {
 .floating-zoom-level-container {
   position: absolute;
   z-index: 10000;
-  background: white;
+  background: rgb(0, 0, 0);
   padding: 10px 20px;
   bottom: 0;
   right: 0;
@@ -70,7 +70,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #eaeaea;
+  background: #1e1c1b;
 }
 
 .canvas-container {
@@ -81,7 +81,7 @@ body {
 }
 
 .toolpanel {
-  background-color: #f9f9f9;
+  background-color: #1e1c1b;
   width: 300px;
   top: 0;
   left: 0;
@@ -121,7 +121,7 @@ body {
   padding-bottom: 10px;
   width: 100%;
   border-bottom: 1px solid #ddd;
-  color: #333;
+  color: #ffffff;
   text-transform: uppercase;
 }
 

@@ -34,6 +34,14 @@ def AprobarP():
 def editor():
     return render_template('Emprendedor/Editor.html')
 
+@app.route('/Premium')
+def premium():
+    return render_template('General/Premium.html')
+
+@app.route('/Plantillas')
+def plantillas():
+    return render_template('Emprendedor/Plantillas.html')
+
 
 
 
