@@ -1,0 +1,35 @@
+Python
+Registro por roles x3 (ocultar admin)
+Login
+Registrar proyectos
+Aprobar proyectos
+Mostrar proyectos
+Agregar anuncios
+Mostrar anuncios
+Aprobar anuncios
+chat
+Bloquear funciones
+
+
+
+Html
+Buscador
+Roles
+Chatbot
+Plantillas integradas al editor
+Menu en editor con logo
+Fuentes de Google
+Aprobar anuncios
+Errores
+Interaccion
+Index admin
+
+Js
+Navegabilidad
+Errores
+Chat
+Aprobar proyectos
+Bloquear funciones
+
+Css
+Responsive

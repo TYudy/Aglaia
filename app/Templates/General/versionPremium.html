@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version Premium</title>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/General/pagoPremium.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+<body>
+  <div class="wrapper">
+    <div class="table basic">
+      <div class="price-section">
+        <div class="price-area">
+          <div class="inner-area">
+            <span class="text">$</span>
+            <span class="price">0</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-name"></div>
+      <ul class="features">
+        <li>
+          <span class="list-name">Limite de Anuncios</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">60% Usabilidad</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">3 Exportaciones</span>
+          <span class="icon cross"><i class="fas fa-times"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Marca de Agua</span>
+          <span class="icon cross"><i class="fas fa-times"></i></span>
+        </li>
+      </ul>
+      <div class="btn"><button>Registrarse</button></div>
+    </div>
+    <div class="table premium">
+      <div class="ribbon"><span>Recomendado</span></div>
+      <div class="price-section">
+        <div class="price-area">
+          <div class="inner-area">
+            <span class="text">$</span>
+            <span class="price">20.000</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-name"></div>
+      <ul class="features">
+        <li>
+          <span class="list-name">Anuncios Ilimitados</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">100% Usabilidad</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Sin marca de agua</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Exportaciones ilimitadas</span>
+          <span class="icon cross"><i class="fas fa-times"></i></span>
+        </li>
+      </ul>
+      <div class="btn"><button id="comprarBtn">Comprar</button></div>
+    </div>
+  </div>
+
+  <script>
+    var comprarBtn = document.getElementById("comprarBtn");
+
+    comprarBtn.addEventListener("click", function() {
+        window.location.href = "{{url_for('pago')}}";
+    });
+  </script>
+
+</body>
+</html>
