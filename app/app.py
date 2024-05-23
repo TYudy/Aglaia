@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -81,39 +80,15 @@ if __name__ == '__main__':
     # Ejecutar la aplicación Flask
     app.run(debug=True)
 
-=======
-from flask import Flask, render_template, request, jsonify, redirect, url_for
-import mysql.connector
-
-app = Flask(__name__)
-
-db = mysql.connector.connect(
-    host = "localhost",
-    user = "root",
-    password="",
-    database = "AGLAIA"
-
-)
-
->>>>>>> 67d6d805489072c094da71de50f53f6444e6b1e4
 suggestions_data = ["Python", "Flask", "JavaScript", "HTML", "CSS", "React", "Vue.js", "Django", "Node.js"]
 
 @app.route('/')
 def index():
-<<<<<<< HEAD
     return render_template('index.html')
 
 @app.route('/Login')
 def login():
     return render_template('General/Login.html')
-=======
-    return render_template ('index.html')
-
-
-@app.route('/Login')
-def login():
-    return render_template ('General/Login.html')
->>>>>>> 67d6d805489072c094da71de50f53f6444e6b1e4
 
 @app.route('/form')
 def form():
@@ -121,11 +96,7 @@ def form():
 
 @app.route('/AP')
 def AprobarP():
-<<<<<<< HEAD
     return render_template('Administrador/AprobarP.html')
-=======
-    return render_template ('Administrador/AprobarP.html')
->>>>>>> 67d6d805489072c094da71de50f53f6444e6b1e4
 
 @app.route('/Editor')
 def editor():
@@ -138,17 +109,11 @@ def premium():
 @app.route('/Plantillas')
 def plantillas():
     return render_template('Emprendedor/Plantillas.html')
-<<<<<<< HEAD
 
 @app.route('/Pago')
 def pago():
     return render_template('General/pago.html')
 
-=======
-@app.route('/Pago')
-def pago():
-    return render_template('General/pago.html')
->>>>>>> 67d6d805489072c094da71de50f53f6444e6b1e4
 @app.route('/regtemp')
 def regtemporal():
     return render_template('General/registro.html')
@@ -157,22 +122,13 @@ def regtemporal():
 def interaccion():
     return render_template('General/interaccion.html')
 
-<<<<<<< HEAD
 @app.route('/registro_usuario', methods=['POST', 'GET'])
-=======
-
-
-
-
-@app.route('/registro_usuario', methods=['GET', 'POST'])
->>>>>>> 67d6d805489072c094da71de50f53f6444e6b1e4
 def registro_usuario():
     if request.method == 'POST':
         nombre = request.form['nombre']
         apellido = request.form['apellido']
         email = request.form['email']
         contraseña = request.form['contraseña']
-<<<<<<< HEAD
         role = request.form['role']
 
         # Encriptar la contraseña antes de almacenarla en la base de datos
@@ -181,26 +137,16 @@ def registro_usuario():
         cur = db.cursor()
         cur.execute("INSERT INTO Usuarios (nombre, apellido, email, contraseña, role) VALUES (%s, %s, %s, %s, %s)",
                     (nombre, apellido, email, contraseña_encriptada, role))
-=======
-      
-        cur = db.cursor()
-        cur.execute("INSERT INTO Usuarios (nombre, apellido, email, contrasena) VALUES (%s, %s, %s, %s)", (nombre, apellido, email, contraseña))
->>>>>>> 67d6d805489072c094da71de50f53f6444e6b1e4
         db.commit()
         cur.close()
         return redirect(url_for('index'))
     return render_template('Registro.html')
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 67d6d805489072c094da71de50f53f6444e6b1e4
 @app.route('/iniciar_sesion', methods=['POST'])
 def iniciar_sesion():
     if request.method == 'POST':
         email = request.form['email']
         contraseña = request.form['contraseña']
-<<<<<<< HEAD
         cur = db.cursor(dictionary=True)  # Fetch results as dictionaries
 
         # Verifica las credenciales del usuario en la base de datos
@@ -226,19 +172,6 @@ def iniciar_sesion():
         else:
             # Credenciales incorrectas, redirigir al error_inicio_sesion o mostrar un mensaje de error
             return redirect(url_for('error_inicio_sesion'))
-=======
-        cur = db.cursor()
-       
-        result = cur.execute("SELECT * FROM Usuarios WHERE email = %s AND contraseña = %s", (email, contraseña))
-        if result > 0:
-            
-            return redirect(url_for('index'))
-        else:
-          
-            return redirect(url_for('error_inicio_sesion'))
-    # return render_template('Login.html')
-
->>>>>>> 67d6d805489072c094da71de50f53f6444e6b1e4
 
 @app.route('/error_inicio_sesion')
 def error_inicio_sesion():
@@ -250,7 +183,6 @@ def autocomplete():
     results = [item for item in suggestions_data if query.lower() in item.lower()]
     return jsonify(results)
 
-<<<<<<< HEAD
 @app.route('/aprobar_anuncio/<int:anuncio_id>')
 def aprobar_anuncio(anuncio_id):
     cur = db.cursor()
@@ -272,7 +204,5 @@ def IndexEmp():
 def IndexPatro():
     return render_template('Patrocinador/IndexPatro.html')
 
-=======
->>>>>>> 67d6d805489072c094da71de50f53f6444e6b1e4
 if __name__ == '__main__':
     app.run(debug=True)
