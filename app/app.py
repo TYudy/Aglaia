@@ -71,11 +71,6 @@ def ejecutar_tareas_programadas():
         schedule.run_pending()
         time.sleep(1)
 
-if __name__ == '__main__':
-    # Ejecutar las tareas programadas en un hilo aparte
-    import threading
-    t = threading.Thread(target=ejecutar_tareas_programadas)
-    t.start()
 
     # Ejecutar la aplicación Flask
     app.run(debug=True)
@@ -175,7 +170,7 @@ def iniciar_sesion():
 
 @app.route('/error_inicio_sesion')
 def error_inicio_sesion():
-    return render_template('error_inicio_sesion.html')
+    return render_template('Login.html')
 
 @app.route("/autocomplete")
 def autocomplete():
@@ -204,5 +199,16 @@ def IndexEmp():
 def IndexPatro():
     return render_template('Patrocinador/IndexPatro.html')
 
+
+# @app.route('/Bot')
+# def Chat_bot():
+#     return render_template('General/chatbot.html')
+
+
+  
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Ejecutar las tareas programadas en un hilo aparte
+    import threading
+    t = threading.Thread(target=ejecutar_tareas_programadas)
+    t.start()
+    app.run(debug=True, port=5000)
