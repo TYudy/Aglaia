@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Version Premium</title>
-    <link rel="stylesheet" href=" {{ url_for('static', filename='css/General/pagoPremium.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/General/pagoPremium.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  </head>
+</head>
 <body>
   <div class="wrapper">
     <div class="table basic">
@@ -21,7 +21,7 @@
       <div class="package-name"></div>
       <ul class="features">
         <li>
-          <span class="list-name">Limite de Anuncios</span>
+          <span class="list-name">Límite de Anuncios</span>
           <span class="icon check"><i class="fas fa-check"></i></span>
         </li>
         <li>
@@ -45,7 +45,7 @@
         <div class="price-area">
           <div class="inner-area">
             <span class="text">$</span>
-            <span class="price">20.000</span>
+            <span class="price">24.990</span>
           </div>
         </div>
       </div>
@@ -60,12 +60,12 @@
           <span class="icon check"><i class="fas fa-check"></i></span>
         </li>
         <li>
-          <span class="list-name">Sin marca de agua</span>
+          <span class="list-name">Sin Marca de Agua</span>
           <span class="icon check"><i class="fas fa-check"></i></span>
         </li>
         <li>
-          <span class="list-name">Exportaciones ilimitadas</span>
-          <span class="icon cross"><i class="fas fa-times"></i></span>
+          <span class="list-name">Exportaciones Ilimitadas</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
         </li>
       </ul>
       <div class="btn"><button id="comprarBtn">Comprar</button></div>
@@ -79,6 +79,5 @@
         window.location.href = "{{url_for('pago')}}";
     });
   </script>
-
 </body>
 </html>

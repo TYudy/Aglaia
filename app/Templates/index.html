@@ -1,5 +1,3 @@
-
-  
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,94 +9,69 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
-    
-    
 </head>
 <body>
     <div class="container">
         <nav>
             <span class="logo">AGLAIA</span>
             <ul>
-                <li> <a href="#Home">HOME</a></li>
+                <li> <a href="#Home">INICIO</a></li>
                 <li> <a href="#Editor">EDITOR</a></li>
                 <li> <a href="#Plantilla">PLANTILLAS</a></li>
                 <li> <a href="#Precio">PRECIOS</a></li>
-                <li> <a href="/Login">LOG IN</a></li>
-                <li> <a href="#Registro">SIGN IN</a></li>
-                
+                <li> <a href="/Login">INICIAR SESION</a></li>
+                <li> <a href="#Registro">REGISTRO</a></li>
             </ul>
         </nav>
         <section id="Home">
             <header>
                 <h1>BIENVENIDOS</h1>
                 <h2>Somos lo que tu emprendimiento necesita</h2>
-                <p>Estaremos dispuestos a brindarte la mejor experincia <br>Crea tus anuncios con AGLAIA</p>
+                <p>Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA</p>
                 <button type="button">
-                    Mas Informacion
+                    Más Información
                     <img src="icono/bxs-right-arrow-alt.svg" alt="">
                 </button>
             </header>
-             <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }}" alt="" >
-             <img class="fondo-emp" src="{{ url_for('static', filename='img/pattern..png') }}" width="10" height="20">
+            <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }}" alt="">
+            
             <div class="icons">
-                <i class='bx bxl-invision'></i>
-                <i class='bx bxl-dropbox' ></i>
-                <i class='bx bxl-linkedin' ></i>
+                <i class='bx bxl-facebook-circle'></i>
+                <i class='bx bxl-whatsapp'></i>
+                <i class='bx bxl-instagram'></i>
+                <i class='bx bxl-twitter'></i>
             </div>
-
         </section>
 
-        <section id="Editor"> 
-            <!-- <header>
-            <h1>"¡Próximamente!</h1> 
-            <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2> 
-            <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
-            </header> -->
-            <iframe src="/Editor" frameborder="0"></iframe>           
+        <section id="Editor">
+            <iframe src="/Editor" frameborder="0"></iframe>
         </section>
-        
-  
-
-
-
 
         <section id="Plantilla">
-            <!-- <header>
-                <h1>"¡Próximamente!</h1> 
-                <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2> 
-                <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
-            </header> -->
             <iframe src="/Plantillas" frameborder="0"></iframe>
         </section>
+
         <section id="Precio">
-            <!-- <header>
-                <h1>"¡Próximamente!</h1> 
-                <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2> 
-                <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
-            </header> -->
             <iframe src="/Premium" frameborder="0"></iframe>
         </section>
+
         <section id="Inicio">
             <header>
-                <h1>"¡Próximamente!</h1> 
-                <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2> 
+                <h1>"¡Próximamente!</h1>
+                <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2>
                 <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
             </header>
         </section>
+
         <section id="Registro">
-            <header>
-                
-                <!-- <h1>"¡Próximamente!</h1> 
-                <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2> 
-                <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p> -->
-            </header>
+            <header></header>
             <iframe src="/regtemp" frameborder="0"></iframe>
         </section>
     </div>
     <script src="/main.js"></script>
     <script>
         window.onload = function() {
-            var home= document.getElementById("Home");
+            var home = document.getElementById("Home");
             if (home) {
                 home.scrollIntoView();
             }
