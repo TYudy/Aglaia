@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 const button = document.getElementById('button');
@@ -60,18 +59,3 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Producto 5', category: 'Ropa' },
     ];
 });
-=======
-const username = document.getElementById('username')
-const password = document.getElementById('password')
-const button = document.getElementById('button')
-
-button.addEventListener('click', (e) => {
-    e.preventDefault()
-    const data = {
-        username: username.value,
-        password: password.value
-    }
-
-    console.log(data)
-})
->>>>>>> b8b1bc5b5d7f050e24dedc1acde53b89af26749c
