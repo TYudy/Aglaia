@@ -6,23 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMPRENDEDORES</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Emprendimiento/IndexEmp.css') }}">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<header>
-		<h1>EMPRENDEDORES</h1>
+	<header class="app-header">
+		<span class="logo">AGLAIA</span>
+		<div class="toggle-menu" onclick="toggleSidebar()" aria-label="Abrir menú">
+			<i class="fa fa-bars"></i>
+		  </div>
 		<div class="search-bar">
 			<input type="text" placeholder="Buscar...">
 			<button type="submit"><i class="fas fa-search"></i></button>
 		</div>
-		<nav>
-			<button class="menu-button">Menú</button>
-			<ul>
-				<li><a href="#inicio">INICIO</a></li>
-				<li><a href="#ayuda">AYUDA</a></li>
-				<li><a href="#editor">EDITOR DEL EMPRENDEDOR</a></li>
-			</ul>
-		</nav>
+		
 	</header>
+	<aside class="app-sidebar">
+		<ul class="app-menu">
+		  <li class="app-menu__item"><a href="#">Inicio</a></li>
+		  <li class="app-menu__item"><a href="#">Editar Perfil</a></li>
+		  <li class="app-menu__item"><a href="#">Contacto</a></li>
+		  <li class="app-menu__item"><a href="#">Ayuda</a></li>
+		</ul>
+	  </aside>
 	<main>
 		<section id="inicio">
 			<h2>Bienvenido EMPRENDEDORES</h2>
@@ -49,5 +54,19 @@
 		<p class="copyright">Copyright © 2024 AGLAIA. Todos los derechos reservados.</p>
 	</footer>
 	<script src="script.js"></script>
+	<script>
+		function toggleSidebar() {
+		  document.body.classList.toggle('sidebar-open');
+		}
+		document.addEventListener('click', function(event) {
+		  var sidebar = document.querySelector('.app-sidebar');
+		  var toggleMenu = document.querySelector('.toggle-menu');
+	
+		  if (!sidebar.contains(event.target) && !toggleMenu.contains(event.target)) {
+			document.body.classList.remove('sidebar-open');
+		  }
+		});
+	  </script>
+
 </body>
 </html>
