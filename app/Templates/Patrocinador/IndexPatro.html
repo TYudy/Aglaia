@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>AGLAIA</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Patrocinador/IndexPatro.css') }}" >
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="toggle-menu" onclick="toggleSidebar()" aria-label="Abrir menú">
+      <i class="fa fa-bars"></i>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar...">
+      <button><i class="fa fa-search"></i></button>
+    </div>
+    <div class="logout">
+      <a href="cerrar_sesion.html"><i class="fa fa-sign-out"></i> Cerrar Sesión</a>
+    </div>
+  </header>
+
+  <aside class="app-sidebar">
+    <ul class="app-menu">
+      <li class="app-menu__item"><a href="#">Inicio</a></li>
+      <li class="app-menu__item"><a href="#">Editar Perfil</a></li>
+      <li class="app-menu__item"><a href="#">Contacto</a></li>
+      <li class="app-menu__item"><a href="#">Ayuda</a></li>
+    </ul>
+  </aside>
+
+  <main class="app-content">
+    <h1>AGLAIA</h1>
+  </main>
+
+  <footer>
+    <div class="social">
+      <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+    </div>
+    <div class="contact">
+      <p>
+        Teléfono: 3144333874 <br>
+        Correo: info@aglaia.com
+      </p>
+    </div>
+    <div class="copyright">
+      © 2024 AGLAIA
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.body.classList.toggle('sidebar-open');
+    }
+    document.addEventListener('click', function(event) {
+      var sidebar = document.querySelector('.app-sidebar');
+      var toggleMenu = document.querySelector('.toggle-menu');
+
+      if (!sidebar.contains(event.target) && !toggleMenu.contains(event.target)) {
+        document.body.classList.remove('sidebar-open');
+      }
+    });
+  </script>
+</body>
+<<<<<<< HEAD
+</html>
+
+
+
+=======
+</html>
+>>>>>>> 67d6d805489072c094da71de50f53f6444e6b1e4

@@ -1,74 +1,216 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
-    width: 100vw;
-    --morado: #7a00dc;
-    --verde: #2CF8C1;
-    --naranja: #ff4321;
-    --gris: #1e1c1b;
-    --blanco: rgb(252, 247, 247);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+html{
+  font-size: 62.5%;
+  background-color: #7a00dc;
 }
-
-.container {
-    height: 100%;
-    width: 100%;
-    background-color: var(--gris);
-    display: flex;
-    justify-content: space-around; 
-    align-items: center;
-    gap: 20px;
-    padding: 30px;
+section{
+  display: none;
 }
-
-.GestionP, .AprobarA, .AprobarP, .Editor, .Premium {
-    background-color: var(--verde);
-    width: 20%; 
-    height: 200px; 
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 11px 5px #030517cf;
-}
-
-.GestionP:hover, .AprobarA:hover, .AprobarP:hover, .Editor:hover, .Premium:hover {
-    background-color: var(--morado);
+section:target{
+display: block;
 }
 
 
-/* .GestionP{
-    background-color: var(--verde);
-    width: 50%;
-    height: 25%;
-    border-radius: 15px;
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color: #7a00dc;
+  font-family: 'Share Tech', sans-serif;
+  min-width: 1200px;
+  position: relative;
+  color:#fff;
+  
+}
 
-} */
-/* .AprobarA{
-    background-color: var(--verde);
-    width: 50%;
-    height: 25%;
-    border-radius: 15px;
+.logo{
+  font-weight: 600;
+  font-size: 3.8rem;
+
 }
-.AprobarP{
-    background-color: var(--verde);
-    width: 50%;
-    height: 25%;
-    border-radius: 15px;
+
+nav{
+  padding: 20px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.3);
+  z-index: 7;
+  
+  
 }
-.Editor{
-    background-color: var(--verde);
-    width: 50%;
-    height: 25%;
-    border-radius: 15px;
+
+ul li{
+  display: inline-block;
+  list-style: none;
+  padding: 6px 20px;
+  font-weight: 500;
+  font-size: 1.7rem;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  z-index: 3;
+  
 }
-.Premium{
-    background-color: var(--verde);
-    width: 50%;
-    height: 25%;
-    border-radius: 15px;
-} */
+ul{
+  z-index: 2;
+  
+}
+
+ul li:hover{
+  background-color: #2CF8C1;
+  border-radius: 25px;
+  text-decoration: none;
+
+}
+
+a:visited {
+  color: white;
+}
+a:not(:visited) {
+  color: white;
+}
+
+header{
+  position: absolute;
+  bottom: 30%;
+  padding: 0 50px;
+  z-index: 6;
+  
+}
+
+header h1{
+  font-size: 7rem;
+  color: #fff;
+}
+header h2{
+  font-size: 4rem;
+  color: #fff; 
+}
+header p{
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff; 
+}
+
+header button{
+  padding: 0 5px;
+  width: 140px;
+  height: 40px;
+  outline: none;
+  color: #272727;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  background-color: #2CF8C1;
+  border-radius: 25px;
+  transition: width 0.5s;
+  box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.3);
+}
+
+
+
+button:hover{
+  
+  align-items: center;
+  justify-content: space-between;
+  width: 160px;
+}
+
+.container .emp{
+  position: absolute;
+  height: 460px;
+  width: 420px;
+  right: 7%;
+  bottom: 0;
+  z-index: 2;
+  
+}
+
+.container .fondo-emp{
+  position: absolute;
+  height: 550px;
+  width: 550px;
+  right: 4%;
+  bottom: 0;
+  z-index: 1;
+  
+}
+
+.icons{
+  position: absolute;
+  bottom: 8%;
+  padding: 0 50px;
+  
+}
+
+.icons i{
+  font-size: 2.5rem;
+  padding: 0 10px;
+  cursor: pointer;
+  
+}
+
+.icons i:hover{
+  color: #ff4321;
+  transition: all 0.3s ease 0s;
+  box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.3);
+}
+
+
+
+
+
+.dropdown
+{
+  z-index: 5;
+}
+
+
+.dropdown a {
+  float: none;
+  display: block;
+  
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+ 
+  background-color: unset;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  max-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+  list-style-type: none; 
+  padding: 0; 
+}
+
+.dropdown-content li {
+  width: 100%; 
+ 
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 8px 8px;
+  color: inherit;
+  text-align: center;
+  
+}
+iframe{
+
+  width: 100%;
+  height: 800px;
+  z-index: 1;
+
+}

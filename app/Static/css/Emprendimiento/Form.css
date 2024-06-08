@@ -1,0 +1,87 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	background-color: #7a00dc;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-color: #7a00dc;
+	font-family: 'Share Tech', sans-serif;
+	min-width: 1200px;
+	position: relative;
+	color: #000000;
+}
+
+.container header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 2rem;
+	background-color: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(5px);
+	text-align: center;
+}
+
+.container header h1 {
+	font-size: 3rem;
+	color: #ffffff;
+	margin-bottom: 1rem;
+}
+
+.container form {
+	width: 50%;
+	padding: 30px;
+	background-color: #2CF8C1;
+	border-radius: 25px;
+	box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.3);
+	margin-top: 10rem;
+}
+
+.container label {
+	display: block;
+	margin-top: 20px;
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.container input,
+.container textarea {
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	border: none;
+	border-radius: 25px;
+	font-size: 1.3rem;
+	box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.3);
+}
+
+.container input[type="file"] {
+	padding: 5px;
+}
+
+.container input:focus,
+.container textarea:focus {
+	outline: none;
+}
+
+.container input[type="submit"] {
+	margin-top: 20px;
+	padding: 10px;
+	width: 100%;
+	background-color: #7a00dc;
+	color: #ffffff;
+	font-size: 1.5rem;
+	font-weight: 500;
+	border: none;
+}
