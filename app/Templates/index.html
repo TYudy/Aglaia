@@ -5,146 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGLAIA</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/app/Static/css/style.css">
-=======
-    <link rel="stylesheet" href="style.css">
->>>>>>> b8b1bc5b5d7f050e24dedc1acde53b89af26749c
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
-    
-    
 </head>
 <body>
     <div class="container">
         <nav>
             <span class="logo">AGLAIA</span>
             <ul>
-                <li> <a href="#Home">HOME</a></li>
-
-                <li> <a href="#Anuncio">ANUNCIOS</a></li>
-                <li> <a href="#Anuncio">ANUNCIOS</a></li>
-
-                <li class="dropdown">
-                    <a >
-                      EMPRENDIMIENTOS
-                    </a>
-                    <ul class="drop>down-content">
-                      <li ><a  href="#salud">Salud y Bienestar</a></li>
-                      <li ><a  href="#educacion">Educación y Formación</a></li>
-                      <li ><a  href="#arte">Arte y Entretenimiento</a></li>
-                      
-                    </ul>
-                </li>
+                <li> <a href="#Home">INICIO</a></li>
+                <li> <a href="#Editor">EDITOR</a></li>
                 <li> <a href="#Plantilla">PLANTILLAS</a></li>
-<<<<<<< HEAD
-                <li> <a href="/app/Templates/General/versionPremium.html">PRECIOS</a></li>
-=======
                 <li> <a href="#Precio">PRECIOS</a></li>
->>>>>>> b8b1bc5b5d7f050e24dedc1acde53b89af26749c
-                <li> <a href="/Login.html">LOG IN</a></li>
-                <li> <a href="#Registro">SIGN IN</a></li>
-                
+                <li> <a href="/Login">INICIAR SESION</a></li>
+                <li> <a href="#Registro">REGISTRO</a></li>
             </ul>
+            <!-- Formulario de búsqueda -->
+            <form id="search-form">
+                <input type="text" id="search-bar" placeholder="Buscar...">
+                <select id="category-select">
+                    <option value="all">Todas las categorías</option>
+                    <option value="Electrónica">Electrónica</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="Hogar">Hogar</option>
+                </select>
+                <button type="submit"><i class='bx bx-search'></i></button>
+            </form>
         </nav>
-        <section id="Home">
+
+        <!-- Resto del contenido -->
+       
+        
             <header>
                 <h1>BIENVENIDOS</h1>
                 <h2>Somos lo que tu emprendimiento necesita</h2>
-                <p>Estaremos dispuestos a brindarte la mejor experincia <br>Crea tus anuncios con AGLAIA</constantemente></p>
+                <p>Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA</p>
                 <button type="button">
-                    Mas Informacion
-                    <img src="icono/bxs-right-arrow-alt.svg" alt="">
-<<<<<<< HEAD
-                    <a href="info.html"></a>
+                    Más Información
                 </button>
             </header>
-             <img class="emp" src="/app/Static/img/foto.png" alt="" >
-             <img class="fondo-emp" src="/app/Static/img/pattern..png" width="10" height="20">
-=======
-                </button>
-            </header>
-
-             <img class="emp" src="img/foto.png" alt="" >
-             <img class="fondo-emp" src="img/pattern..png" width="10" height="20">
->>>>>>> b8b1bc5b5d7f050e24dedc1acde53b89af26749c
+            <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }}" alt="">
+            
             <div class="icons">
-                <i class='bx bxl-invision'></i>
-                <i class='bx bxl-dropbox' ></i>
-                <i class='bx bxl-linkedin' ></i>
+                <a href="https://www.facebook.com/profile.php?id=61560555698181&" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://whatsapp.com" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                <a href="https://www.instagram.com/aglaia_ads/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="https://x.com/AglaiaAds" target="_blank"><i class='bx bxl-twitter'></i></a>
             </div>
-
         </section>
 
-        <section id="Anuncio"> 
-            <header>
-            <h1>"¡Próximamente!</h1> 
-            <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2> 
-            <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
-            </header>
+        <section id="Editor">
+            <iframe src="/Editor" frameborder="0"></iframe>
         </section>
-        
-        <section id="salud">
-            <header>
-                <h1>"¡Próximamente!</h1> 
-                <h2>Estamos preparando esta sección, para mostrarte los emprendimientos más innovadores en ambitos de la salud, pero todavía no está lista.</h2> 
-                <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
-                </header>
-        
-        </section>
-
-        <section id="educacion">
-            <header>
-                <h1>"¡Próximamente!</h1> 
-                <h2>Estamos preparando esta sección, para mostrarte los emprendimientos más innovadores en ambitos de educación, pero todavía no está lista.</h2> 
-                <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
-                </header>
-        </section>
-
-        <section id="arte">
-            <header>
-                <h1>"¡Próximamente!</h1> 
-                <h2>Estamos preparando esta sección,para mostrarte los emprendimientos artisticos más innovadores , pero todavía no está lista.</h2> 
-                <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
-                </header>
-        </section>
-
-
-
 
         <section id="Plantilla">
-            <header>
-                <h1>"¡Próximamente!</h1> 
-                <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2> 
-                <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
-            </header>
+            <iframe src="/Plantillas" frameborder="0"></iframe>
         </section>
+
         <section id="Precio">
-            <header>
-                <h1>"¡Próximamente!</h1> 
-                <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2> 
-                <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
-            </header>
+            <iframe src="/Premium" frameborder="0"></iframe>
         </section>
+
         <section id="Inicio">
             <header>
-                <h1>"¡Próximamente!</h1> 
-                <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2> 
+                <h1>"¡Próximamente!</h1>
+                <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2>
                 <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
             </header>
         </section>
+
         <section id="Registro">
-            <header>
-                <h1>"¡Próximamente!</h1> 
-                <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2> 
-                <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
-            </header>
+            <header></header>
+            <iframe src="/regtemp" frameborder="0"></iframe>
         </section>
     </div>
-<<<<<<< HEAD
-    <script src="/main.js"></scriptsrc></script>
-=======
->>>>>>> b8b1bc5b5d7f050e24dedc1acde53b89af26749c
+
+    <ul id="search-results"></ul>
+
 </body>
 </html>

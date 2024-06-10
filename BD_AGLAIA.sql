@@ -136,3 +136,23 @@ INSERT INTO Anuncios (titulo, descripcion, usuario_id, fecha_creacion, fecha_exp
 ('Cena de San Valentín', '¡Celebra el amor con una cena romántica en nuestro restaurante!', 3, '2024-04-25', '2024-05-25', 0.00, 3, 'cena.jpg'),
 ('¡Lanzamiento exclusivo! Smartphone XYZ', 'Descubre el último modelo de smartphone con nosotros.', 4, '2024-04-25', '2024-05-25', 0.00, 4, 'xyz.jpg'),
 ('Promoción de inscripción gratuita', 'Inscríbete este mes y no pagues la inscripción.', 5, '2024-04-25', '2024-05-25', 0.00, 5, 'promo.jpg');
+
+
+
+CREATE DATABASE Registro_usuarios;
+
+USE Regitro_usuarios;
+
+CREATE TABLE Registro_usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(50) NOT NULL,
+  apellidos VARCHAR(50) NOT NULL,
+  tipo_identificacion VARCHAR(10) NOT NULL,
+  numero_identificacion VARCHAR(20) NOT NULL,
+  correo_electronico VARCHAR(50) NOT NULL,
+  fecha_nacimiento DATE NOT NULL,
+  telefono VARCHAR(20) NOT NULL,
+  direccion VARCHAR(100) NOT NULL,
+  contrasena VARCHAR(50) NOT NULL,
+  confirmacion_contrasena VARCHAR(50) NOT NULL
+);

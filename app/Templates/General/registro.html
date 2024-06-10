@@ -1,105 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
-    <link rel="stylesheet" href="/Aglaia/app/Static/css/General/registro.css">
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="text-center">Registro de Usuario</h1>
-      <form>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/General/registro.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Registro de Usuario</h1>
+    <form action="{{ url_for('registro_usuario') }}" method="POST">
         <div class="form-group row">
-          <label for="name" class="col-sm-2 col-form-label">Nombre:</label>
+            <label for="nombre" class="col-sm-2 col-form-label">Nombre:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="apellido" class="col-sm-2 col-form-label">Apellidos:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellidos" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="document_type" class="col-sm-2 col-form-label">Tipo de Identificación:</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="document_type" name="document_type">
+                    <option value="">Seleccione una opción</option>
+                    <option value="cc">Cédula de Ciudadanía</option>
+                    <option value="ce">Cédula de Extranjería</option>
+                    <option value="ti">Tarjeta de Identidad</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="document_number" class="col-sm-2 col-form-label">Número de Documento:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="document_number" name="document_number" placeholder="Número de Documento" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Correo Electrónico:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electrónico" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="birth_date" class="col-sm-2 col-form-label">Fecha de Nacimiento:</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="birth_date" name="birth_date" placeholder="Fecha de Nacimiento" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="phone" class="col-sm-2 col-form-label">Teléfono:</label>
+            <div class="col-sm-10">
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Teléfono" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="address" class="col-sm-2 col-form-label">Dirección:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="address" name="address" placeholder="Dirección" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="contraseña" class="col-sm-2 col-form-label">Contraseña:</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="confirm_contraseña" class="col-sm-2 col-form-label">Confirmar Contraseña:</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="confirm_contrasena" name="confirm_contrasena" placeholder="Confirmar Contraseña" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="role" class="col-sm-2 col-form-label">Rol:</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="role" name="role" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="administrador">Administrador</option>
+                    <option value="emprendimiento">Emprendimiento</option>
+                    <option value="patrocinador">Patrocinador</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+          <label for="subscribe_emails" class="col-sm-2 col-form-label">Suscribirse a correos electrónicos:</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="name" placeholder="Nombre">
+              <select class="form-control" id="subscribe_emails" name="subscribe_emails">
+                  <option value="1">Sí</option>
+                  <option value="0">No</option>
+              </select>
           </div>
-        </div>
+      </div>
         <div class="form-group row">
-          <label for="last_name" class="col-sm-2 col-form-label">Apellidos:</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="last_name" placeholder="Apellidos">
-          </div>
+            <div class="col-sm-10 offset-sm-2">
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </div>
         </div>
-        <div class="form-group row">
-          <label for="document_type" class="col-sm-2 col-form-label">Tipo de Identificación:</label>
-          <div class="col-sm-10">
-            <select class="form-control" id="document_type">
-              <option value="">Seleccione una opción</option>
-              <option value="cc">Cédula de Ciudadanía</option>
-              <option value="ce">Cédula de Extranjería</option>
-              <option value="ti">Tarjeta de Identidad</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="document_number" class="col-sm-2 col-form-label">Número de Documento:</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="document_number" placeholder="Número de Documento">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="email" class="col-sm-2 col-form-label">Correo Electrónico:</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" placeholder="Correo Electrónico">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="birth_date" class="col-sm-2 col-form-label">Fecha de Nacimiento:</label>
-          <div class="col-sm-10">
-            <input type="date" class="form-control" id="birth_date" placeholder="Fecha de Nacimiento">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="phone" class="col-sm-2 col-form-label">Teléfono:</label>
-          <div class="col-sm-10">
-            <input type="tel" class="form-control" id="phone" placeholder="Teléfono">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="address" class="col-sm-2 col-form-label">Dirección:</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="address" placeholder="Dirección">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="password" class="col-sm-2 col-form-label">Contraseña:</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="password" placeholder="Contraseña">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="confirm_password" class="col-sm-2 col-form-label">Confirmar Contraseña:</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="confirm_password" placeholder="Confirmar Contraseña">
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-10 offset-sm-2">
-            <button type="submit" class="btn btn-primary">Registrarse</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </body>
+    </form>
+</div>
+</body>
 </html>
-
-CREATE DATABASE Registro_usuarios;
-
-USE Regitro_usuarios;
-
-CREATE TABLE Registro_usuarios (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(50) NOT NULL,
-  apellidos VARCHAR(50) NOT NULL,
-  tipo_identificacion VARCHAR(10) NOT NULL,
-  numero_identificacion VARCHAR(20) NOT NULL,
-  correo_electronico VARCHAR(50) NOT NULL,
-  fecha_nacimiento DATE NOT NULL,
-  telefono VARCHAR(20) NOT NULL,
-  direccion VARCHAR(100) NOT NULL,
-  contrasena VARCHAR(50) NOT NULL,
-  confirmacion_contrasena VARCHAR(50) NOT NULL
-);
-
