@@ -37,6 +37,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2px;
   box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.3);
   z-index: 7;
 }
@@ -53,14 +54,14 @@ ul li {
   font-size: 1.7rem;
   text-decoration: underline;
   cursor: pointer;
-  transition: all 0.3s ease;
   z-index: 3;
 }
 
-ul li:hover {
+ul li a:hover {
   background-color: #2CF8C1;
   border-radius: 25px;
-  text-decoration: none;
+  padding: 6px 20px;
+  margin: 0;
 }
 
 a:visited, a:not(:visited) {

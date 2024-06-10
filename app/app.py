@@ -211,4 +211,5 @@ if __name__ == '__main__':
     # import threading
     # t = threading.Thread(target=ejecutar_tareas_programadas)
     # t.start()
+    app.add_url_rule('/', view_func=index)
     app.run(debug=True, port=5000)
