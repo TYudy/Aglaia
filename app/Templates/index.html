@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <nav>
-            <span class="logo">AGLAIA</span>
+            <!-- <span class="logo">AGLAIA</span>
             <ul>
                 <li> <a href="#Home">INICIO</a></li>
                 <li> <a href="#Editor">EDITOR</a></li>
@@ -21,7 +21,18 @@
                 <li> <a href="#Precio">PRECIOS</a></li>
                 <li> <a href="/Login">INICIAR SESION</a></li>
                 <li> <a href="#Registro">REGISTRO</a></li>
+            </ul> -->
+            <span class="logo">AGLAIA</span>
+            <ul>
+                <li><a onclick="loadHome()">INICIO</a></li>
+                <li><a onclick="loadContent('/Editor')">EDITOR</a></li>
+                <li><a onclick="loadContent('/Plantillas')">PLANTILLAS</a></li>
+                <li><a onclick="loadContent('/Premium')">PRECIOS</a></li>
+                <li> <a href="/Login">INICIAR SESION</a></li>
+                <li><a onclick="loadContent('/regtemp')">REGISTRO</a></li>
             </ul>
+            
+            
         </nav>
         <section id="Home">
             <header>
@@ -42,8 +53,12 @@
                 <i class='bx bxl-twitter'></i>
             </div>
         </section>
+       
 
-        <section id="Editor">
+        <iframe id="iframeContent" style="display: none;"></iframe>
+    </div>
+
+        <!-- <section id="Editor">
             <iframe src="/Editor" frameborder="0"></iframe>
         </section>
 
@@ -66,16 +81,9 @@
         <section id="Registro">
             <header></header>
             <iframe src="/regtemp" frameborder="0"></iframe>
-        </section>
+        </section>  -->
     </div>
-    <script src="/main.js"></script>
-    <script>
-        window.onload = function() {
-            var home = document.getElementById("Home");
-            if (home) {
-                home.scrollIntoView();
-            }
-        };
-    </script>
+    
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>
 </html>
