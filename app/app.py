@@ -123,7 +123,7 @@ def registro_usuario():
         nombre = request.form['nombre']
         apellido = request.form['apellido']
         email = request.form['email']
-        contraseña = request.form['contraseña']
+        contraseña = request.form['contrasena']
         role = request.form['role']
 
         # Encriptar la contraseña antes de almacenarla en la base de datos
@@ -211,4 +211,10 @@ if __name__ == '__main__':
     import threading
     t = threading.Thread(target=ejecutar_tareas_programadas)
     t.start()
-    app.run(debug=True, port=5000)
+app.run(debug=True, port=5001)
+
+
+
+
+
+

@@ -22,7 +22,21 @@
                 <li> <a href="/Login">INICIAR SESION</a></li>
                 <li> <a href="#Registro">REGISTRO</a></li>
             </ul>
+            <!-- Formulario de búsqueda -->
+            <form id="search-form">
+                <input type="text" id="search-bar" placeholder="Buscar...">
+                <select id="category-select">
+                    <option value="all">Todas las categorías</option>
+                    <option value="Electrónica">Electrónica</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="Hogar">Hogar</option>
+                </select>
+                <button type="submit"><i class='bx bx-search'></i></button>
+            </form>
         </nav>
+
+        <!-- Resto del contenido -->
+       
         <section id="Home">
             <header>
                 <h1>BIENVENIDOS</h1>
@@ -30,16 +44,15 @@
                 <p>Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA</p>
                 <button type="button">
                     Más Información
-                    <img src="icono/bxs-right-arrow-alt.svg" alt="">
                 </button>
             </header>
             <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }}" alt="">
             
             <div class="icons">
-                <i class='bx bxl-facebook-circle'></i>
-                <i class='bx bxl-whatsapp'></i>
-                <i class='bx bxl-instagram'></i>
-                <i class='bx bxl-twitter'></i>
+                <a href="https://www.facebook.com/profile.php?id=61560555698181&" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://whatsapp.com" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                <a href="https://www.instagram.com/aglaia_ads/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="https://x.com/AglaiaAds" target="_blank"><i class='bx bxl-twitter'></i></a>
             </div>
         </section>
 
@@ -68,14 +81,10 @@
             <iframe src="/regtemp" frameborder="0"></iframe>
         </section>
     </div>
-    <script src="/main.js"></script>
-    <script>
-        window.onload = function() {
-            var home = document.getElementById("Home");
-            if (home) {
-                home.scrollIntoView();
-            }
-        };
-    </script>
+
+    <ul id="search-results"></ul>
 </body>
 </html>
+
+    
+
