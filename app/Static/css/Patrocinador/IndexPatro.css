@@ -13,7 +13,8 @@ a {
 
 /* Header */
 .app-header {
-  background-color: #2CF8C1;
+  background: linear-gradient(to right, #B8BEC1, #838B8E, #454D51);
+  box-shadow: 7px 7px 12px 0 rgba(109, 107, 107, 0.3);
   color: #272727;
   padding: 2rem;
 }

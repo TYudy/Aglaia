@@ -1,3 +1,4 @@
+/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +12,17 @@ body {
     justify-content: center;
     min-height: 100vh;
     background: linear-gradient(to right, #7a00dc, #2CF8C1);
+    position: relative;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
 }
 
 form {
@@ -22,7 +34,10 @@ form {
     box-shadow: 0 5px 10px rgba(126, 6, 148, 0.7);
     border-radius: 15px;
     z-index: 2;
-    transform: translateX(-30%);
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 10px;
 }
 
 form .title {
@@ -55,7 +70,6 @@ form label input::placeholder {
     color: rgba(37, 37, 37, 0.5);
 }
 
-
 form .link {
     color: #252525;
     margin-bottom: 15px;
@@ -69,13 +83,56 @@ form button {
     cursor: pointer;
     font-size: 20px;
 }
+
 .emp {
-    position: absolute;
-    bottom: 20%;
-    left: 60%;
-    transform: translateX(-50%);
-    z-index: 1;
-    width:"20%" ;
-    height:"40%" ;
-    
+    max-width: 100%;
+    height: auto;
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+    margin: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    .emp {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .emp {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    form .title {
+        font-size: 28px;
+    }
+
+    form label .fa-solid {
+        font-size: 18px;
+    }
+
+    form label input {
+        font-size: 16px;
+    }
+
+    form button {
+        font-size: 18px;
+    }
+
+    .emp {
+        max-width: 80%;
+    }
 }

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Chatbot</title>
+  <style>
+    #chat-container {
+      width: 400px;
+      height: 500px;
+      border: 1px solid #ccc;
+      overflow: auto;
+      padding: 10px;
+    }
+    .user-message {
+      background-color: #007bff;
+      color: #fff;
+      padding: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      text-align: right;
+    }
+    .bot-message {
+      background-color: #f1f1f1;
+      padding: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container"></div>
+  <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+  <button id="send-button">Enviar</button>
+
+  <script>
+    const chatContainer = document.getElementById('chat-container');
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
+
+    sendButton.addEventListener('click', sendMessage);
+    userInput.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+    function sendMessage() {
+      const userMessage = userInput.value.trim();
+      if (userMessage !== '') {
+        displayMessage('user', userMessage);
+        const botResponse = getBotResponse(userMessage);
+        displayMessage('bot', botResponse);
+        userInput.value = '';
+      }
+    }
+
+    function displayMessage(sender, message) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add(`${sender}-message`);
+      messageElement.textContent = message;
+      chatContainer.appendChild(messageElement);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    function getBotResponse(userMessage) {
+      const lowercaseMessage = userMessage.toLowerCase();
+
+      // Saludos
+      if (lowercaseMessage.includes('hola')) {
+        return '¡Hola! ¿En qué puedo ayudarte?';
+      } else if (lowercaseMessage.includes('gracias')) {
+        return '¡De nada! Estoy aquí para ayudarte.';
+      } else if (lowercaseMessage.includes('adiós')) {
+        return '¡Hasta luego! Que tengas un buen día.';
+      }
+
+      // Preguntas sobre el chatbot
+      else if (lowercaseMessage.includes('nombre')) {
+        return 'Mi nombre es Chatbot.';
+      } else if (lowercaseMessage.includes('haces')) {
+        return 'Soy un chatbot creado para responder preguntas y ayudarte con diferentes tareas.';
+      }
+
+      // Preguntas sobre el clima
+      else if (lowercaseMessage.includes('clima')) {
+        return 'Lamentablemente, no tengo información sobre el clima. Pero puedo buscar en internet si lo deseas.';
+      }
+
+      // Preguntas sobre noticias
+      else if (lowercaseMessage.includes('noticias')) {
+        return 'Aquí tienes algunas noticias recientes: [insertar noticias relevantes]';
+      }
+
+      // Preguntas sobre deportes
+      else if (lowercaseMessage.includes('deportes')) {
+        return 'Estos son los últimos resultados deportivos: [insertar resultados deportivos]';
+      }
+
+      // Preguntas sobre entretenimiento
+      else if (lowercaseMessage.includes('películas') || lowercaseMessage.includes('series')) {
+        return 'Algunas recomendaciones de entretenimiento: [insertar recomendaciones de películas y series]';
+      }
+
+      // Preguntas generales
+      else if (lowercaseMessage.endsWith('?')) {
+        return 'Disculpa, no puedo responder a esa pregunta. Todavía estoy aprendiendo.';
+      }
+
+      // Si no se reconoce el mensaje
+      else {
+        return 'Disculpa, no entendí tu mensaje. Puedes reformularlo, por favor.';
+      }
+    }
+  </script>
+</body>
+</html>

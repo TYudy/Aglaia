@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <title>AGLAIA</title>
-  <link rel="stylesheet" type="text/css" href="/app/Static/css/main.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Patrocinador/IndexPatro.css') }}" >
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <header class="app-header">
+    <span class="logo">AGLAIA</span>
     <div class="toggle-menu" onclick="toggleSidebar()" aria-label="Abrir menú">
       <i class="fa fa-bars"></i>
     </div>
@@ -18,7 +19,7 @@
       <button><i class="fa fa-search"></i></button>
     </div>
     <div class="logout">
-      <a href="cerrar_sesion.html"><i class="fa fa-sign-out"></i> Cerrar Sesión</a>
+      <a href="/Login"><i class="fa fa-sign-out"></i> Cerrar Sesión</a>
     </div>
   </header>
 
@@ -27,7 +28,7 @@
       <li class="app-menu__item"><a href="#">Inicio</a></li>
       <li class="app-menu__item"><a href="#">Editar Perfil</a></li>
       <li class="app-menu__item"><a href="#">Contacto</a></li>
-      <li class="app-menu__item"><a href="#">Ayuda</a></li>
+      <li class="app-menu__item"><a href="#">Ayudad</a></li>
     </ul>
   </aside>
 
@@ -37,14 +38,14 @@
 
   <footer>
     <div class="social">
-      <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
-      <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61560555698181&" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+      <a href="https://www.instagram.com/aglaia_ads/" target="_blank"><i class='bx bxl-instagram'></i></a>
+      <a href="https://x.com/AglaiaAds" target="_blank"><i class='bx bxl-twitter'></i></a>
     </div>
     <div class="contact">
       <p>
         Teléfono: 3144333874 <br>
-        Correo: info@aglaia.com
+        Correo: aglaiaads@gmail.com
       </p>
     </div>
     <div class="copyright">
@@ -67,3 +68,6 @@
   </script>
 </body>
 </html>
+
+
+
