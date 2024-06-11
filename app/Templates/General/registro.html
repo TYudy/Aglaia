@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/General/registro.css') }}">
+    <link rel="stylesheet" href="registro-styles.css">
 </head>
 <body>
 <div class="container">
@@ -66,13 +67,13 @@
         <div class="form-group row">
             <label for="contraseña" class="col-sm-2 col-form-label">Contraseña:</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Contraseña" required>
             </div>
         </div>
         <div class="form-group row">
             <label for="confirm_contraseña" class="col-sm-2 col-form-label">Confirmar Contraseña:</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="confirm_contrasena" name="confirm_contrasena" placeholder="Confirmar Contraseña" required>
+                <input type="password" class="form-control" id="confirm_contraseña" name="confirm_contraseña" placeholder="Confirmar Contraseña" required>
             </div>
         </div>
         <div class="form-group row">
@@ -102,5 +103,6 @@
         </div>
     </form>
 </div>
+<script src="cambioEstilo.js"></script>
 </body>
 </html>

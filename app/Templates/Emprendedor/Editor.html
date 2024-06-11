@@ -1,69 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor de Anuncios</title>
+<html>
+  <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='js/Editor/lib/style.css') }}">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
-        jQuery.fn.outerHTML = function() {
-            return jQuery('<div />').append(this.eq(0).clone()).html();
-        };
-        Number.prototype.countDecimals = function () {
-            if(Math.floor(this.valueOf()) === this.valueOf()) return 0;
-            return this.toString().split(".")[1].length || 0; 
-        }
+      jQuery.fn.outerHTML = function() {
+        return jQuery('<div />').append(this.eq(0).clone()).html();
+      };
+      Number.prototype.countDecimals = function () {
+        if(Math.floor(this.valueOf()) === this.valueOf()) return 0;
+        return this.toString().split(".")[1].length || 0; 
+      }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.3/fabric.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.css">
+
     <script src="{{ url_for('static', filename='js/Editor/vendor/grapick.min.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='js/Editor/vendor/grapick.min.css') }}">
+
     <script src=" {{ url_for('static', filename='js/Editor/vendor/undo-redo-stack.js') }}"></script>
+
     <script src="{{ url_for('static', filename='js/Editor/lib/core.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/toolbar.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/canvas.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/shapes.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/freeDrawSettings.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/canvasSettings.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/selectionSettings.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/drawingLine.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/drawingPath.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/drawingText.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/tip.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/upload.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/copyPaste.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/utils.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/zoom.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Editor/lib/saveInBrowser.js') }}"></script>
-</head>
-<body>
-    <div id="moderationMessage" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); color: white; display: flex; justify-content: center; align-items: center; z-index: 1000;">
-        <div style="text-align: center; padding: 20px; background: white; color: black; border-radius: 10px;">
-            <p>Por favor, ten en cuenta nuestras reglas de moderación de contenido:</p>
-            <ul style="text-align: left;">
-                <li>No se permite contenido inapropiado.</li>
-                <li>No se permite lenguaje ofensivo.</li>
-                <li>No se permite contenido que viole derechos de autor.</li>
-                <li>El contenido debe ser respetuoso y adecuado para todas las edades.</li>
-            </ul>
-            <button onclick="closeModerationMessage()" style="margin-top: 20px;">Aceptar y Continuar</button>
-        </div>
-    </div>
+<script src="{{ url_for('static', filename='js/Editor/lib/toolbar.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Editor/lib/canvas.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Editor/lib/shapes.js') }}"></script>
 
+<script src="{{ url_for('static', filename='js/Editor/lib/freeDrawSettings.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Editor/lib/canvasSettings.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Editor/lib/selectionSettings.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/Editor/lib/drawingLine.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Editor/lib/drawingPath.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Editor/lib/drawingText.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Editor/lib/tip.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Editor/lib/upload.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Editor/lib/copyPaste.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/Editor/lib/utils.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Editor/lib/zoom.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Editor/lib/saveInBrowser.js') }}"></script>
+  </head>
+  <body>
     <div id="image-editor-container"></div>
-
-    <script>
-        function closeModerationMessage() {
-            document.getElementById("moderationMessage").style.display = "none";
-        }
-
-        // Mostrar el mensaje de moderación al cargar la página
-        window.onload = function() {
-            document.getElementById("moderationMessage").style.display = "flex";
-        };
-    </script>
-    <script src="{{ url_for('static', filename='js/Editor/script.js') }}"></script>
-</body>
+  </body>
+  <script src="{{ url_for('static', filename='js/Editor/script.js ') }}"></script>
 </html>

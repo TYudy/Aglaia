@@ -292,39 +292,3 @@ iframe {
     width: 140px;
   }
 }
-
-
-/* Estilos del formulario de búsqueda */
-#search-form {
-  display: flex;
-  align-items: center;
-}
-
-#search-bar {
-  padding: 5px;
-  margin-right: 5px;
-}
-
-#category-select {
-  padding: 5px;
-  margin-right: 5px;
-}
-
-#search-form button {
-  background-color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-#search-results {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-#search-results li {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin-bottom: 5px;
-}

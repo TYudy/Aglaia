@@ -123,7 +123,7 @@ def registro_usuario():
         nombre = request.form['nombre']
         apellido = request.form['apellido']
         email = request.form['email']
-        contraseña = request.form['contrasena']
+        contraseña = request.form['contraseña']
         role = request.form['role']
 
         # Encriptar la contraseña antes de almacenarla en la base de datos
