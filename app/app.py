@@ -5,7 +5,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime, timedelta
-import schedule
+# import schedule
 import time
 
 app = Flask(__name__)
@@ -18,62 +18,62 @@ db = mysql.connector.connect(
     database="AGLAIA"
 )
 
-smtp_server = 'smtp.example.com'
-smtp_port = 587
-smtp_username = 'your_email@example.com'
-smtp_password = 'your_email_password'
+# smtp_server = 'smtp.example.com'
+# smtp_port = 587
+# smtp_username = 'your_email@example.com'
+# smtp_password = 'your_email_password'
 
-# Función para enviar correos electrónicos
-def enviar_correo(destinatario, asunto, mensaje):
-    try:
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.starttls()
-        server.login(smtp_username, smtp_password)
+# # Función para enviar correos electrónicos
+# def enviar_correo(destinatario, asunto, mensaje):
+#     try:
+#         server = smtplib.SMTP(smtp_server, smtp_port)
+#         server.starttls()
+#         server.login(smtp_username, smtp_password)
 
-        msg = MIMEMultipart()
-        msg['From'] = smtp_username
-        msg['To'] = destinatario
-        msg['Subject'] = asunto
-        msg.attach(MIMEText(mensaje, 'plain'))
+#         msg = MIMEMultipart()
+#         msg['From'] = smtp_username
+#         msg['To'] = destinatario
+#         msg['Subject'] = asunto
+#         msg.attach(MIMEText(mensaje, 'plain'))
 
-        server.send_message(msg)
-        server.quit()
-        print(f"Correo electrónico enviado a {destinatario}")
-    except Exception as e:
-        print(f"Error al enviar correo electrónico a {destinatario}: {e}")
+#         server.send_message(msg)
+#         server.quit()
+#         print(f"Correo electrónico enviado a {destinatario}")
+#     except Exception as e:
+#         print(f"Error al enviar correo electrónico a {destinatario}: {e}")
 
-# Función para obtener los usuarios que se han registrado como emprendedores o patrocinadores
-def obtener_usuarios_notificaciones():
-    cur = db.cursor(dictionary=True)
-    cur.execute("SELECT email, role FROM Usuarios WHERE role IN ('emprendedor', 'patrocinador')")
-    usuarios = cur.fetchall()
-    cur.close()
-    return usuarios
+# # Función para obtener los usuarios que se han registrado como emprendedores o patrocinadores
+# def obtener_usuarios_notificaciones():
+#     cur = db.cursor(dictionary=True)
+#     cur.execute("SELECT email, role FROM Usuarios WHERE role IN ('emprendedor', 'patrocinador')")
+#     usuarios = cur.fetchall()
+#     cur.close()
+#     return usuarios
 
-# Función para enviar correos electrónicos programados
-def enviar_correos_programados():
-    usuarios = obtener_usuarios_notificaciones()
-    if usuarios:
-        for usuario in usuarios:
-            email = usuario['email']
-            role = usuario['role']
-            mensaje = f"Hola,\n\n¡Gracias por ser parte de nuestra comunidad en AGLAIA! Aquí tienes las últimas novedades...\n\n[Contenido del correo electrónico aquí]"
+# # Función para enviar correos electrónicos programados
+# def enviar_correos_programados():
+#     usuarios = obtener_usuarios_notificaciones()
+#     if usuarios:
+#         for usuario in usuarios:
+#             email = usuario['email']
+#             role = usuario['role']
+#             mensaje = f"Hola,\n\n¡Gracias por ser parte de nuestra comunidad en AGLAIA! Aquí tienes las últimas novedades...\n\n[Contenido del correo electrónico aquí]"
 
-            enviar_correo(email, "Novedades de AGLAIA", mensaje)
+#             enviar_correo(email, "Novedades de AGLAIA", mensaje)
 
 # Programar el envío de correos electrónicos dos veces a la semana (por ejemplo, los lunes y jueves a las 10:00 AM)
-schedule.every().monday.at("10:00").do(enviar_correos_programados)
-schedule.every().thursday.at("10:00").do(enviar_correos_programados)
+# schedule.every().monday.at("10:00").do(enviar_correos_programados)
+# schedule.every().thursday.at("10:00").do(enviar_correos_programados)
 
 # Función para ejecutar las tareas programadas
-def ejecutar_tareas_programadas():
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+# def ejecutar_tareas_programadas():
+#     while True:
+#         schedule.run_pending()
+#         time.sleep(1)
 
 
     # Ejecutar la aplicación Flask
-    app.run(debug=True)
+
 
 suggestions_data = ["Python", "Flask", "JavaScript", "HTML", "CSS", "React", "Vue.js", "Django", "Node.js"]
 
@@ -208,13 +208,8 @@ def IndexPatro():
   
 if __name__ == '__main__':
     # Ejecutar las tareas programadas en un hilo aparte
-    import threading
-    t = threading.Thread(target=ejecutar_tareas_programadas)
-    t.start()
-app.run(debug=True, port=5001)
-
-
-
-
-
-
+    # import threading
+    # t = threading.Thread(target=ejecutar_tareas_programadas)
+    # t.start()
+    app.add_url_rule('/', view_func=index)
+    app.run(debug=True, port=5000)

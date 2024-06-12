@@ -2,19 +2,18 @@
     box-sizing: border-box;
     margin: 0;
 }
-
-body {
+body{
     height: 100vh;
     width: 100vw;
     --morado: #7a00dc;
-    --verde: #2CF8C1;
+    --verde:#2CF8C1;
     --naranja: #ff4321;
-    --gris: #1e1c1b;
-    --blanco: rgb(252, 247, 247);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+    --gris:#1e1c1b;
+    --blanco:rgb(252, 247, 247);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 
-.container {
+}
+.container{
     height: 100%;
     width: 100%;
     background-color: var(--gris);
@@ -26,7 +25,7 @@ body {
     padding: 30px;
 }
 
-.GestionP, .AprobarA, .AprobarP, .Editor, .Premium {
+.GestionP,.AprobarA,.AprobarP,.Editor,.Premium{
     background-color: var(--verde);
     width: 54%;
     height: 40%;
@@ -35,9 +34,40 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 0px 11px 5px #030517cf;
-    transition: background-color 0.3s ease;
+    
 }
-
-.GestionP:hover, .AprobarA:hover, .AprobarP:hover, .Editor:hover, .Premium:hover {
+.GestionP:hover,.AprobarA:hover,.Aprobar:hover,.Editor:hover,.Premium:hover{
     background-color: var(--morado);
 }
+
+/* .GestionP{
+    background-color: var(--verde);
+    width: 50%;
+    height: 25%;
+    border-radius: 15px;
+
+} */
+/* .AprobarA{
+    background-color: var(--verde);
+    width: 50%;
+    height: 25%;
+    border-radius: 15px;
+}
+.AprobarP{
+    background-color: var(--verde);
+    width: 50%;
+    height: 25%;
+    border-radius: 15px;
+}
+.Editor{
+    background-color: var(--verde);
+    width: 50%;
+    height: 25%;
+    border-radius: 15px;
+}
+.Premium{
+    background-color: var(--verde);
+    width: 50%;
+    height: 25%;
+    border-radius: 15px;
+} */

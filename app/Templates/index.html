@@ -13,14 +13,23 @@
 <body>
     <div class="container">
         <nav>
-            <span class="logo">AGLAIA</span>
+            <!-- <span class="logo">AGLAIA</span>
             <ul>
-                <li> <a href="#Home">INICIO</a></li>
+                <li> <a href="#Home">INICIO</a></li>   
                 <li> <a href="#Editor">EDITOR</a></li>
                 <li> <a href="#Plantilla">PLANTILLAS</a></li>
                 <li> <a href="#Precio">PRECIOS</a></li>
                 <li> <a href="/Login">INICIAR SESION</a></li>
                 <li> <a href="#Registro">REGISTRO</a></li>
+            </ul> -->
+            <span class="logo">AGLAIA</span>
+            <ul>
+                <li><a href="#" onclick="loadHome()">INICIO</a></li>
+                <li><a  href="#" onclick="loadContent('/Editor')">EDITOR</a></li>
+                <li><a href="#" onclick="loadContent('/Plantillas')">PLANTILLAS</a></li>
+                <li><a href="#" onclick="loadContent('/Premium')">PRECIOS</a></li>
+                <li> <a href="/Login">INICIAR SESIÓN</a></li>
+                <li><a href="#" onclick="loadContent('/regtemp')">REGISTRO</a></li>
             </ul>
             <!-- Formulario de búsqueda -->
             <form id="search-form">
@@ -44,47 +53,27 @@
                 <p>Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA</p>
                 <button type="button">
                     Más Información
+                    <img src="icono/bxs-right-arrow-alt.svg" alt="">
                 </button>
             </header>
             <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }}" alt="">
             
             <div class="icons">
-                <a href="https://www.facebook.com/profile.php?id=61560555698181&" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="https://whatsapp.com" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-                <a href="https://www.instagram.com/aglaia_ads/" target="_blank"><i class='bx bxl-instagram'></i></a>
-                <a href="https://x.com/AglaiaAds" target="_blank"><i class='bx bxl-twitter'></i></a>
+                <i class='bx bxl-facebook-circle'></i>
+                <i class='bx bxl-whatsapp'></i>
+                <i class='bx bxl-instagram'></i>
+                <i class='bx bxl-twitter'></i>
             </div>
         </section>
+       
 
-        <section id="Editor">
-            <iframe src="/Editor" frameborder="0"></iframe>
-        </section>
-
-        <section id="Plantilla">
-            <iframe src="/Plantillas" frameborder="0"></iframe>
-        </section>
-
-        <section id="Precio">
-            <iframe src="/Premium" frameborder="0"></iframe>
-        </section>
-
-        <section id="Inicio">
-            <header>
-                <h1>"¡Próximamente!</h1>
-                <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2>
-                <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
-            </header>
-        </section>
-
-        <section id="Registro">
-            <header></header>
-            <iframe src="/regtemp" frameborder="0"></iframe>
-        </section>
+        <iframe id="iframeContent" ></iframe>
     </div>
+
+    
+    
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
     <ul id="search-results"></ul>
 </body>
 </html>
-
-    
-

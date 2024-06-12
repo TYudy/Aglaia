@@ -2,38 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Admin/IndexAdmin.css') }}">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
          <nav>
             <span class="logo">AGLAIA</span>
             <ul>
-                <li> <a href="#Home">INICIO</a></li>
+                <li> <a href="#Home">HOME</a></li>
                 <li> <a href="#Editor">EDITOR</a></li>
                 <li> <a href="#Plantilla">PLANTILLAS</a></li>
                 <li> <a href="#Precio">PRECIOS</a></li>
-                <li> <a href="/Login">INCIAR SESION</a></li>
-                <li> <a href="#Registro">REGISTRO</a></li>
+                <li> <a href="/Login">LOG IN</a></li>
+                <li> <a href="#Registro">SIGN IN</a></li>
+                
             </ul>
-
-            
-            <form id="search-form">
-                <input type="text" id="search-bar" placeholder="Buscar...">
-                <select id="category-select">
-                    <option value="all">Todas las categorías</option>
-                    <option value="Electrónica">Electrónica</option>
-                    <option value="Ropa">Ropa</option>
-                    <option value="Hogar">Hogar</option>
-                </select>
-                <button type="submit"><i class='bx bx-search'></i></button>
-            </form>
         </nav>
     </header>
     <div class="container">
