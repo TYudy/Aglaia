@@ -4,84 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/General/premium.css') }}">
-    <title>Document</title>
+    <title>Pago de Suscripción</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class='container'>
-        <div class='window'>
-          <div class='order-info'>
-            <div class='order-info-content'>
-              <h1>Resumen del pedido</h1>
-              <h2></h2>
-              <h2>Anuncio</h2>
-
-                      <div class='line'></div>
-              <table class='order-table'>
-                <tbody>
-                  <tr>
-      
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class='price'>20.000</div>
-                    </td>
-                  </tr>
-                </tbody>
-      
-              </table>
-              <div class='line'></div>
-              <table class='order-table'>
-               
-              </table>
-              <div class='line'></div>
-              <table class='order-table'>
-              </table>
-              <div class='line'></div>
-              <div class='total'>
-                <span style='float:left;'>
-                  TOTAL
-                </span>
-                <span style='float:right; text-align:right;'>
-                  $20.000
-                </span>
-              </div>
-      </div>
-      </div>
-              <div class='credit-info'>
-                <div class='credit-info-content'>
-                  <table class='half-input-table'>
-                    <tr><td>Seleccione metodo de pago: </td>
-                        <td><div class='dropdown' id='card-dropdown'></td></tr>
-                            <select>
-                                <option value="nequi">Nequi</option>
-                                <option value="visa">Visa</option>
-                                <option value="pse">Pse</option>
-                            </select>
-                        </div>
-                      <div class='dropdown-select'>
-                  </table>
-                  <img src="{{ url_for('static', filename='img/nequi.png') }}" height='80' class='credit-card-image' id='credit-card-image'>
-                  <p>Numero Tarjeta</p>
-                  <input class='input-field'></input>
-                  <p>Nombre en la tarjeta</p>
-                 
-                  <input class='input-field'></input>
-                  <table class='half-input-table'> 
-                    <tr>
-                      <td> Fecha de vencimiento
-                        <input class='input-field'></input>
-                      </td>
-                      <td>CVC
-                        <input class='input-field'></input>
-                      </td>
-                    </tr>
-                  </table>
-                  <button class='pay-btn'>Comprar</button>
-      
+    <div class="container">
+        <div class="payment-window">
+            <div class="order-summary">
+                <h1>Resumen del Pedido</h1>
+                <div class="line"></div>
+                <div class="order-item">
+                    <h2>Anuncio</h2>
+                    <div class="price">$24,990</div>
                 </div>
-      
-              </div>
+                <div class="line"></div>
+                <div class="total">
+                    <span>TOTAL</span>
+                    <span>$24,990</span>
+                </div>
+                <button class="back-btn" onclick="window.location.href='precios.html'">Volver a Precios</button>
             </div>
-      </div>
+            <div class="payment-info">
+                <h1>Información de Pago</h1>
+                <div class="line"></div>
+                <label for="payment-method">Seleccione método de pago:</label>
+                <select id="payment-method" class="input-field" onchange="changeCardImage()">
+                    <option value="nequi">Nequi</option>
+                    <option value="visa">Visa</option>
+                    <option value="pse">PSE</option>
+                </select>
+                <img src="{{ url_for('static', filename='img/nequi.png') }}" height="80" class="credit-card-image" id="credit-card-image">
+                <label for="card-number">Número de Tarjeta</label>
+                <input id="card-number" class="input-field" placeholder="1234 5678 9101 1121">
+                <label for="card-name">Nombre en la Tarjeta</label>
+                <input id="card-name" class="input-field" placeholder="John Doe">
+                <div class="half-input-table">
+                    <div>
+                        <label for="expiry-date">Fecha de Vencimiento</label>
+                        <input id="expiry-date" class="input-field" placeholder="MM/AA">
+                    </div>
+                    <div>
+                        <label for="cvc">CVC</label>
+                        <input id="cvc" class="input-field" placeholder="123">
+                    </div>
+                </div>
+                <button class="pay-btn">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeCardImage() {
+            const cardImage = document.getElementById('credit-card-image');
+            const paymentMethod = document.getElementById('payment-method').value;
+            switch (paymentMethod) {
+                case 'nequi':
+                    cardImage.src = "{{ url_for('static', filename='img/nequi.png') }}";
+                    break;
+                case 'visa':
+                    cardImage.src = "{{ url_for('static', filename='img/visa.png') }}";
+                    break;
+                case 'pse':
+                    cardImage.src = "{{ url_for('static', filename='img/pse.png') }}";
+                    break;
+                default:
+                    cardImage.src = "{{ url_for('static', filename='img/default.png') }}";
+            }
+        }
+    </script>
 </body>
 </html>
