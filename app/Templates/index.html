@@ -9,20 +9,22 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='js/buscador.js') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='js/msinfo.js') }}">
+    <script src="{{ url_for('static', filename='js/buscador.js') }}"></script>
+ 
 </head>
 <body>
     <div class="container">
         <nav>
             <span class="logo">AGLAIA</span>
             <ul>
+               
                 <li> <a href="#Home">INICIO</a></li>
                 <li> <a href="#Editor">EDITOR</a></li>
                 <li> <a href="#Plantilla">PLANTILLAS</a></li>
                 <li> <a href="#Precio">PRECIOS</a></li>
                 <li> <a href="/Login">INICIAR SESION</a></li>
                 <li> <a href="#Registro">REGISTRO</a></li>
+                <li> <a href="/Bot">Ayuda</a></li>
             </ul>
         </nav>
         <section id="Home">
@@ -95,5 +97,6 @@
             }
         });
     </script>
+    
 </body>
 </html>

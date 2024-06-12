@@ -200,9 +200,9 @@ def IndexPatro():
     return render_template('Patrocinador/IndexPatro.html')
 
 
-# @app.route('/Bot')
-# def Chat_bot():
-#     return render_template('General/chatbot.html')
+@app.route('/Bot')
+def Chat_bot():
+     return render_template('General/chatbot.html')
 
 
   
