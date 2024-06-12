@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // function loadContent(page) {
 //     fetch(page)
 //         .then(response => response.text())
@@ -75,6 +76,9 @@
 // window.onload = function() {
 //     loadHome(); // Cargar la página de inicio por defecto
 // };
+=======
+
+>>>>>>> bc810460056645b5fc541fe2862a01dcff7d793c
 
 function loadContent(page) {
     var iframe = document.getElementById('iframeContent');
@@ -89,5 +93,9 @@ function loadHome() {
 }
 
 window.onload = function() {
+<<<<<<< HEAD
     loadHome(); // Cargar la página de inicio por defecto
+=======
+    loadHome(); 
+>>>>>>> bc810460056645b5fc541fe2862a01dcff7d793c
 };
