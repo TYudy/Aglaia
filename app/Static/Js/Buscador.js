@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+=======
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+const button = document.getElementById('button');
+
+button.addEventListener('click', (e) => {
+    e.preventDefault();
+    const data = {
+        username: username.value,
+        password: password.value
+    };
+
+    console.log(data);
+});
+
+>>>>>>> 401e367ca5ce7fbf712af22e0c508eb672273133
 document.addEventListener('DOMContentLoaded', function () {
     const searchBar = document.getElementById('search-bar');
     const categorySelect = document.getElementById('category-select');
