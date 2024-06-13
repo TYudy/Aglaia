@@ -93,7 +93,7 @@
             o.selectable = false
             o.evented = false
           });
-          this.updateTip('Tip: click to place points, press and pull for curves! Click outside or press Esc to cancel!');
+          this.updateTip('Consejo: haz clic para colocar puntos, presiona y tira para crear curvas. ¡Haga clic afuera o presione Esc para cancelar!');
           break;
         case 'textbox':
           this.canvas.isDrawingTextMode = true
@@ -108,7 +108,7 @@
           this.openDragDropPanel();
           break;
         default:
-          this.updateTip('Tip: hold Shift when drawing a line for 15° angle jumps!');
+          this.updateTip('Consejo: ¡mantén presionada la tecla Mayús cuando dibujes una línea para saltos en ángulo de 15°!');
           break;
       }
     }

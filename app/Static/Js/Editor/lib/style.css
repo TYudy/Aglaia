@@ -15,8 +15,8 @@ body {
 
 .toolbar {
   line-height: 0;
-  background-color: #2CF8C1;
-  box-shadow: 0 0 3px 0 rgba(50, 50, 50, .25);
+  background-color: #FF6347; /* Tomato */
+  box-shadow: 0 0 3px 0 rgba(128, 0, 128, .25); /* Purple */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,9 +35,9 @@ body {
 .toolbar button.active,
 .toolbar button:hover {
   opacity: 1;
-  border-left: 1px solid #292929;
-  border-right: 1px solid #ccc;
-  box-shadow: inset 5px 0 10px 0 rgba(50, 50, 50, .1);
+  border-left: 1px solid #8B0000; /* Dark Red */
+  border-right: 1px solid #FFD700; /* Gold */
+  box-shadow: inset 5px 0 10px 0 rgba(0, 128, 0, .1); /* Green */
 }
 
 .toolbar button img,
@@ -55,11 +55,11 @@ body {
 .floating-zoom-level-container {
   position: absolute;
   z-index: 10000;
-  background: rgb(0, 0, 0);
+  background: rgb(0, 0, 255); /* Blue */
   padding: 10px 20px;
   bottom: 0;
   right: 0;
-  border: 1px solid #ccc;
+  border: 1px solid #00FFFF; /* Aqua */
 }
 
 .canvas-holder {
@@ -70,28 +70,28 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #4d4b4b;
+  background: #FFC0CB; /* Pink */
 }
 
 .canvas-container {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHUlEQVQ4jWNgYGAQIYAJglEDhoUBg9+FowbQ2gAARjwKARjtnN8AAAAASUVORK5CYII=");
   background-size: 30px 30px;
-  border: 1px solid #2CF8C1;
+  border: 1px solid #7FFFD4; /* Aquamarine */
   margin: auto;
 }
 
 .toolpanel {
-  background-color: #1e1c1b;
+  background-color: #696969; /* Dim Gray */
   width: 300px;
   top: 0;
   left: 0;
   height: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid #D3D3D3; /* Light Gray */
   transition: all .4s;
   box-sizing: border-box;
   text-align: left;
   font-size: 13px;
-  color: #777;
+  color: #000080; /* Navy */
   display: none;
   position: absolute;
   z-index: 9999;
@@ -120,8 +120,8 @@ body {
   margin: 0;
   padding-bottom: 10px;
   width: 100%;
-  border-bottom: 1px solid #ddd;
-  color: #ffffff;
+  border-bottom: 1px solid #D3D3D3; /* Light Gray */
+  color: #FFFFFF; /* White */
   text-transform: uppercase;
 }
 
@@ -131,12 +131,11 @@ body {
   right: -42px;
   width: 40px;
   height: 80px;
-  background: #f9f9f9;
-  border: 1px solid #ddd;
+  background: #A9A9A9; /* Dark Gray */
+  border: 1px solid #f3f3f3; /* Orange Red */
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   cursor: pointer;
-
   background-image: url('/lib/caret-left.svg');
   background-size: 10px;
   background-repeat: no-repeat;
@@ -162,12 +161,11 @@ body {
   margin: 9px;
 }
 
-
 #background-panel .canvas-size-setting input {
   width: 60px;
-  background-color: #fff;
+  background-color: #fff7f7; /* Light Blue */
   border-radius: 6px;
-  border: 2px solid #e4e4e4;
+  border: 2px solid #868686; /* Hot Pink */
   padding: 4px 10px;
   line-height: 18px;
   font-size: 13px;
@@ -179,8 +177,8 @@ body {
   padding: 0;
   width: 32px;
   height: 32px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #f76505; /* ICONOS DE LA PARTE DE ABAJO */
+  border: 1px solid #66fff2; /* BORDE DE LOS ICONOS */
   text-align: center;
   outline: none;
 }
@@ -239,20 +237,20 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background: #7900dc2d;
+  background: #FFDAB9; /* Peach Puff */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .custom-modal-content {
-  background: white;
+  background: #FFFFFF; /* White */
   width: max-content;
   padding: 20px;
 }
 
 .custom-modal-content .button-download {
-  border: 1px solid #ccc;
+  border: 1px solid #51e1fa; /* Crimson */
   padding: 10px;
   cursor: pointer;
   margin: 5px;
@@ -260,7 +258,7 @@ body {
 }
 
 .custom-modal-content .button-download:hover {
-  background: #ccc;
+  background: #D3D3D3; /* Light Gray */
   transition: 0.3s;
 }
 
@@ -278,7 +276,7 @@ body {
 .toolpanel .input-container select {
   width: 50%;
   height: 29px;
-  border: 1px solid #ccc;
+  border: 1px solid #FF6347; /* Tomato */
   border-radius: 5px;
   outline: none;
 }
@@ -288,12 +286,12 @@ body {
 }
 
 .toolpanel .input-container .custom-number-input {
-  background: #ebebeb;
+  background: #8B4513; /* Saddle Brown */
   display: flex;
   align-items: center;
   padding: 1px;
   height: 30px;
-  background-color: #e4e4e4;
+  background-color: #8A2BE2; /* Blue Violet */
   border-radius: 6px;
   text-align: center;
 }
@@ -301,10 +299,10 @@ body {
 .toolpanel .input-container .custom-number-input button {
   width: 36px !important;
   height: 30px !important;
-  background-color: #fff;
+  background-color: #00CED1; /* Dark Turquoise */
   background-clip: padding-box;
   border-radius: 6px;
-  color: #333;
+  color: #800080; /* Purple */
   border: 1px solid transparent;
   font-size: 16px;
   cursor: pointer;
@@ -344,7 +342,7 @@ body {
 }
 
 .tab-container .tabs .tab-label.active {
-  color: black
+  color: #000000; /* Black */
 }
 
 .gradient-orientation-container {
@@ -352,17 +350,17 @@ body {
 }
 
 .drag-drop-input {
-  background-color: #fff;
+  background-color: #FAFAD2; /* Light Goldenrod Yellow */
   width: 100%;
   box-sizing: border-box;
-  border: 2px dashed #ccc;
+  border: 2px dashed #FFA500; /* Orange */
   border-radius: 6px;
   text-align: center;
   padding: 120px;
 }
 
 .drag-drop-input.dragging {
-  border-color: #4368a9;
+  border-color: #00BFFF; /* Deep Sky Blue */
 }
 
 #tip-container {
@@ -370,5 +368,5 @@ body {
   text-align: center;
   touch-action: none;
   cursor: default;
-  color: #888;
+  color: #808080; /* Gray */
 }

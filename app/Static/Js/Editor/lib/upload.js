@@ -9,7 +9,7 @@
       $('body').append(`<div class="custom-modal-container">
         <div class="custom-modal-content">
           <div class="drag-drop-input">
-            <div>Drag & drop files<br>or click to browse.<br>JPG, PNG or SVG only!</div>
+            <div>Arrastrar y soltar archivoso<br>o haga clic para navegar.<br>¡Solo JPG, PNG o SVG!</div>
           </div>
         </div>
       </div>`)
