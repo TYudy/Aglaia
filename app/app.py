@@ -18,61 +18,6 @@ db = mysql.connector.connect(
     database="AGLAIA"
 )
 
-# smtp_server = 'smtp.example.com'
-# smtp_port = 587
-# smtp_username = 'your_email@example.com'
-# smtp_password = 'your_email_password'
-
-# # Función para enviar correos electrónicos
-# def enviar_correo(destinatario, asunto, mensaje):
-#     try:
-#         server = smtplib.SMTP(smtp_server, smtp_port)
-#         server.starttls()
-#         server.login(smtp_username, smtp_password)
-
-#         msg = MIMEMultipart()
-#         msg['From'] = smtp_username
-#         msg['To'] = destinatario
-#         msg['Subject'] = asunto
-#         msg.attach(MIMEText(mensaje, 'plain'))
-
-#         server.send_message(msg)
-#         server.quit()
-#         print(f"Correo electrónico enviado a {destinatario}")
-#     except Exception as e:
-#         print(f"Error al enviar correo electrónico a {destinatario}: {e}")
-
-# # Función para obtener los usuarios que se han registrado como emprendedores o patrocinadores
-# def obtener_usuarios_notificaciones():
-#     cur = db.cursor(dictionary=True)
-#     cur.execute("SELECT email, role FROM Usuarios WHERE role IN ('emprendedor', 'patrocinador')")
-#     usuarios = cur.fetchall()
-#     cur.close()
-#     return usuarios
-
-# # Función para enviar correos electrónicos programados
-# def enviar_correos_programados():
-#     usuarios = obtener_usuarios_notificaciones()
-#     if usuarios:
-#         for usuario in usuarios:
-#             email = usuario['email']
-#             role = usuario['role']
-#             mensaje = f"Hola,\n\n¡Gracias por ser parte de nuestra comunidad en AGLAIA! Aquí tienes las últimas novedades...\n\n[Contenido del correo electrónico aquí]"
-
-#             enviar_correo(email, "Novedades de AGLAIA", mensaje)
-
-# Programar el envío de correos electrónicos dos veces a la semana (por ejemplo, los lunes y jueves a las 10:00 AM)
-# schedule.every().monday.at("10:00").do(enviar_correos_programados)
-# schedule.every().thursday.at("10:00").do(enviar_correos_programados)
-
-# Función para ejecutar las tareas programadas
-# def ejecutar_tareas_programadas():
-#     while True:
-#         schedule.run_pending()
-#         time.sleep(1)
-
-
-    # Ejecutar la aplicación Flask
 
 
 suggestions_data = ["Python", "Flask", "JavaScript", "HTML", "CSS", "React", "Vue.js", "Django", "Node.js"]
@@ -158,7 +103,7 @@ def iniciar_sesion():
             # Redirigir según el rol
             if user['role'] == 'administrador':
                 return redirect(url_for('IndexAd'))
-            elif user['role'] == 'emprendedor':
+            elif user['role'] == 'emprendimiento':
                 return redirect(url_for('IndexEmp'))
             elif user['role'] == 'patrocinador':
                 return redirect(url_for('IndexPatro'))
@@ -168,9 +113,9 @@ def iniciar_sesion():
             # Credenciales incorrectas, redirigir al error_inicio_sesion o mostrar un mensaje de error
             return redirect(url_for('error_inicio_sesion'))
 
-@app.route('/error_inicio_sesion')
-def error_inicio_sesion():
-    return render_template('Login.html')
+            @app.route('/error_inicio_sesion')
+            def error_inicio_sesion():
+                return render_template('Login.html')
 
 @app.route("/autocomplete")
 def autocomplete():
@@ -200,9 +145,9 @@ def IndexPatro():
     return render_template('Patrocinador/IndexPatro.html')
 
 
-# @app.route('/Bot')
-# def Chat_bot():
-#     return render_template('General/chatbot.html')
+@app.route('/Bot')
+def Chat_bot():
+     return render_template('General/chatbot.html')
 
 
   
