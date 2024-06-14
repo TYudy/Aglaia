@@ -34,13 +34,12 @@
             </ul> -->
             <span class="logo">AGLAIA</span>
             <ul>
-                <li><a href="#" onclick="loadHome()">INICIO</a></li>
-                <li><a  href="#" onclick="loadContent('/Editor')">EDITOR</a></li>
-                <li><a href="#" onclick="loadContent('/Plantillas')">PLANTILLAS</a></li>
-                <li><a href="#" onclick="loadContent('/Premium')">PRECIOS</a></li>
+    <li><a  onclick="loadHome()">INICIO</a></li>
+                <li><a   onclick="loadContent('/Editor')">EDITOR</a></li>
+                <li><a  onclick="loadContent('/Plantillas')">PLANTILLAS</a></li>
+                <li><a  onclick="loadContent('/Premium')">PRECIOS</a></li>
                 <li> <a href="/Login">INICIAR SESIÓN</a></li>
                 <li><a href="#" onclick="loadContent('/regtemp')">REGISTRO</a></li>
-                <li><a href="#" onclick="loadContent('/Bot')">AYUDAS</a></li>
             </ul>
             <!-- Formulario de búsqueda -->
             <form id="search-form">
@@ -53,36 +52,31 @@
                 </select>
                 <button type="submit"><i class='bx bx-search'></i></button>
             </form>
+
         </nav>
 
-            <!-- Resto del contenido -->
-        
-            <section id="Home">
-                <header>
-                    <h1>BIENVENIDOS</h1>
-                    <h2>Somos lo que tu emprendimiento necesita</h2>
-                    
-                    <button id="infoButton" type="button">
-                        Más Información
-                    </button>
-                    <div id="infoContainer" style="display:none;">
-                        <p>
-                            Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA ADS <br> Diseña, publica y distribuye anuncios personalizados para impulsar tu pequeño emprendimiento de manera fácil y económica. <br>
-                            Nuestra plataforma ofrece plantillas prediseñadas que puedes personalizar con tu logo, colores y mensajes únicos. <br>
-                            Con herramientas de edición intuitivas y previsualización en tiempo real, verás exactamente cómo quedará tu anuncio antes de publicarlo. <br>
-                            Además, podrás distribuir tus anuncios a través de redes sociales, correo electrónico y medios locales, segmentando tu audiencia según ubicación, edad e intereses. <br>
-                            Los análisis detallados del rendimiento te permitirán ajustar y mejorar tus campañas publicitarias para obtener los mejores resultados.                </div>
-                </header>
-                <img class="emp" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
-                
-                <div class="icons">
-                    <a href="https://www.facebook.com/profile.php?id=61560555698181&" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
-                    <a href="https://whatsapp.com" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-                    <a href="https://www.instagram.com/aglaia_ads/" target="_blank"><i class='bx bxl-instagram'></i></a>
-                    <a href="https://x.com/AglaiaAds" target="_blank"><i class='bx bxl-twitter'></i></a>
-                </div>
-            </section>
-        
+        <!-- Resto del contenido -->
+       
+        <section id="Home">
+            <header>
+                <h1>BIENVENIDOS</h1>
+                <h2>Somos lo que tu emprendimiento necesita</h2>
+                <p>Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA</p>
+                <button type="button">
+                    Más Información
+                    <img src="icono/bxs-right-arrow-alt.svg" alt="">
+                </button>
+            </header>
+            <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }}" alt="">
+            
+            <div class="icons">
+                <i class='bx bxl-facebook-circle'></i>
+                <i class='bx bxl-whatsapp'></i>
+                <i class='bx bxl-instagram'></i>
+                <i class='bx bxl-twitter'></i>
+            </div>
+        </section>
+       
 
         <iframe id="iframeContent" ></iframe>
     </div>
