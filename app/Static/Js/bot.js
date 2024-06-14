@@ -54,8 +54,8 @@ function getBotResponse(userMessage) {
 
   // Preguntas sobre el chatbot
   } else if (lowercaseMessage.includes('nombre')) {
-    return 'Mi nombre es Chatbot.';
-  } else if (lowercaseMessage.includes('haces')) {
+    return 'Mi nombre es AglaBot. Soy un chatbot creado para ayudarte.';
+  } else if (lowercaseMessage.includes('Que puedes hacer')) {
     return 'Soy un chatbot creado para responder preguntas y ayudarte con diferentes tareas.';
   } else if (lowercaseMessage.includes('funcionas')) {
     return 'Funciono mediante procesamiento de lenguaje natural y lógica programada.';
@@ -69,8 +69,8 @@ function getBotResponse(userMessage) {
     return 'Estoy entrenado con una amplia variedad de datos para responder tus preguntas.';
 
   // Preguntas sobre el clima
-  } else if (lowercaseMessage.includes('clima')) {
-    return 'Lamentablemente, no tengo información sobre el clima. Pero puedo buscar en internet si lo deseas.';
+  } else if (lowercaseMessage.includes('Que es Aglaia')) {
+    return 'Estaremos dispuestos a brindarte la mejor experiencia Crea tus anuncios con AGLAIA ADS Diseña, publica y distribuye anuncios personalizados para impulsar tu pequeño emprendimiento de manera fácil y económica. Nuestra plataforma ofrece plantillas prediseñadas que puedes personalizar con tu logo, colores y mensajes únicos. Con herramientas de edición intuitivas y previsualización en tiempo real, verás exactamente cómo quedará tu anuncio antes de publicarlo. Además, podrás distribuir tus anuncios a través de redes sociales, correo electrónico y medios locales, segmentando tu audiencia según ubicación, edad e intereses. Los análisis detallados del rendimiento te permitirán ajustar y mejorar tus campañas publicitarias para obtener los mejores resultados..';
   } else if (lowercaseMessage.includes('tiempo')) {
     return 'Lo siento, no tengo acceso a la información del tiempo en este momento.';
   } else if (lowercaseMessage.includes('lluvia')) {

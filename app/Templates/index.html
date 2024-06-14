@@ -39,7 +39,8 @@
                 <li><a  onclick="loadContent('/Plantillas')">PLANTILLAS</a></li>
                 <li><a  onclick="loadContent('/Premium')">PRECIOS</a></li>
                 <li> <a href="/Login">INICIAR SESIÓN</a></li>
-                <li><a href="#" onclick="loadContent('/regtemp')">REGISTRO</a></li>
+                <li><a onclick="loadContent('/regtemp')">REGISTRO</a></li>
+                <li> <a href="/Bot">Ayudas</a></li>
             </ul>
             <!-- Formulario de búsqueda -->
             <form id="search-form">
@@ -81,25 +82,7 @@
         <iframe id="iframeContent" ></iframe>
     </div>
 
-    <script src="/main.js"></script>
-    <script>
-        window.onload = function() {
-            var home = document.getElementById("Home");
-            if (home) {
-                home.scrollIntoView();
-            }
-        };
 
-        document.getElementById('infoButton').addEventListener('click', function() {
-            var infoContainer = document.getElementById('infoContainer');
-            if (infoContainer.style.display === 'none') {
-                infoContainer.style.display = 'block';
-            } else {
-                infoContainer.style.display = 'none';
-            }
-        });
-    </script>
-    
 
     
     
