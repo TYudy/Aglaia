@@ -40,7 +40,7 @@
                 <li><a  onclick="loadContent('/Premium')">PRECIOS</a></li>
                 <li> <a href="/Login">INICIAR SESIÓN</a></li>
                 <li><a onclick="loadContent('/regtemp')">REGISTRO</a></li>
-                <li> <a href="/Bot">Ayudas</a></li>
+                <li> <a href="/Bot">AYUDAS</a></li>
             </ul>
             <!-- Formulario de búsqueda -->
             <form id="search-form">
@@ -62,11 +62,18 @@
             <header>
                 <h1>BIENVENIDOS</h1>
                 <h2>Somos lo que tu emprendimiento necesita</h2>
-                <p>Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA</p>
-                <button type="button">
+                
+                <button id="infoButton" type="button">
                     Más Información
                     <img src="icono/bxs-right-arrow-alt.svg" alt="">
                 </button>
+                <div id="infoContainer" style="display:none;">
+                    <p>
+                        Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA ADS <br> Diseña, publica y distribuye anuncios personalizados para impulsar tu pequeño emprendimiento de manera fácil y económica. <br>
+                        Nuestra plataforma ofrece plantillas prediseñadas que puedes personalizar con tu logo, colores y mensajes únicos. <br>
+                         Con herramientas de edición intuitivas y previsualización en tiempo real, verás exactamente cómo quedará tu anuncio antes de publicarlo. <br>
+                          Además, podrás distribuir tus anuncios a través de redes sociales, correo electrónico y medios locales, segmentando tu audiencia según ubicación, edad e intereses. <br>
+                           Los análisis detallados del rendimiento te permitirán ajustar y mejorar tus campañas publicitarias para obtener los mejores resultados.                </div>
             </header>
             <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }}" alt="">
             
@@ -89,6 +96,23 @@
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
     <ul id="search-results"></ul>
+    <script>
+        window.onload = function() {
+            var home = document.getElementById("Home");
+            if (home) {
+                home.scrollIntoView();
+            }
+        };
+
+        document.getElementById('infoButton').addEventListener('click', function() {
+            var infoContainer = document.getElementById('infoContainer');
+            if (infoContainer.style.display === 'none') {
+                infoContainer.style.display = 'block';
+            } else {
+                infoContainer.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>
