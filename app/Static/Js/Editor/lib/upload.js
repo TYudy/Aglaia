@@ -11,7 +11,7 @@
       $('body').append(`<div class="custom-modal-container">
         <div class="custom-modal-content">
           <div class="drag-drop-input">
-            <div>Drag & drop files or click to browse.<br>Supports images (JPG, PNG, SVG) and videos (MP4)!</div>
+            <div>Drag & drop files<br>or click to browse.<br>JPG, PNG or SVG only!</div>
           </div>
         </div>
       </div>`);

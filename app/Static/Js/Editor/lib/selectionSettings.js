@@ -8,55 +8,55 @@
       strokeDashArray: [],
       strokeLineCap: 'butt'
     },
-    label: "Stroke"
+    label: "Acometida"
   }, {
     value: {
       strokeDashArray: [1, 10],
       strokeLineCap: 'butt'
     },
-    label: 'Dash-1'
+    label: 'Colision-1'
   }, {
     value: {
       strokeDashArray: [1, 10],
       strokeLineCap: 'round'
     },
-    label: 'Dash-2'
+    label: 'Colision-2'
   }, {
     value: {
       strokeDashArray: [15, 15],
       strokeLineCap: 'square'
     },
-    label: 'Dash-3'
+    label: 'Colision-3'
   }, {
     value: {
       strokeDashArray: [15, 15],
       strokeLineCap: 'round'
     },
-    label: 'Dash-4'
+    label: 'Colision-4'
   }, {
     value: {
       strokeDashArray: [25, 25],
       strokeLineCap: 'square'
     },
-    label: 'Dash-5',
+    label: 'Colision-5',
   }, {
     value: {
       strokeDashArray: [25, 25],
       strokeLineCap: 'round'
     },
-    label: 'Dash-6',
+    label: 'Colision-6',
   }, {
     value: {
       strokeDashArray: [1, 8, 16, 8, 1, 20],
       strokeLineCap: 'square'
     },
-    label: 'Dash-7',
+    label: 'Colision-7',
   }, {
     value: {
       strokeDashArray: [1, 8, 16, 8, 1, 20],
       strokeLineCap: 'round'
     },
-    label: 'Dash-8',
+    label: 'Colision-8',
   }]
   const AlignmentButtonList = [{
     pos: 'left',
@@ -79,13 +79,13 @@
   }]
   var selectionSettings = function () {
     const _self = this;
-    $(`${this.containerSelector} .main-panel`).append(`<div class="toolpanel" id="select-panel"><div class="content"><p class="title">Selection Settings</p></div></div>`);
+    $(`${this.containerSelector} .main-panel`).append(`<div class="toolpanel" id="select-panel"><div class="content"><p class="title">AJUSTES DE SELECCIÓN</p></div></div>`);
 
     // font section
     (() => {
       $(`${this.containerSelector} .toolpanel#select-panel .content`).append(`
         <div class="text-section">
-          <h4>Font Style</h4>
+          <h4>Tipos de Fuentes</h4>
           <div class="style">
             <button id="bold"><svg id="Capa_1" x="0px" y="0px" viewBox="-70 -70 450 450" xml:space="preserve"><path d="M218.133,144.853c20.587-14.4,35.2-37.653,35.2-59.52C253.333,37.227,216.107,0,168,0H34.667v298.667h150.187 c44.693,0,79.147-36.267,79.147-80.853C264,185.387,245.547,157.76,218.133,144.853z M98.667,53.333h64c17.707,0,32,14.293,32,32 s-14.293,32-32,32h-64V53.333z M173.333,245.333H98.667v-64h74.667c17.707,0,32,14.293,32,32S191.04,245.333,173.333,245.333z"></path></svg></button>
             <button id="italic"><svg id="Capa_1" x="0px" y="0px" viewBox="-70 -70 450 450" xml:space="preserve"><polygon points="106.667,0 106.667,64 153.92,64 80.747,234.667 21.333,234.667 21.333,298.667 192,298.667 192,234.667 144.747,234.667 217.92,64 277.333,64 277.333,0  "></polygon></svg></button>
@@ -96,7 +96,7 @@
           </div>
           <div class="family">
             <div class="input-container">
-            <label>Font Family</label>
+            <label>TIPOGRAFIA</label>
             <select id="font-family">
               <option value=""></option>
               <option value="'Open Sans', sans-serif">Open Sans</option>
@@ -114,21 +114,21 @@
             </div>
           </div>
           <div class="sizes">
-            <div class="input-container"><label>Font Size</label>
+            <div class="input-container"><label>Tamaño de Fuente</label>
               <div class="custom-number-input">
               <button class="decrease">-</button>
               <input type="number" min="1" value="20" id="fontSize">
               <button class="increase">+</button>
               </div>
             </div>
-            <div class="input-container"><label>Line Height</label>
+            <div class="input-container"><label>Altura de Linea</label>
               <div class="custom-number-input">
               <button class="decrease">-</button>
               <input type="number" min="0" max="3" value="1" step="0.1" id="lineHeight">
               <button class="increase">+</button>
               </div>
             </div>
-            <div class="input-container"><label>Letter Spacing</label>
+            <div class="input-container"><label>Espaciado de letras</label>
               <div class="custom-number-input">
               <button class="decrease">-</button>
               <input type="number" min="0" max="2000" step="100" value="0" id="charSpacing">
@@ -139,18 +139,18 @@
           </div>
           <div class="align">
             <div class="input-container">
-            <label>Text Alignment</label>
+            <label>Alineación del texto</label>
             <select id="text-align">
-              <option value="left">Left</option>
-              <option value="center">Center</option>
-              <option value="right">Right</option>
-              <option value="justify">Justify</option>
+              <option value="left">Izquierda</option>
+              <option value="center">Centro</option>
+              <option value="right">Derecha</option>
+              <option value="justify">Justificar</option>
             </select>
             </div>
           </div>
           <div class="color">
             <div class="input-container">
-            <label>Text Color</label>
+            <label>Color Del Texto</label>
             <input id="color-picker" value="black">
             </div>
           </div>
@@ -233,16 +233,16 @@
     (() => {
       $(`${this.containerSelector} .toolpanel#select-panel .content`).append(`
         <div class="border-section">
-          <h4>Border</h4>
-          <div class="input-container"><label>Width</label>
+          <h4>Borde</h4>
+          <div class="input-container"><label>Ancho</label>
             <div class="custom-number-input">
             <button class="decrease">-</button>
             <input type="number" min="1" value="1" id="input-border-width">
             <button class="increase">+</button>
             </div>
           </div>
-          <div class="input-container"><label>Style</label><select id="input-border-style">${BorderStyleList.map(item => `<option value='${JSON.stringify(item.value)}'>${item.label}</option>`)}</select></div>
-          <div class="input-container"><label>Corner Type</label><select id="input-corner-type"><option value="miter" selected>Square</option><option value="round">Round</option></select></div>
+          <div class="input-container"><label>Estilo</label><select id="input-border-style">${BorderStyleList.map(item => `<option value='${JSON.stringify(item.value)}'>${item.label}</option>`)}</select></div>
+          <div class="input-container"><label>Tipo de esquina</label><select id="input-corner-type"><option value="miter" selected>Cuadrado</option><option value="round">Redondo</option></select></div>
           <div class="input-container"><label>Color</label><input id="color-picker" value="black"></div>
           <hr>
         </div>
@@ -296,8 +296,8 @@
         <div class="fill-section">
           <div class="tab-container">
           <div class="tabs">
-            <div class="tab-label" data-value="color-fill">Color Fill</div>
-            <div class="tab-label" data-value="gradient-fill">Gradient Fill</div>
+            <div class="tab-label" data-value="color-fill">RELLENO DE COLOR</div>
+            <div class="tab-label" data-value="gradient-fill">Relleno Degradado</div>
           </div>
           <div class="tab-content" data-value="color-fill">
             <input id="color-picker" value='black'/><br>
@@ -426,7 +426,7 @@
       })
       $(`${this.containerSelector} .toolpanel#select-panel .content`).append(`
         <div class="alignment-section">
-          <h4>Alignment</h4>
+          <h4>Alineacion</h4>
           ${buttons}
           <hr>
         </div>
@@ -443,7 +443,7 @@
     (() => {
       $(`${this.containerSelector} .toolpanel#select-panel .content`).append(`
         <div class="object-options">
-          <h4>Object Options</h4>
+          <h4>Opciones de Objeto</h4>
           <button id="flip-h"><svg width="512" height="512" enable-background="new 0 0 16 16" viewBox="0 0 16 20" xml:space="preserve"><g transform="matrix(0 1.5365 1.5385 0 -5.0769 1.5495)"><rect x="5" y="8" width="1" height="1"></rect><rect x="7" y="8" width="1" height="1"></rect><rect x="9" y="8" width="1" height="1"></rect><rect x="1" y="8" width="1" height="1"></rect><rect x="3" y="8" width="1" height="1"></rect><path d="M 1,2 5.5,6 10,2 Z M 7.37,3 5.5,4.662 3.63,3 Z"></path><polygon points="10 15 5.5 11 1 15"></polygon></g></svg></button>
           <button id="flip-v"><svg width="512" height="512" enable-background="new 0 0 16 16" viewBox="0 0 16 20" xml:space="preserve"><g transform="matrix(1.5365 0 0 1.5385 -.45052 -3.0769)"><rect x="5" y="8" width="1" height="1"></rect><rect x="7" y="8" width="1" height="1"></rect><rect x="9" y="8" width="1" height="1"></rect><rect x="1" y="8" width="1" height="1"></rect><rect x="3" y="8" width="1" height="1"></rect><path d="M 1,2 5.5,6 10,2 Z M 7.37,3 5.5,4.662 3.63,3 Z"></path><polygon points="5.5 11 1 15 10 15"></polygon></g></svg></button>
           <button id="bring-fwd"><svg x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><g><path d="M10,10h686v686H10V10 M990,304v686H304V794h98v98h490V402h-98v-98H990z"></path></g></svg></button>

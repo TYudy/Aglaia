@@ -20,12 +20,13 @@
                 <i class="fa-solid fa-lock"></i>
                 <input placeholder="Contraseña" type="password" name="contraseña" required>
             </label>
+            <a href="{{ url_for('index') }}">Volver al inicio</a><br>
             <a href="#" class="link">¿Olvidaste tu contraseña?</a>
             <button type="submit" id="button">INICIAR SESIÓN</button>
         </form>
         <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }}" alt="Logo de AGLAIA">
     </div>
-    <a href="{{ url_for('index') }}">Volver al inicio</a>
+    
     <script src="/app/Static/Js/main.js"></script>
 
     

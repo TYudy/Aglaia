@@ -5,15 +5,15 @@
   'use strict';
   var canvasSettings = function () {
     const _self = this;
-    $(`${this.containerSelector} .main-panel`).append(`<div class="toolpanel" id="background-panel"><div class="content"><p class="title">Canvas Settings</p></div></div>`);
+    $(`${this.containerSelector} .main-panel`).append(`<div class="toolpanel" id="background-panel"><div class="content"><p class="title">AJUSTES DEL LIENZO</p></div></div>`);
 
     // set dimension section
     (() => {
       $(`${this.containerSelector} .toolpanel#background-panel .content`).append(`
       <div class="canvas-size-setting">
-        <p>Canvas Size</p>
+        <p>TAMAÑO DEL LIENZO</p>
         <div class="input-container">
-          <label>Width</label>
+          <label>ANCHO</label>
           <div class="custom-number-input">
           <button class="decrease">-</button>
           <input type="number" min="100" id="input-width" value="640"/>
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="input-container">
-          <label>Height</label>
+          <label>ALTO</label>
           <div class="custom-number-input">
           <button class="decrease">-</button>
           <input type="number" min="100" id="input-height" value="480"/>
@@ -55,8 +55,8 @@
       <div class="color-settings">
         <div class="tab-container">
           <div class="tabs">
-            <div class="tab-label" data-value="color-fill">Color Fill</div>
-            <div class="tab-label" data-value="gradient-fill">Gradient Fill</div>
+            <div class="tab-label" data-value="color-fill">RELLENO DE COLOR</div>
+            <div class="tab-label" data-value="gradient-fill">RELLENO DEL DEGRADADO</div>
           </div>
           <div class="tab-content" data-value="color-fill">
             <input id="color-picker" value='black'/><br>
