@@ -46,7 +46,7 @@
 
     let ShapeList = defaultShapes;
     if (Array.isArray(this.shapes) && this.shapes.length) ShapeList = this.shapes;
-    $(`${this.containerSelector} .main-panel`).append(`<div class="toolpanel" id="shapes-panel"><div class="content"><p class="title">Shapes</p></div></div>`);
+    $(`${this.containerSelector} .main-panel`).append(`<div class="toolpanel" id="shapes-panel"><div class="content"><p class="title">FORMAS</p></div></div>`);
 
     ShapeList.forEach(svg => {
       $(`${this.containerSelector} .toolpanel#shapes-panel .content`).append(`<div class="button">${svg}</div>`)

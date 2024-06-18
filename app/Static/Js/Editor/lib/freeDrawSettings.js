@@ -10,13 +10,13 @@
     let color = 'black';
 
     const _self = this;
-    $(`${this.containerSelector} .main-panel`).append(`<div class="toolpanel" id="draw-panel"><div class="content"><p class="title">Free Draw</p></div></div>`);
+    $(`${this.containerSelector} .main-panel`).append(`<div class="toolpanel" id="draw-panel"><div class="content"><p class="title">Puntero</p></div></div>`);
 
     // set dimension section
     $(`${this.containerSelector} .toolpanel#draw-panel .content`).append(`
       <div>
         <div class="input-container">
-          <label>Brush Width</label>
+          <label>Ancho del pincel</label>
           <div class="custom-number-input">
           <button class="decrease">-</button>
           <input type="number" min="1" value="1" id="input-brush-width"/>
@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="input-container">
-          <label>Brush Type</label>
+          <label>Tipo de pincel</label>
           <select id="input-brush-type">
             <option value="pencil" selected>Pencil</option>
             <option value="circle">Circle</option>
@@ -32,7 +32,7 @@
           </select>
         </div>
         <div class="input-container">
-          <label>Brush Color</label>
+          <label>Color del pincel</label>
           <input id="color-picker" value='black'/>
         </div>
       </div>

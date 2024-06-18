@@ -6,11 +6,11 @@
 
   function tipPanel() {
     const defaultTips = [
-      'Tip: use arrows to move a selected object by 1 pixel!',
-      'Tip: Shift + Click to select and modify multiple objects!',
-      'Tip: hold Shift when rotating an object for 15° angle jumps!',
-      'Tip: hold Shift when drawing a line for 15° angle jumps!',
-      'Tip: Ctrl +/-, Ctrl + wheel to zoom in and zoom out!',
+      'Consejo: ¡usa las flechas para mover un objeto seleccionado 1 píxel!',
+      'Consejo: ¡Mayús + clic para seleccionar y modificar múltiples objetos!',
+      'Consejo: ¡mantén presionada la tecla Mayús cuando gires un objeto para realizar saltos en un ángulo de 15°!',
+      'Consejo: ¡mantén presionada la tecla Mayús cuando dibujes una línea para saltos en ángulo de 15°!',
+      'Consejo: Ctrl +/-, Ctrl + rueda para acercar y alejar!',
     ]
     const _self = this;
     $(`${this.containerSelector} .canvas-holder .content`).append(`
