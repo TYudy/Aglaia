@@ -11,6 +11,8 @@ import time
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
+app.static_folder = 'static'
+
 db = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -152,9 +154,5 @@ def Chat_bot():
 
   
 if __name__ == '__main__':
-    # Ejecutar las tareas programadas en un hilo aparte
-    # import threading
-    # t = threading.Thread(target=ejecutar_tareas_programadas)
-    # t.start()
     app.add_url_rule('/', view_func=index)
     app.run(debug=True, port=5000)
