@@ -15,76 +15,98 @@
         <nav>
             <span class="logo">AGLAIA</span>
             <ul>
-                <li> <a href="#Home">INICIO</a></li>
-                <li> <a href="#Editor">EDITOR</a></li>
-                <li> <a href="#Plantilla">PLANTILLAS</a></li>
-                <li> <a href="#Precio">PRECIOS</a></li>
-                <li> <a href="/Login">INICIAR SESION</a></li>
-                <li> <a href="#Registro">REGISTRO</a></li>
+                <li><a onclick="loadHome()">INICIO</a></li>
+                <li><a onclick="loadContent('/Editor')">EDITOR</a></li>
+                <li><a onclick="loadContent('/Plantillas')">PLANTILLAS</a></li>
+                <li><a onclick="loadContent('/Premium')">PRECIOS</a></li>
+                <li><a href="/Login">INICIAR SESIÓN</a></li>
+                <li>
+                    <a href="javascript:void(0);" onclick="toggleRegisterMenu()">REGISTRO</a>
+                    <div id="register-menu" class="register-menu">
+                        <a onclick="loadContent('/RegisEmpre')">EMPRENDEDOR</a>
+                        <a onclick="loadContent('/RegisPatro')">PATROCINADOR</a>
+                    </div>
+                </li>
             </ul>
-            <!-- Formulario de búsqueda -->
-            <form id="search-form">
-                <input type="text" id="search-bar" placeholder="Buscar...">
-                <select id="category-select">
-                    <option value="all">Todas las categorías</option>
-                    <option value="Electrónica">Electrónica</option>
-                    <option value="Ropa">Ropa</option>
-                    <option value="Hogar">Hogar</option>
-                </select>
-                <button type="submit"><i class='bx bx-search'></i></button>
-            </form>
         </nav>
 
-        <!-- Resto del contenido -->
-       
         <section id="Home">
+           
+
             <header>
                 <h1>BIENVENIDOS</h1>
                 <h2>Somos lo que tu emprendimiento necesita</h2>
                 <p>Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA</p>
-                <button type="button">
-                    Más Información
-                </button>
+                <button type="button">Más Información</button>
             </header>
+
             <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }}" alt="">
-            
-            <div class="icons">
-                <a href="https://www.facebook.com/profile.php?id=61560555698181&" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="https://whatsapp.com" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-                <a href="https://www.instagram.com/aglaia_ads/" target="_blank"><i class='bx bxl-instagram'></i></a>
-                <a href="https://x.com/AglaiaAds" target="_blank"><i class='bx bxl-twitter'></i></a>
-            </div>
+            <!-- <form id="search-form" action="/buscar" method="GET">
+                <input type="text" id="busqueda" name="q" placeholder="Ingresa tu búsqueda...">
+                <button type="submit">Buscar</button>
+            </form>
+
+            <div class="columns-container">
+                <div class="column">
+                    <img src="ruta/a/tu/imagen1.jpg" alt="Imagen 1">
+                    <h2>Sección 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla odio eget ligula fermentum, et viverra risus aliquam.</p>
+                </div>
+                <div class="column">
+                    <img src="ruta/a/tu/imagen2.jpg" alt="Imagen 2">
+                    <h2>Sección 2</h2>
+                    <p>Phasellus imperdiet mauris id luctus elementum. Nunc nec ipsum vel libero interdum mattis sed eget nulla.</p>
+                </div>
+                <div class="column">
+                    <img src="ruta/a/tu/imagen3.jpg" alt="Imagen 3">
+                    <h2>Sección 3</h2>
+                    <p>Vestibulum in volutpat justo. Duis auctor, eros a tempus condimentum, lorem odio rhoncus dolor, vel convallis nunc eros id sem.</p>
+                </div>
+            </div> -->
         </section>
 
-        <section id="Editor">
-            <iframe src="/Editor" frameborder="0"></iframe>
-        </section>
+        <iframe id="iframeContent"></iframe>
 
-        <section id="Plantilla">
-            <iframe src="/Plantillas" frameborder="0"></iframe>
-        </section>
-
-        <section id="Precio">
-            <iframe src="/Premium" frameborder="0"></iframe>
-        </section>
-
-        <section id="Inicio">
-            <header>
-                <h1>"¡Próximamente!</h1>
-                <h2>Estamos preparando esta sección para ofrecerte contenido increíble, pero todavía no está lista.</h2>
-                <p>Agradecemos tu paciencia y te pedimos que vuelvas más tarde para descubrir todas las novedades que estamos preparando para ti. ¡Gracias por tu interés!"</p>
-            </header>
-        </section>
-
-        <section id="Registro">
-            <header></header>
-            <iframe src="/regtemp" frameborder="0"></iframe>
-        </section>
     </div>
+
+   <section id="buscador">
+    <form id="search-form" action="/buscar" method="GET">
+        <input type="text" id="busqueda" name="q" placeholder="Ingresa tu búsqueda...">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <div class="columns-container">
+        <div class="column">
+            <img src="ruta/a/tu/imagen1.jpg" alt="Imagen 1">
+            <h2>EMPRENDIMIENTO 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla odio eget ligula fermentum, et viverra risus aliquam.</p>
+        </div>
+        <div class="column">
+            <img src="ruta/a/tu/imagen2.jpg" alt="Imagen 2">
+            <h2>EMPRENDIMIENTO 2</h2>
+            <p>Phasellus imperdiet mauris id luctus elementum. Nunc nec ipsum vel libero interdum mattis sed eget nulla.</p>
+        </div>
+        <div class="column">
+            <img src="ruta/a/tu/imagen3.jpg" alt="Imagen 3">
+            <h2>EMPRENDIMIENTO 3</h2>
+            <p>Vestibulum in volutpat justo. Duis auctor, eros a tempus condimentum, lorem odio rhoncus dolor, vel convallis nunc eros id sem.</p>
+        </div>
+    </div>
+
+    
+
+   </section>
+   <footer>
+    <div class="icons">
+        <a href="https://www.facebook.com/profile.php?id=61560555698181&" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+        <a href="https://whatsapp.com" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+        <a href="https://www.instagram.com/aglaia_ads/" target="_blank"><i class='bx bxl-instagram'></i></a>
+        <a href="https://x.com/AglaiaAds" target="_blank"><i class='bx bxl-twitter'></i></a>
+    </div>
+    <p>&copy; 2024 ACJO SOFT. Todos los derechos reservados.</p>
+</footer>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
     <ul id="search-results"></ul>
 </body>
 </html>
-
-    
-
