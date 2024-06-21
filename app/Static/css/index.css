@@ -228,7 +228,7 @@ iframe {
 /* Estilos para el formulario de búsqueda */
 #search-form {
   position: absolute;
-  top: 85%;
+  top: 900px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -258,6 +258,9 @@ iframe {
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+.container{
+  
 }
 
 #search-form button:hover {

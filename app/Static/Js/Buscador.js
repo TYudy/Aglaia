@@ -1,3 +1,20 @@
+<<<<<<<<< Temporary merge branch 1
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+const button = document.getElementById('button');
+
+button.addEventListener('click', (e) => {
+    e.preventDefault();
+    const data = {
+        username: username.value,
+        password: password.value
+    };
+
+    console.log(data);
+});
+
+=========
+>>>>>>>>> Temporary merge branch 2
 document.addEventListener('DOMContentLoaded', function () {
     const searchBar = document.getElementById('search-bar');
     const categorySelect = document.getElementById('category-select');

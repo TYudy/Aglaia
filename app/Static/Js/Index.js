@@ -62,3 +62,37 @@ function adjustFooterPosition() {
   window.addEventListener('resize', adjustFooterPosition);
   
 
+function loadContent(page) {
+    var iframe = document.getElementById('iframeContent');
+    iframe.src = page;
+    iframe.style.display = 'block'; 
+    document.getElementById('Home').style.display = 'none';
+    document.getElementById('buscador').style.display = 'none'; 
+}
+
+function loadHome() {
+    var iframe = document.getElementById('iframeContent');
+    iframe.style.display = 'none'; 
+    document.getElementById('Home').style.display = 'block';
+    document.getElementById('buscador').style.display = 'block'; 
+}
+
+window.onload = function() {
+    loadHome(); 
+};
+
+window.onload = function() {
+    var home = document.getElementById("Home");
+    if (home) {
+        home.scrollIntoView();
+    }
+};
+
+document.getElementById('infoButton').addEventListener('click', function() {
+    var infoContainer = document.getElementById('infoContainer');
+    if (infoContainer.style.display === 'none') {
+        infoContainer.style.display = 'block';
+    } else {
+        infoContainer.style.display = 'none';
+    }
+});
