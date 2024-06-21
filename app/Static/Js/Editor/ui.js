@@ -336,16 +336,16 @@ function updateStrokeValues() {
     object.get('strokeWidth') == 0
   ) {
     $('#miter').addClass('line-join-active');
-    $('#miter img').attr('src', '../assets/miter-active.svg');
+    $('#miter img').attr('src', '../../static/img/Editor/miter-active.svg');
   } else if (object.get('strokeDashArray') == false) {
     $('#bevel').addClass('line-join-active');
-    $('#bevel img').attr('src', '../assets/bevel-active.svg');
+    $('#bevel img').attr('src', '../../static/img/Editor/bevel-active.svg');
   } else if (object.get('strokeDashArray') == [10, 5]) {
     $('#round').addClass('line-join-active');
-    $('#round img').attr('src', '../assets/round-active.svg');
+    $('#round img').attr('src', '../../static/img/Editor/round-active.svg');
   } else {
     $('#small-dash').addClass('line-join-active');
-    $('#small-dash img').attr('src', '../assets/dash2-active.svg');
+    $('#small-dash img').attr('src', '../../static/img/Editor/dash2-active.svg');
   }
 }
 
@@ -415,25 +415,25 @@ function updateTextValues() {
     $('#align-text-left').addClass('align-text-active');
     $('#align-text-left img').attr(
       'src',
-      '../assets/align-text-left-active.svg'
+      '../../static/img/Editor/align-text-left-active.svg'
     );
   } else if (object.get('textAlign') == 'center') {
     $('#align-text-center').addClass('align-text-active');
     $('#align-text-center img').attr(
       'src',
-      '../assets/align-text-center-active.svg'
+      '../../static/img/Editor/align-text-center-active.svg'
     );
   } else if (object.get('textAlign') == 'right') {
     $('#align-text-right').addClass('align-text-right-active');
     $('#align-text-right img').attr(
       'src',
-      '../assets/align-text-right-active.svg'
+      '../../static/img/Editor/align-text-right-active.svg'
     );
   } else {
     $('#align-text-justify').addClass('align-text-justify-active');
     $('#align-text-justify img').attr(
       'src',
-      '../assets/align-text-justify-active.svg'
+      '../../static/img/Editor/align-text-justify-active.svg'
     );
   }
   if (
@@ -441,22 +441,22 @@ function updateTextValues() {
     object.get('fontWeight') == 700
   ) {
     $('#format-bold').addClass('format-text-active');
-    $('#format-bold img').attr('src', '../assets/bold-active.svg');
+    $('#format-bold img').attr('src', '../../static/img/Editor/bold-active.svg');
   }
   if (object.get('fontStyle') == 'italic') {
     $('#format-italic').addClass('format-text-active');
-    $('#format-italic img').attr('src', '../assets/italic-active.svg');
+    $('#format-italic img').attr('src', '../../static/img/Editor/italic-active.svg');
   }
   if (object.get('underline') == true) {
     $('#format-underline').addClass('format-text-active');
     $('#format-underline img').attr(
       'src',
-      '../assets/underline-active.svg'
+      '../../static/img/Editor/underline-active.svg'
     );
   }
   if (object.get('linethrough') == true) {
     $('#format-strike').addClass('format-text-active');
-    $('#format-strike img').attr('src', '../assets/strike-active.svg');
+    $('#format-strike img').attr('src', '../../static/img/Editor/strike-active.svg');
   }
 }
 
@@ -957,7 +957,7 @@ function populateGrid(type) {
               item.type +
               "' data-key='" +
               item.key +
-              "'><img class='delete-media' draggable=false src='../assets/more-options.svg'><img draggable=false onload='onLoadImage(this)' class='image-thing' src='" +
+              "'><img class='delete-media' draggable=false src='../../static/img/Editor/more-options.svg'><img draggable=false onload='onLoadImage(this)' class='image-thing' src='" +
               item.thumb +
               "'</div>"
           );
@@ -985,7 +985,7 @@ function populateGrid(type) {
               item.type +
               "' data-key='" +
               item.key +
-              "'><img class='delete-media' draggable=false src='../assets/more-options.svg'><img draggable=false onload='onLoadImage(this)' class='image-thing' src='" +
+              "'><img class='delete-media' draggable=false src='../../static/img/Editor/more-options.svg'><img draggable=false onload='onLoadImage(this)' class='image-thing' src='" +
               item.thumb +
               "'></div>"
           );
@@ -1005,7 +1005,7 @@ function populateGrid(type) {
         $('#audio-list').append(
           "<div class='audio-item audio-item-active' data-src='" +
             item.src +
-            "'><div class='audio-preview'><img src='../assets/play-button.svg'></div><img class='audio-thumb' src='" +
+            "'><div class='audio-preview'><img src='../../static/img/Editor/play-button.svg'></div><img class='audio-thumb' src='" +
             item.thumb +
             "'><div class='audio-info'><div class='audio-info-title'>" +
             item.name +
@@ -1021,7 +1021,7 @@ function populateGrid(type) {
         $('#audio-list').append(
           "<div class='audio-item' data-src='" +
             item.src +
-            "'><div class='audio-preview'><img src='../assets/play-button.svg'></div><img class='audio-thumb' src='" +
+            "'><div class='audio-preview'><img src='../../static/img/Editor/play-button.svg'></div><img class='audio-thumb' src='" +
             item.thumb +
             "'><div class='audio-info'><div class='audio-info-title'>" +
             item.name +
@@ -1222,36 +1222,36 @@ function switchTool(e) {
   resizeCanvas();
   var act = $('.tool-active');
   if (act.attr('id') == 'image-tool') {
-    act.find('img').attr('src', '../assets/image.svg');
+    act.find('img').attr('src', '../../static/img/Editor/image.svg');
   } else if (act.attr('id') == 'text-tool') {
-    act.find('img').attr('src', '../assets/text.svg');
+    act.find('img').attr('src', '../../static/img/Editor/text.svg');
   } else if (act.attr('id') == 'mockup-tool') {
-    act.find('img').attr('src', '../assets/mockup.svg');
+    act.find('img').attr('src', '../../static/img/Editor/mockup.svg');
   } else if (act.attr('id') == 'video-tool') {
-    act.find('img').attr('src', '../assets/video.svg');
+    act.find('img').attr('src', '../../static/img/Editor/video.svg');
   } else if (act.attr('id') == 'shape-tool') {
-    act.find('img').attr('src', '../assets/shape.svg');
+    act.find('img').attr('src', '../../static/img/Editor/shape.svg');
   } else if (act.attr('id') == 'upload-tool') {
-    act.find('img').attr('src', '../assets/uploads.svg');
+    act.find('img').attr('src', '../../static/img/Editor/uploads.svg');
   } else if (act.attr('id') == 'audio-tool') {
-    act.find('img').attr('src', '../assets/audio.svg');
+    act.find('img').attr('src', '../../static/img/Editor/audio.svg');
   }
   $('.tool-active').removeClass('tool-active');
   $(this).addClass('tool-active');
   if ($(this).attr('id') == 'image-tool') {
-    $(this).find('img').attr('src', '../assets/image-active.svg');
+    $(this).find('img').attr('src', '../../static/img/Editor/image-active.svg');
   } else if ($(this).attr('id') == 'text-tool') {
-    $(this).find('img').attr('src', '../assets/text-active.svg');
+    $(this).find('img').attr('src', '../../static/img/Editor/text-active.svg');
   } else if ($(this).attr('id') == 'mockup-tool') {
-    $(this).find('img').attr('src', '../assets/mockup-active.svg');
+    $(this).find('img').attr('src', '../../static/img/Editor/mockup-active.svg');
   } else if ($(this).attr('id') == 'video-tool') {
-    $(this).find('img').attr('src', '../assets/video-active.svg');
+    $(this).find('img').attr('src', '../../static/img/Editor/video-active.svg');
   } else if ($(this).attr('id') == 'shape-tool') {
-    $(this).find('img').attr('src', '../assets/shape-active.svg');
+    $(this).find('img').attr('src', '../../static/img/Editor/shape-active.svg');
   } else if ($(this).attr('id') == 'upload-tool') {
-    $(this).find('img').attr('src', '../assets/uploads-active.svg');
+    $(this).find('img').attr('src', '../../static/img/Editor/uploads-active.svg');
   } else if ($(this).attr('id') == 'audio-tool') {
-    $(this).find('img').attr('src', '../assets/audio-active.svg');
+    $(this).find('img').attr('src', '../../static/img/Editor/audio-active.svg');
   }
   updateBrowser($(this).attr('id'));
   resetHeight();
@@ -1579,17 +1579,17 @@ function collapsePanel() {
   $('#canvas-area').addClass('canvas-full');
   var act = $('.tool-active');
   if (act.attr('id') == 'image-tool') {
-    act.find('img').attr('src', '../assets/image.svg');
+    act.find('img').attr('src', '../../static/img/Editor/image.svg');
   } else if (act.attr('id') == 'text-tool') {
-    act.find('img').attr('src', '../assets/text.svg');
+    act.find('img').attr('src', '../../static/img/Editor/text.svg');
   } else if (act.attr('id') == 'mockup-tool') {
-    act.find('img').attr('src', '../assets/mockup.svg');
+    act.find('img').attr('src', '../../static/img/Editor/mockup.svg');
   } else if (act.attr('id') == 'video-tool') {
-    act.find('img').attr('src', '../assets/video.svg');
+    act.find('img').attr('src', '../../static/img/Editor/video.svg');
   } else if (act.attr('id') == 'shape-tool') {
-    act.find('img').attr('src', '../assets/shape.svg');
+    act.find('img').attr('src', '../../static/img/Editor/shape.svg');
   } else if (act.attr('id') == 'upload-tool') {
-    act.find('img').attr('src', '../assets/uploads.svg');
+    act.find('img').attr('src', '../../static/img/Editor/uploads.svg');
   }
   $('.tool-active').removeClass('tool-active');
   resizeCanvas();
@@ -1699,7 +1699,7 @@ $(document).on('click', '.zoom-options-item', zoomTo);
 
 // Add background audio (temporary)
 function addBackgroundAudio() {
-  background_audio = new Audio('../assets/audio.wav');
+  background_audio = new Audio('../../static/img/Editor/audio.wav');
 }
 
 // Hide all modals
@@ -1800,7 +1800,7 @@ function loadMoreMedia() {
                 hit.user +
                 "</a><div id='time-video'>" +
                 fancyTimeFormat(hit.duration) +
-                "</div><img draggable=false onload='onLoadImage(this)' src='../assets/transparent.png'</div>"
+                "</div><img draggable=false onload='onLoadImage(this)' src='../../static/img/Editor/transparent.png'</div>"
             );
             createVideoThumbnail(video, 250, 0, true).then(function (
               data
@@ -1883,7 +1883,7 @@ function search() {
                 hit.user +
                 "</a><div id='time-video'>" +
                 fancyTimeFormat(hit.duration) +
-                "</div><img draggable=false onload='onLoadImage(this)' src='../assets/transparent.png'</div>"
+                "</div><img draggable=false onload='onLoadImage(this)' src='../../static/img/Editor/transparent.png'</div>"
             );
             //createVideoThumbnail(video, 250, 0, true).then(function(data){
             $(".image-grid-item[data-src='" + video + "']")
@@ -2030,7 +2030,7 @@ function replaceAudioBackground() {
 		var src = $(this).attr("data-src");
 		if (background_audio != false) {
 			$("#audio-upload-button").removeClass("remove-audio");
-			$("#audio-upload-button").html('<img src="../assets/upload.svg"> Upload audio');
+			$("#audio-upload-button").html('<img src='../../static/img/Editor/upload.svg'> Upload audio');
 		}
 		db.collection("projects").doc({id: 1}).update({
 			audiosrc: src,
@@ -2049,17 +2049,17 @@ function previewAudioBackground(e) {
   e.preventDefault();
   e.stopPropagation();
   var src = $(this).parent().attr('data-src');
-  if ($(this).find('img').attr('src') == '../assets/play-button.svg') {
+  if ($(this).find('img').attr('src') == '../../static/img/Editor/play-button.svg') {
     temp_audio = new Audio(src);
     temp_audio.crossOrigin = 'anonymous';
     temp_audio.currentTime = 0;
     temp_audio.play();
-    $(this).find('img').attr('src', '../assets/pause-button.svg');
+    $(this).find('img').attr('src', '../../static/img/Editor/pause-button.svg');
   } else {
     if (temp_audio != false) {
       temp_audio.pause();
     }
-    $(this).find('img').attr('src', '../assets/play-button.svg');
+    $(this).find('img').attr('src', '../../static/img/Editor/play-button.svg');
   }
 }
 $(document).on('click', '.audio-preview', previewAudioBackground);

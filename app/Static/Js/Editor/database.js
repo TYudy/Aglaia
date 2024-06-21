@@ -419,7 +419,7 @@ async function saveFile(thumbnail, file, type, name, place, hidden) {
     populateGrid('videos-tab');
   }
   $('#upload-button').html(
-    "<img src='../assets/upload.svg'> Upload media"
+    "<img src='../../static/img/Editor/upload.svg'> Upload media"
   );
   $('#upload-button').removeClass('uploading');
   if (place) {
