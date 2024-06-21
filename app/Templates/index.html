@@ -9,17 +9,20 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/buscador.js') }}"></script>
+ 
 </head>
 <body>
     <div class="container">
         <nav>
             <span class="logo">AGLAIA</span>
             <ul>
-                <li><a onclick="loadHome()">INICIO</a></li>
-                <li><a onclick="loadContent('/Editor')">EDITOR</a></li>
-                <li><a onclick="loadContent('/Plantillas')">PLANTILLAS</a></li>
-                <li><a onclick="loadContent('/Premium')">PRECIOS</a></li>
-                <li><a href="/Login">INICIAR SESIÓN</a></li>
+                
+    <li><a  onclick="loadHome()">INICIO</a></li>
+                <li><a   onclick="loadContent('/Editor')">EDITOR</a></li>
+                <li><a  onclick="loadContent('/Plantillas')">PLANTILLAS</a></li>
+                <li><a  onclick="loadContent('/Premium')">PRECIOS</a></li>
+                <li> <a href="/Login">INICIAR SESIÓN</a></li>
                 <li>
                     <a href="javascript:void(0);" onclick="toggleRegisterMenu()">REGISTRO</a>
                     <div id="register-menu" class="register-menu">
@@ -27,42 +30,33 @@
                         <a onclick="loadContent('/RegisPatro')">PATROCINADOR</a>
                     </div>
                 </li>
+                <li> <a href="/Bot">AYUDAS</a></li>
             </ul>
         </nav>
 
         <section id="Home">
-           
 
             <header>
                 <h1>BIENVENIDOS</h1>
                 <h2>Somos lo que tu emprendimiento necesita</h2>
                 <p>Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA</p>
-                <button type="button">Más Información</button>
+                
+                
+                <button id="infoButton" type="button">
+                    Más Información
+                    <img src="icono/bxs-right-arrow-alt.svg" alt="">
+                </button>
+                <div id="infoContainer" style="display:none;">
+                    <p>
+                        Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA ADS <br> Diseña, publica y distribuye anuncios personalizados para impulsar tu pequeño emprendimiento de manera fácil y económica. <br>
+                        Nuestra plataforma ofrece plantillas prediseñadas que puedes personalizar con tu logo, colores y mensajes únicos. <br>
+                         Con herramientas de edición intuitivas y previsualización en tiempo real, verás exactamente cómo quedará tu anuncio antes de publicarlo. <br>
+                          Además, podrás distribuir tus anuncios a través de redes sociales, correo electrónico y medios locales, segmentando tu audiencia según ubicación, edad e intereses. <br>
+                           Los análisis detallados del rendimiento te permitirán ajustar y mejorar tus campañas publicitarias para obtener los mejores resultados.                </div>
             </header>
 
             <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }}" alt="">
-            <!-- <form id="search-form" action="/buscar" method="GET">
-                <input type="text" id="busqueda" name="q" placeholder="Ingresa tu búsqueda...">
-                <button type="submit">Buscar</button>
-            </form>
-
-            <div class="columns-container">
-                <div class="column">
-                    <img src="ruta/a/tu/imagen1.jpg" alt="Imagen 1">
-                    <h2>Sección 1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla odio eget ligula fermentum, et viverra risus aliquam.</p>
-                </div>
-                <div class="column">
-                    <img src="ruta/a/tu/imagen2.jpg" alt="Imagen 2">
-                    <h2>Sección 2</h2>
-                    <p>Phasellus imperdiet mauris id luctus elementum. Nunc nec ipsum vel libero interdum mattis sed eget nulla.</p>
-                </div>
-                <div class="column">
-                    <img src="ruta/a/tu/imagen3.jpg" alt="Imagen 3">
-                    <h2>Sección 3</h2>
-                    <p>Vestibulum in volutpat justo. Duis auctor, eros a tempus condimentum, lorem odio rhoncus dolor, vel convallis nunc eros id sem.</p>
-                </div>
-            </div> -->
+           
         </section>
 
         <iframe id="iframeContent"></iframe>
@@ -70,6 +64,7 @@
     </div>
 
    <section id="buscador">
+    
     <form id="search-form" action="/buscar" method="GET">
         <input type="text" id="busqueda" name="q" placeholder="Ingresa tu búsqueda...">
         <button type="submit">Buscar</button>
@@ -93,9 +88,8 @@
         </div>
     </div>
 
-    
-
    </section>
+
    <footer>
     <div class="icons">
         <a href="https://www.facebook.com/profile.php?id=61560555698181&" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
@@ -105,8 +99,19 @@
     </div>
     <p>&copy; 2024 ACJO SOFT. Todos los derechos reservados.</p>
 </footer>
+       
+       
+
+        <iframe id="iframeContent" ></iframe>
+    </div>
+
+
+
+    
+    
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
     <ul id="search-results"></ul>
+    
 </body>
 </html>

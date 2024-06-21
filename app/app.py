@@ -3,6 +3,8 @@ import mysql.connector
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
+app.static_folder = 'static'
+
 db = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -105,7 +107,7 @@ def iniciar_sesion():
             # Redirigir según el rol
             if user['role'] == 'administrador':
                 return redirect(url_for('IndexAd'))
-            elif user['role'] == 'emprendedor':
+            elif user['role'] == 'emprendimiento':
                 return redirect(url_for('IndexEmp'))
             elif user['role'] == 'patrocinador':
                 return redirect(url_for('IndexPatro'))
@@ -115,9 +117,9 @@ def iniciar_sesion():
             # Credenciales incorrectas, redirigir al error_inicio_sesion o mostrar un mensaje de error
             return redirect(url_for('error_inicio_sesion'))
 
-@app.route('/error_inicio_sesion')
-def error_inicio_sesion():
-    return render_template('Login.html')
+            @app.route('/error_inicio_sesion')
+            def error_inicio_sesion():
+                return render_template('Login.html')
 
 @app.route("/autocomplete")
 def autocomplete():
@@ -147,13 +149,12 @@ def IndexPatro():
     return render_template('Patrocinador/IndexPatro.html')
 
 
-# @app.route('/Bot')
-# def Chat_bot():
-#     return render_template('General/chatbot.html')
+@app.route('/Bot')
+def Chat_bot():
+     return render_template('General/chatbot.html')
 
 
   
 if __name__ == '__main__':
-
     app.add_url_rule('/', view_func=index)
     app.run(debug=True,port=5000)
