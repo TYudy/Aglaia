@@ -6,30 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMPRENDEDORES</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Emprendimiento/IndexEmp.css') }}">
+    <link rel="stylesheet" href="IndexEmp.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<header class="app-header">
-		<span class="logo">AGLAIA</span>
-		<div class="toggle-menu" onclick="toggleSidebar()" aria-label="Abrir menú">
-			<i class="fa fa-bars"></i>
+	<div class="grid-container">
+        <div class="sidebar">
+          <button><img src="https://picsum.photos/70" alt=""></button>
+		  <div class="sidebar-header">
+			<div class="user-pic" style="color:#fff;">
+			  <i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
+			</div>
+			<div class="user-info">
+			  <span class="user-name"> <strong>Joe Chien</strong></span>
+			  <span class="user-role">Administrator</span>
+			  <span class="user-status"><i class="fa fa-circle"></i> <span>Online</span></span>
+			</div>
 		  </div>
-		<div class="search-bar">
-			<input type="text" placeholder="Buscar...">
-			<button type="submit"><i class="fas fa-search"></i></button>
-		</div>
+		  <!-- sidebar-header -->
+		  <div class="sidebar-search">
+			<div>
+			  <div class="input-group">
+				<input type="text" class="form-control search-menu" placeholder="Search...">
+				<div class="input-group-append">
+				  <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="sidebar-footer">
+            <a href="#">
+              <i class="fa fa-bell"></i>
+              <span class="badge badge-pill badge-warning notification">3</span>
+            </a>
+            <a href="#">
+              <i class="fa fa-envelope"></i>
+              <span class="badge badge-pill badge-success notification">7</span>
+            </a>
+            <a href="#">
+              <i class="fa fa-cog"></i>
+              <span class="badge-sonar"></span>
+            </a>
+            <a href="#">
+              <i class="fa fa-power-off"></i>
+            </a>
+          </div>
+
+
+
+
+        </div>
 		
-	</header>
-	<aside class="app-sidebar">
-		<ul class="app-menu">
-		  <li class="app-menu__item"><a href="#">Inicio</a></li>
-		  <li class="app-menu__item"><a href="#">Editar Perfil</a></li>
-		  <li class="app-menu__item"><a href="#">Contacto</a></li>
-		  <li class="app-menu__item"><a href="#">Ayuda</a></li>
-		</ul>
-	  </aside>
+        <div class="main-content">
+			<div class="sidebar-brand">
+				<a href="#">pro sidebar</a>
+				<div id="close-sidebar"><i class="fas fa-times"></i></div>
+			  </div>
+        </div>
+      </div>
+	
 	<main>
-		<section id="inicio">
+		<!-- <section id="inicio">
 			<h2>Bienvenido EMPRENDEDORES</h2>
 			<p> ¿Qué es Aglaia?
 
@@ -41,10 +78,10 @@
 				Conéctate directamente con tus clientes.
 				Únete a una comunidad de emprendedores que se apoyan mutuamente.
 				¡Haz que tu negocio brille con Aglaia! </p>
-		</section>
+		</section> -->
 		<!-- Agrega más secciones aquí -->
 	</main>
-	<footer>
+	<!-- <footer>
 		<div class="social-media">
 			<a href="#"><i class="fab fa-facebook-f"></i></a>
 			<a href="#"><i class="fab fa-twitter"></i></a>
@@ -52,20 +89,8 @@
 			<a href="#"><i class="fab fa-linkedin-in"></i></a>
 		</div>
 		<p class="copyright">Copyright © 2024 AGLAIA. Todos los derechos reservados.</p>
-	</footer>ñ
-	<script>
-		function toggleSidebar() {
-		  document.body.classList.toggle('sidebar-open');
-		}
-		document.addEventListener('click', function(event) {
-		  var sidebar = document.querySelector('.app-sidebar');
-		  var toggleMenu = document.querySelector('.toggle-menu');
-	
-		  if (!sidebar.contains(event.target) && !toggleMenu.contains(event.target)) {
-			document.body.classList.remove('sidebar-open');
-		  }
-		});
-	  </script>
+	</footer> -->
 
+    <script src="IndexEmp.js"></script>
 </body>
 </html>

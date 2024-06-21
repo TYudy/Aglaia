@@ -6,37 +6,163 @@
   
   <title>AGLAIA</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Patrocinador/IndexPatro.css') }}" >
+  <link rel="stylesheet" type="text/css" href="IndexPatro.css" >
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-  <header class="app-header">
-    <span class="logo">AGLAIA</span>
+  
+  <header class="masthead">
     <div class="toggle-menu" onclick="toggleSidebar()" aria-label="Abrir menú">
-      <i class="fa fa-bars"></i>
-    </div>
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar...">
-      <button><i class="fa fa-search"></i></button>
-    </div>
-    <div class="logout">
-      <a href="/Login"><i class="fa fa-sign-out"></i> Cerrar Sesión</a>
-    </div>
+    <i class="fa fa-bars"></i>
+  </div>
+    
+      <div class="logo">
+        <h1>Aglaia<i class="fas fa-ellipsis-h logo-icon" aria-hidden="true"></i></h1>
+      </div>
+  
+      <div class="vault-search">
+        <form>
+          <input type="search" class="search-input" placeholder="search my vault" aria-label="search vault">
+          
+          <i class='bx bx-search-alt search-icon' aria-hidden="true"></i>
+        </form>
+      </div>
+  
+      <div class="user-settings" tabindex="0" aria-label="User Settings">
+        <div class="profile-content">
+          <img src="https://picsum.photos/70" alt="profileImg">
+        </div>
+        <ul class="user-info">
+          <li class="user-email">email@example.com</li>
+          <li class="user-type">Premium User</li>
+        </ul>
+        <div class="user-arrow-btn">
+          <i class='bx bx-down-arrow'></i>
+          <ul class="sub-menu">
+            <li><i class='bx bx-message-alt-detail p'></i><a href="#">Usuarios</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Anuncios</a></li>
+          </ul>
+        </div>
+      </div>
+  
   </header>
+  
 
   <aside class="app-sidebar">
     <ul class="app-menu">
-      <li class="app-menu__item"><a href="#">Inicio</a></li>
-      <li class="app-menu__item"><a href="#">Editar Perfil</a></li>
-      <li class="app-menu__item"><a href="#">Contacto</a></li>
-      <li class="app-menu__item"><a href="#">Ayudad</a></li>
+      <li class="app-menu__item">
+        <a href="#">
+            <i class='bx bx-message-alt-detail app-menu__item icon'></i>
+          <span class="link_name">Inicio</span>
+        </a>
+      </li>
+      <li class="app-menu__item">
+        <a href="#">
+            <i class='bx bx-message-alt-detail app-menu__item icon'></i>
+          <span class="link_name">Chats</span>
+        </a>
+      </li>
+      <li class="app-menu__item">
+        <a href="#">
+            <i class='bx bx-message-alt-detail app-menu__item icon'></i>
+          <span class="link_name">Inversiones</span>
+        </a>
+      </li>
+      <li class="app-menu__item">
+        <a href="#">
+            <i class='bx bx-message-alt-detail app-menu__item icon'></i>
+          <span class="link_name">Chats</span>
+        </a>
+      </li>
+      
     </ul>
+    
+    <div class="toggler">
+            
+        <label id="switch" class="switch">
+          <input type="checkbox" onchange="cambiarTema()" id="slider">
+          <span class="slider round"></span>
+          <div class="names">
+           <p class="light">Light</p>
+           <p class="dark">Dark</p>
+         </div>
+          
+      </label>
+ </div>
   </aside>
 
   <main class="app-content">
-    <h1>AGLAIA</h1>
+    
   </main>
+  <!-- <section id="Home"> -->
+    <div class="vault-items-controls">
 
-  <footer>
+      <h2>All items</h2>
+  
+      <button class="vault-items-controls-btn btn" aria-label="Collapse Items" title="Collapse Items">
+                  <i class="fas fa-caret-up" aria-hidden="true"></i>
+              </button>
+  
+      <button class="vault-items-controls-btn btn" aria-label="Compact View" title="Compact View">
+                  <i class="fas fa-search-minus" aria-hidden="true"></i>
+              </button>
+  
+      <div class="vault-items-controls-group">
+  
+        <button class="vault-items-controls-btn btn current" aria-label="Grid View" title="Grid View">
+                      <i class="fas fa-th-large" aria-hidden="true"></i>
+                  </button>
+  
+        <button class="vault-items-controls-btn btn" aria-label="List View" title="List View">
+                      <i class="fas fa-list" aria-hidden="true"></i>
+                  </button>
+  
+      </div>
+  
+      <button class="vault-items-controls-btn btn" aria-label="Sort Options" title="Sort Options">
+                  <i class="fas fa-sort" aria-hidden="true"></i>
+              </button>
+  
+    </div>
+
+
+    <div class="container-info" >
+    <div class="vault-item password-item" tabindex="0">
+			<div class="vault-item-img">
+				<img src="https://picsum.photos/70" alt="">
+			</div>
+			<div class="vault-item-info">
+				<h3 class="vault-item-name">Amazon</h3>
+				<h4 class="vault-item-summary">email@example.com</h4>
+			</div>
+		</div>
+
+		<div class="vault-item password-item" tabindex="0">
+			<div class="vault-item-img">
+				<img src="https://picsum.photos/70" alt="">
+			</div>
+			<div class="vault-item-info">
+				<h3 class="vault-item-name">Apple ID</h3>
+				<h4 class="vault-item-summary">email@example.com</h4>
+			</div>
+		</div>
+
+		<div class="vault-item bank-account-item" tabindex="0">
+			<div class="vault-item-img">
+				<img src="https://picsum.photos/70" alt="">
+			</div>
+			<div class="vault-item-info">
+				<h3 class="vault-item-name">Bank Account</h3>
+				<h4 class="vault-item-summary">Ending in 1234</h4>
+			</div>
+		</div>
+  </div>
+
+  <!-- </section> -->
+
+  <!-- <footer>
     <div class="social">
       <a href="https://www.facebook.com/profile.php?id=61560555698181&" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
       <a href="https://www.instagram.com/aglaia_ads/" target="_blank"><i class='bx bxl-instagram'></i></a>
@@ -51,20 +177,10 @@
     <div class="copyright">
       © 2024 AGLAIA
     </div>
-  </footer>
+  </footer> -->
 
-  <script>
-    function toggleSidebar() {
-      document.body.classList.toggle('sidebar-open');
-    }
-    document.addEventListener('click', function(event) {
-      var sidebar = document.querySelector('.app-sidebar');
-      var toggleMenu = document.querySelector('.toggle-menu');
-
-      if (!sidebar.contains(event.target) && !toggleMenu.contains(event.target)) {
-        document.body.classList.remove('sidebar-open');
-      }
-    });
+  <script src="IndexPatro.js">
+    
   </script>
 </body>
 </html>
