@@ -3,13 +3,13 @@
     <head>
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/Editor/nice-select.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/Editor/range-slider.min.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/Editor/magic-check.min.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/Editor/styles.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='Js/Editor/src/nice-select.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='Js/Editor/src/range-slider.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='Js/Editor/src/magic-check.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='Js/Editor/src/styles.css') }}">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/Editor/favicon.ico') }}">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
 		<!-- Primary Meta Tags -->
 		<title>Aglaia Ads: el editor de anuncios alucinantes para todos</title>
 		<meta name="title" content="Motionity - The web-based motion graphics editor for everyone">
@@ -40,7 +40,7 @@
 			<div id="disc-overlay"></div>
 		</div>
         <audio controls id="audio-thing">
-          <source src="{{ url_for('static', filename='img/Editor/audio.wav') }}" type="audio/wav">
+          <source src="{{ url_for('static', filename='Js/Editor/src/assets/audio.wav') }}" type="audio/wav">
         </audio>
         <input type="file" id="filepick" accept="image/*,video/*,audio/*" multiple>
         <input type="file" id="filepick2" accept="audio/*">
@@ -122,14 +122,14 @@
         <div id="properties-overlay"></div>
         <div id="align" class="align-off">
             <div id="align-v">
-                <img class="align" id="align-top" src="{{ url_for('static', filename='img/Editor/src/assets/align-top.svg') }}" title="Align to the top">
-                <img class="align" id="align-center-v" src="{{ url_for('static', filename='img/Editor/src/assets/align-center-v.svg') }}" title="Align to the center">
-                <img class="align" id="align-bottom" src="{{ url_for('static', filename='img/Editor/src/assets/align-bottom.svg') }}" title="Align to the bottom">
+                <img class="align" id="align-top" src="{{ url_for('static', filename='Js/Editor/src/assets/align-top.svg') }}" title="Align to the top">
+                <img class="align" id="align-center-v" src="{{ url_for('static', filename='Js/Editor/src/assets/align-center-v.svg') }}" title="Align to the center">
+                <img class="align" id="align-bottom" src="{{ url_for('static', filename='Js/Editor/src/assets/align-bottom.svg') }}" title="Align to the bottom">
             </div>
             <div id="align-h">
-                <img class="align" id="align-left" src="{{ url_for('static', filename='img/Editor/align-left.svg') }}" title="Align to the left">
-                <img class="align" id="align-center-h" src="{{ url_for('static', filename='img/Editor/align-center-h.svg') }}" title="Align to the center">
-                <img class="align" id="align-right" src="{{ url_for('static', filename='img/Editor/align-right.svg') }}" title="Align to the right">
+                <img class="align" id="align-left" src="{{ url_for('static', filename='Js/Editor/src/assets/align-left.svg') }}" title="Align to the left">
+                <img class="align" id="align-center-h" src="{{ url_for('static', filename='Js/Editor/src/assets/align-center-h.svg') }}" title="Align to the center">
+                <img class="align" id="align-right" src="{{ url_for('static', filename='Js/Editor/src/assets/align-right.svg') }}" title="Align to the right">
             </div>
         </div>
         <hr>
@@ -169,7 +169,7 @@
 					<div id="filters-container">
 					<div id="filters-header">
 						<div id="filters-title">Filtros</div>
-						<img src="{{ url_for('static', filename='img/Editor/close.svg') }}" id="filters-close">
+						<img src="{{ url_for('static', filename='Js/Editor/src/assets/close.svg') }}" id="filters-close">
 					</div>
 					<select id="filters-list">
 						<option value="none">Sin filtro</option>
@@ -184,7 +184,7 @@
 					</select>
 					<hr>
 					<div id="filters-title">Ajustes</div>
-					<div id="reset-filters"><img src="{{ url_for('static', filename='img/Editor/repeat.svg') }}"> Reiniciar</div>
+					<div id="reset-filters"><img src="{{ url_for('static', filename='Js/Editor/src/assets/repeat.svg') }}"> Reiniciar</div>
 					<div class="filter-row">
 						<th class="name-col">Brillo</th>
 						<th class="value-col">
@@ -259,13 +259,13 @@
 					</div>
 				</div>
 				<div id="top-canvas">
-					<div id="undo"><img src="{{ url_for('static', filename='img/Editor/undo.svg') }}"> Deshacer</div>
-					<div id="redo"><img src="{{ url_for('static', filename='img/Editor/undo.svg') }}"> Rehacer</div>
+					<div id="undo"><img src="{{ url_for('static', filename='Js/Editor/src/assets/undo.svg') }}"> Deshacer</div>
+					<div id="redo"><img src="{{ url_for('static', filename='Js/Editor/src/assets/undo.svg') }}"> Rehacer</div>
 					<div id="other-controls">
 						<div title="Hand tool (Space bar)" id="hand-tool">
-							<img src="{{ url_for('static', filename='img/Editor/hand-tool.svg') }}">
+							<img src="{{ url_for('static', filename='Js/Editor/src/assets/hand-tool.svg') }}">
 						</div>
-						<div id="zoom-level" title="Canvas zoom level"><span>100%</span><img src="{{ url_for('static', filename='img/Editor/arrow.svg') }}"></div>
+						<div id="zoom-level" title="Canvas zoom level"><span>100%</span><img src="{{ url_for('static', filename='Js/Editor/src/assets/arrow.svg') }}"></div>
 						<div id="zoom-options" class="zoom-hidden">
 							<div class="zoom-options-item" data-zoom="in">Acercarse</div>
 							<div class="zoom-options-item" data-zoom="out">Disminuir el zoom</div>
@@ -276,9 +276,9 @@
 					</div>
 				</div>
 							
-				<img src="{{ url_for('static', filename='img/Editor/replace-image.svg') }}" id="replace-image">
-				<img src="{{ url_for('static', filename='img/Editor/loading-image.svg') }}" id="load-image" class="load-media">
-				<img src="{{ url_for('static', filename='img/Editor/loading-video.svg') }}" id="load-video" class="load-media">
+				<img src="{{ url_for('static', filename='Js/Editor/src/assets/replace-image.svg') }}" id="replace-image">
+				<img src="{{ url_for('static', filename='Js/Editor/src/assets/loading-image.svg') }}" id="load-image" class="load-media">
+				<img src="{{ url_for('static', filename='Js/Editor/src/assets/loading-video.svg') }}" id="load-video" class="load-media">
 				<canvas id="canvas"></canvas>
 			</div>
 			<div id="timeline-handle"></div>
@@ -294,7 +294,7 @@
 							<option value="easeOutInQuad">Facilitar la salida</option>
 							<option value="easeInBounce">Facilidad en el rebote</option>
 							<option value="easeOutBounce">Facilita el rebote</option>
-							<option value="easeinOutBounce">Facilita el rebote hacia adentro y hacia afuera</option>w
+							<option value="easeinOutBounce">Facilita el rebote hacia adentro y hacia afuera</option>
 							<option value="easeOutInBouce">Facilita el rebote hacia afuera</option>
 							<option value="easeOutInBouce">Facilita el rebote hacia afuera</option>
 							<option value="easeInSine">Facilidad en seno</option>
@@ -314,7 +314,7 @@
 				<div id="layer-list">
 					<div id="layerhead">CAPAS</div>
 					<div id="layer-inner-list">
-						<img src="{{ url_for('static', filename='img/Editor/nolayers.svg') }}" id="nolayers">
+						<img src="{{ url_for('static', filename='Js/Editor/src/assets/nolayers.svg') }}" id="nolayers">
 					</div>
 				</div>
 				<div id="timearea">
@@ -329,9 +329,9 @@
 				<canvas id="canvasrecord"></canvas>
 			</div>
 			<div id="controls" class="noselect">
-				<img id="timeline-big" src="{{ url_for('static', filename='img/Editor/timeline-big.svg') }}">
+				<img id="timeline-big" src="{{ url_for('static', filename='Js/Editor/src/assets/timeline-big.svg') }}">
 				<div id="timeline-zoom"></div>
-				<img id="timeline-small" src="{{ url_for('static', filename='img/Editor/timeline-small.svg') }}">
+				<img id="timeline-small" src="{{ url_for('static', filename='Js/Editor/src/assets/timeline-small.svg') }}">
 				<div id="speed">
 					<div id="speed-settings">
 						<div class="speed" data-speed="4">4.0x</div>
@@ -341,22 +341,22 @@
 						<div class="speed" data-speed="1">1.0x</div>
 						<div class="speed" data-speed="0.5">0.5x</div>
 					</div>
-					<img src="{{ url_for('static', filename='img/Editor/zap.svg') }}"> <span>1.0x</span> <img id="speed-arrow" src="{{ url_for('static', filename='img/Editor/arrow.svg') }}">
+					<img src="{{ url_for('static', filename='Js/Editor/src/assets/zap.svg') }}"> <span>1.0x</span> <img id="speed-arrow" src="{{ url_for('static', filename='Js/Editor/src/assets/arrow.svg') }}">
 				</div>
 				<div id="playback">
 					<div id="current-time">
 						<input value="00:00:00" readonly>
 					</div>
-					<img src="{{ url_for('static', filename='img/Editor/skip.svg') }}" id="skip-backward">
-					<img src="{{ url_for('static', filename='img/Editor/play-button.svg') }}" id="play-button">
-					<img src="{{ url_for('static', filename='img/Editor/skip.svg') }}" id="skip-forward">
+					<img src="{{ url_for('static', filename='Js/Editor/src/assets/skip.svg') }}" id="skip-backward">
+					<img src="{{ url_for('static', filename='Js/Editor/src/assets/play-button.svg') }}" id="play-button">
+					<img src="{{ url_for('static', filename='Js/Editor/src/assets/skip.svg') }}" id="skip-forward">
 					<div id="total-time">
 						<input value="00:00:00" readonly>
 					</div>
 				</div>
 				<div id="controls-right">
-					<div id="share"><img src="{{ url_for('static', filename='img/Editor/importexport.svg') }}"> Importación y exportación</div>
-					<div id="download"><img src="{{ url_for('static', filename='img/Editor/download-icon.svg') }}"> Descargar</div>
+					<div id="share"><img src="{{ url_for('static', filename='Js/Editor/src/assets/importexport.svg') }}"> Importación y exportación</div>
+					<div id="download"><img src="{{ url_for('static', filename='Js/Editor/src/assets/download-icon.svg') }}"> Descargar</div>
 				</div>
 			</div>
 			<div id="moderationMessage" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); color: white; display: flex; justify-content: center; align-items: center; z-index: 1000;">
@@ -385,34 +385,28 @@
 				};
 			</script>
 			
-			
 			<video id="test-video"></video>
 			<input id="emptyInput" value=" " style="opacity:0">
-			<script src="{{ url_for('static', filename='Js/Editor/libraries/localbase.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/libraries/localbase.js') }}"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/@simonwep/selection-js/lib/selection.min.js"></script>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/libraries/sortable.min.js') }}"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/libraries/range-slider.min.js') }}"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/libraries/jquery.nice-select.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/libraries/sortable.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/libraries/range-slider.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/libraries/jquery.nice-select.min.js') }}"></script>
 			<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/460/fabric.min.js"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/libraries/anime.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/libraries/anime.min.js') }}"></script>
 			<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/init.js') }}"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/ui.js') }}"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/align.js') }}"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/converter.js') }}"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/database.js') }}"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/lottie.js') }}"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/text.js') }}"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/recorder.js') }}"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/functions.js') }}"></script>
-			<script src="{{ url_for('static', filename='Js/Editor/events.js') }}"></script>
-
-
-
-
-
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/init.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/ui.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/align.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js\Editor\src\js\converter.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/database.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/lottie.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/text.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/recorder.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/functions.js') }}"></script>
+			<script src="{{ url_for('static', filename='Js/Editor/src/js/events.js') }}"></script>
 		</body>
 	</html>
