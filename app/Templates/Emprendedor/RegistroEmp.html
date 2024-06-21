@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro para Emprendimientos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Emprendimiento/Registro.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Registro para Emprendimientos</h2>
+    <form action="RegistroEmpre" method="POST">
+        <h3>Información del Emprendedor</h3>
+        <label for="nombreCompleto">Nombre Completo:</label>
+        <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="telefono">Teléfono (opcional):</label>
+        <input type="tel" id="telefono" name="telefono">
+
+        <label for="ubicacion">Ubicación (Ciudad, País):</label>
+        <input type="text" id="ubicacion" name="ubicacion" required>
+
+        <h3>Detalles del Emprendimiento</h3>
+        <label for="nombreEmprendimiento">Nombre del Emprendimiento:</label>
+        <input type="text" id="nombreEmprendimiento" name="nombreEmprendimiento" required>
+
+        <label for="descripcionEmprendimiento">Descripción del Emprendimiento:</label>
+        <textarea id="descripcionEmprendimiento" name="descripcionEmprendimiento" rows="4" required></textarea>
+
+        <label for="categoriaEmprendimiento">Categoría del Emprendimiento:</label>
+        <input type="text" id="categoriaEmprendimiento" name="categoriaEmprendimiento" required>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required>
+
+        <h3>Requisitos Específicos</h3>
+        <label for="productosNoSexuales">Productos No Relacionados con Contenido Sexual o para Adultos:</label>
+        <input type="checkbox" id="productosNoSexuales" name="productosNoSexuales" required>
+        <span>Asegúrate de que los productos no incluyan este tipo de contenido.</span>
+
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+
+</body>
+</html>

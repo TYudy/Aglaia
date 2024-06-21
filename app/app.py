@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, jsonify, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
+from werkzeug.security import generate_password_hash
 import mysql.connector
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -15,15 +16,62 @@ db = mysql.connector.connect(
 db.close()
 
 
-
+def get_db_connection():
+    db = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="AGLAIA"
+    )
+    return db
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/Login')
+# Ruta para mostrar el formulario de inicio de sesión y procesar los datos
+@app.route('/Login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        contraseña = request.form['contraseña']
+
+        db = get_db_connection()
+        cursor = db.cursor(dictionary=True)
+
+        # Verificar las credenciales del usuario en la base de datos
+        cursor.execute("SELECT * FROM Usuarios WHERE email = %s", (email,))
+        user = cursor.fetchone()
+
+        if user and check_password_hash(user['contraseña'], contraseña):
+            # Usuario autenticado correctamente, guardar información en la sesión
+            session['user_id'] = user['id_usuario']
+            session['user_role'] = user['role']
+
+            # Redirigir según el rol del usuario
+            if user['role'] == 'patrocinador':
+                cursor.close()
+                db.close()
+                return redirect(url_for('IndexPatro'))
+            elif user['role'] == 'emprendimiento':
+                cursor.close()
+                db.close()
+                return redirect(url_for('IndexEmp'))
+            else:
+                cursor.close()
+                db.close()
+                return "Rol de usuario no reconocido"
+
+        # Credenciales incorrectas
+        flash('Credenciales incorrectas', 'error')
+        cursor.close()
+        db.close()
+        return redirect(url_for('login'))
+
+    # Método GET: Mostrar el formulario de inicio de sesión
     return render_template('General/Login.html')
+
+
 
 @app.route('/form')
 def form():
@@ -54,13 +102,45 @@ def regtemporal():
     return render_template('General/registro.html')
 
 
-@app.route('/RegisPatro')
-def registropatro():
-    return render_template('Patrocinador/RegistroPatr.html')
+@app.route('/RegistroPatro', methods=['GET', 'POST'])
+def registro_patrocinador():
+    if request.method == 'POST':
+        nombre_empresa = request.form['nombre_empresa']
+        persona_contacto = request.form['persona_contacto']
+        correo = request.form['correo']
+        telefono = request.form['telefono']
+        contraseña = request.form['contraseña']
 
-@app.route('/RegisEmpre')
+        # Encripta la contraseña antes de almacenarla en la base de datos
+        contraseña_encriptada = generate_password_hash(contraseña)
+
+        db = get_db_connection()
+        cursor = db.cursor()
+
+        try:
+            # Insertar en la tabla Usuarios
+            cursor.execute("INSERT INTO Usuarios (nombre, apellido, email, contraseña, role) VALUES (%s, '', %s, %s, 'patrocinador')",
+                           (nombre_empresa, correo, contraseña_encriptada))
+            # Insertar en la tabla Patrocinadores
+            cursor.execute("INSERT INTO Patrocinadores (nombre_empresa, persona_contacto, email_Patro, telefono, fecha_registro, usuario_id) VALUES (%s, %s, %s, %s, CURDATE(), %s)",
+                           (nombre_empresa, persona_contacto, correo, telefono, cursor.lastrowid))
+            db.commit()
+            flash('Patrocinador registrado correctamente', 'success')
+            return redirect(url_for('login'))  # Redirige al inicio de sesión después de registrar
+
+        except mysql.connector.Error as err:
+            print(f"Error al registrar patrocinador: {err}")
+            flash('Error al registrar patrocinador', 'error')   
+            db.rollback()
+        finally:
+            cursor.close()
+            db.close()
+
+    return render_template('Patrocinador/RegistroPatro.html')
+
+@app.route('/RegistroEmpre')
 def registroempre():
-    return render_template('Emprendedor/Registro.html')
+    return render_template('Emprendedor/RegistroEmp.html')
 
 @app.route('/Interaccion')
 def interaccion():

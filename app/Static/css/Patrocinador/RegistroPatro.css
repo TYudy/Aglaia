@@ -1,0 +1,62 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Color de fondo blanco */
+    color: #333333; /* Color de texto principal */
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #7a00dc, #2CF8C1);
+}
+
+h1 {
+    color: #2CF8C1; /* Color púrpura */
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f8f8f8; /* Color de fondo gris claro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333333; /* Color de texto principal */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd; /* Borde gris claro */
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #2CF8C1; /* Color turquesa */
+    color: #ffffff; /* Color de texto blanco */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #1da88a; /* Color turquesa más oscuro al pasar el mouse */
+}
