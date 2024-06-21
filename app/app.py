@@ -73,6 +73,7 @@ def login():
 
 
 
+
 @app.route('/form')
 def form():
     return render_template('Emprendedor/Formulario.html')
@@ -135,11 +136,48 @@ def registro_patrocinador():
         finally:
             cursor.close()
             db.close()
-
     return render_template('Patrocinador/RegistroPatro.html')
 
-@app.route('/RegistroEmpre')
+
+@app.route('/RegistroEmpre', methods=['GET', 'POST'])
 def registroempre():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        descripcion = request.form['descripcion']
+        categoria_id = request.form['categoria']
+        contraseña = request.form['contrasena']  # Asegúrate de usar el nombre correcto del campo de contraseña
+
+        # Encripta la contraseña antes de almacenarla en la base de datos
+        contraseña_encriptada = generate_password_hash(contraseña)
+
+        # Simula obtener el ID de usuario de la sesión actual
+        usuario_id = 1  # Debes obtener el usuario_id de la sesión actual correctamente
+
+        db = get_db_connection()
+        cursor = db.cursor()
+
+        try:
+            # Insertar en la tabla Emprendimientos
+            cursor.execute("INSERT INTO Emprendimientos (nombre, descripcion, categoria_id, usuario_id) "
+                           "VALUES (%s, %s, %s, %s)",
+                           (nombre, descripcion, categoria_id, usuario_id))
+            db.commit()
+
+            # Insertar en la tabla Usuarios (si es necesario)
+            # Aquí debes ajustar según tu lógica de cómo registras los usuarios
+
+            flash('Emprendimiento registrado correctamente', 'success')
+            return redirect(url_for('login'))  # Redirige al inicio de sesión después de registrar
+
+        except mysql.connector.Error as err:
+            print(f"Error al registrar emprendimiento: {err}")
+            flash('Error al registrar emprendimiento', 'error')
+            db.rollback()
+        finally:
+            cursor.close()
+            db.close()
+
+    # Método GET: Mostrar el formulario de registro de emprendimiento
     return render_template('Emprendedor/RegistroEmp.html')
 
 @app.route('/Interaccion')
@@ -197,9 +235,9 @@ def iniciar_sesion():
             # Credenciales incorrectas, redirigir al error_inicio_sesion o mostrar un mensaje de error
             return redirect(url_for('error_inicio_sesion'))
 
-            @app.route('/error_inicio_sesion')
-            def error_inicio_sesion():
-                return render_template('Login.html')
+@app.route('/error_inicio_sesion')
+def error_inicio_sesion():
+    return render_template('Login.html')
 
 @app.route("/autocomplete")
 def autocomplete():
@@ -207,7 +245,7 @@ def autocomplete():
     results = [item for item in suggestions_data if query.lower() in item.lower()]
     return jsonify(results)
 
-@app.route('/aprobar_anuncio/<int:anuncio_id>')
+@app.route('/aprobar_anuncio')
 def aprobar_anuncio(anuncio_id):
     cur = db.cursor()
     cur.execute("UPDATE Anuncios SET aprobado = TRUE WHERE id_anuncio = %s", (anuncio_id,))
