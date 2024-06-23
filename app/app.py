@@ -14,9 +14,6 @@ db = mysql.connector.connect(
 )
 db.close()
 
-
-
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -148,13 +145,10 @@ def IndexEmp():
 def IndexPatro():
     return render_template('Patrocinador/IndexPatro.html')
 
-
 @app.route('/Bot')
 def Chat_bot():
      return render_template('General/chatbot.html')
 
-
-  
 if __name__ == '__main__':
     app.add_url_rule('/', view_func=index)
     app.run(debug=True,port=5000)

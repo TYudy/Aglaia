@@ -191,15 +191,15 @@ const shape_panel =
 const path_panel =
   '<hr><div id="back-properties" class="panel-section"><p class="property-title">Shape</p><table><tr><th class="name-col">Color</th><th class="value-col"><div id="object-color-fill" class="object-color"><div id="color-fill-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-fill-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr></table></div>';
 const text_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Texto</p><table><tr><th class="name-col">Font</th><th class="value-col"><select id="font-picker"></select></th></tr><tr><th class="name-col">Align</th><th class="value-col"><div class="align-text" id="align-text-left"><img src="../assets/align-text-left.svg"></div><div class="align-text" id="align-text-center"><img src="../assets/align-text-center.svg"></div><div class="align-text" id="align-text-right"><img src="../assets/align-text-right.svg"></div><div class="align-text" id="align-text-justify"><img src="../assets/align-text-justify.svg"></div></th></tr><tr><th class="name-col">Format</th><th class="value-col"><div class="format-text" id="format-bold"><img src="../assets/bold.svg"></div><div class="format-text" id="format-italic"><img src="../assets/italic.svg"></div><div class="format-text" id="format-underline"><img src="../assets/underline.svg"></div><div class="format-text" id="format-strike"><img src="../assets/strike.svg"></div></th></tr><tr><th class="name-col">Color</th><th class="value-col"><div id="object-color-fill" class="object-color"><div id="color-fill-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-fill-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Letter</th><th class="value-col"><div id="select-letter"></div><div id="text-h" class="property-input" data-label="%"><input type="number" value=1></div></th></tr><tr><th class="name-col">Line</th><th class="value-col"><div id="select-line"></div><div id="text-v" class="property-input" data-label="%"><input type="number" value=1></div></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Texto</p><table><tr><th class="name-col">Font</th><th class="value-col"><select id="font-picker"></select></th></tr><tr><th class="name-col">Align</th><th class="value-col"><div class="align-text" id="align-text-left"><img src="../../static/img/Editor/align-text-left.svg"></div><div class="align-text" id="align-text-center"><img src="../../static/img/Editor/align-text-center.svg"></div><div class="align-text" id="align-text-right"><img src="../../static/img/Editor/align-text-right.svg"></div><div class="align-text" id="align-text-justify"><img src="../../static/img/Editor/align-text-justify.svg"></div></th></tr><tr><th class="name-col">Format</th><th class="value-col"><div class="format-text" id="format-bold"><img src="../../static/img/Editor/bold.svg"></div><div class="format-text" id="format-italic"><img src="../../static/img/Editor/italic.svg"></div><div class="format-text" id="format-underline"><img src="../../static/img/Editor/underline.svg"></div><div class="format-text" id="format-strike"><img src="../../static/img/Editor/strike.svg"></div></th></tr><tr><th class="name-col">Color</th><th class="value-col"><div id="object-color-fill" class="object-color"><div id="color-fill-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-fill-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Letter</th><th class="value-col"><div id="select-letter"></div><div id="text-h" class="property-input" data-label="%"><input type="number" value=1></div></th></tr><tr><th class="name-col">Line</th><th class="value-col"><div id="select-line"></div><div id="text-v" class="property-input" data-label="%"><input type="number" value=1></div></th></tr></table></div>';
 const stroke_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Stroke</p><table><tr><th class="name-col">Type</th><th class="value-col left-col"><div class="line-join" id="miter"><img src="../../assets/miter.svg"></div><div class="line-join" id="bevel"><img src="../assets/bevel.svg"></div><div class="line-join" id="round"><img src="../assets/round.svg"></div><div class="line-join" id="small-dash"><img src="../assets/dash2.svg"></div></th></tr><tr><th class="name-col">Color</th><th class="value-col"><div id="object-color-stroke" class="object-color"><div id="color-stroke-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-stroke-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Width</th><th class="value-col" id="duration-cell"><div id="object-stroke" class="property-input" data-label="px"><input type="number" min=0 value=0></div></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Stroke</p><table><tr><th class="name-col">Type</th><th class="value-col left-col"><div class="line-join" id="miter"><img src="../../static/img/Editor/miter.svg"></div><div class="line-join" id="bevel"><img src="../../static/img/Editor/bevel.svg"></div><div class="line-join" id="round"><img src="../../static/img/Editor/round.svg"></div><div class="line-join" id="small-dash"><img src="../../static/img/Editor/dash2.svg"></div></th></tr><tr><th class="name-col">Color</th><th class="value-col"><div id="object-color-stroke" class="object-color"><div id="color-stroke-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-stroke-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Width</th><th class="value-col" id="duration-cell"><div id="object-stroke" class="property-input" data-label="px"><input type="number" min=0 value=0></div></th></tr></table></div>';
 const shadow_panel =
   '<hr><div id="back-properties" class="panel-section"><p class="property-title">Shadow</p><table><tr><th class="name-col">Offset</th><th class="value-col"><div id="object-shadow-x" class="property-input" data-label="X"><input type="number" value=0></div><div id="object-shadow-y" class="property-input" data-label="Y"><input value=0 type="number"></div></th></tr><tr><th class="name-col">Color</th><th class="value-col"><div id="object-color-shadow" class="object-color"><div id="color-shadow-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-shadow-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Blur</th><th class="value-col" id="duration-cell"><div id="object-blur" class="property-input" data-label="px"><input type="number" value=0 min=0></div></th></tr></table></div>';
 const image_more_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Image</p><div id="image-buttons"><div id="filters-button"><img src="{{ url_for(\'static\', filename=\'img/Editor/filters.svg\')}}"> Edit filters</div><div id="crop-image"><img src= "{{ url_for(\'static\', filename=\'img/Editor/crop-icon.svg\')}}""../../assets/crop-icon.svg">Crop image</div></div></div></hr>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Image</p><div id="image-buttons"><div id="filters-button"><img src="../../static/img/Editor/filters.svg"> Edit filters</div><div id="crop-image"><img src= "../../static/img/Editor/crop-icon.svg""../../static/img/Editor/crop-icon.svg">Crop image</div></div></div></hr>';
 const video_more_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Video</p><div id="image-buttons"><div id="filters-button" class="filters-video"><img src="../assets/filters.svg"> Edit filters</div></div></div></hr>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Video</p><div id="image-buttons"><div id="filters-button" class="filters-video"><img src="../../static/img/Editor/filters.svg"> Edit filters</div></div></div></hr>';
 const animated_text_panel =
   '<hr><div id="back-properties" class="panel-section"><p class="property-title">Texto</p><table><tr><th class="name-col">Content</th><th class="value-col" id="duration-cell"><div id="animated-text" class="property-input" data-label=""><input id="animatedinput" type="text" value="text"><div id="animatedset">Set</div></div></th></tr><tr><th class="name-col">Font</th><th class="value-col"><select id="font-picker"></select></th></tr><tr><th class="name-col">Color</th><th class="value-col"><div id="text-color" class="object-color"><div id="color-text-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="color-text-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr></table></div>';
 const start_animation_panel =
@@ -209,142 +209,142 @@ const audio_panel =
 
 // Browser variants
 const shape_browser =
-  '<div id="search-fixed"><p class="property-title">Objetos</p><img id="collapse" src="../../assets/collapse.svg"><div id="browser-search"><input placeholder="Buscar..."><img src="../../assets/search.svg" id="search-icon"><img src="../../assets/delete.svg" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><p class="row-title">Formas</p><div class="gallery-row" id="shapes-row"></div><p class="row-title">Emojis</p><div class="gallery-row" id="emojis-row"></div></div>';
+  '<div id="search-fixed"><p class="property-title">Objetos</p><img id="collapse" src="../../static/img/Editor/collapse.svg"><div id="browser-search"><input placeholder="Buscar..."><img src="../../static/img/Editor/search.svg" id="search-icon"><img src="../../static/img/Editor/delete.svg" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><p class="row-title">Formas</p><div class="gallery-row" id="shapes-row"></div><p class="row-title">Emojis</p><div class="gallery-row" id="emojis-row"></div></div>';
 const image_browser =
-  '<div id="search-fixed"><p class="property-title">Imágenes</p><img id="collapse" src="../../assets/collapse.svg"><div id="browser-search"><input placeholder="Buscar..."><a href="https://pixabay.com" target="_blank" id="pixabay"><img src="../assets/pixabay.svg"></a><img src="../assets/search.svg" id="search-icon"><img src="../assets/delete.svg" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><div id="landing"><div id="landing-text">Explora millones de imágenes de alta calidad de Pixabay. Utilice la barra de búsqueda de arriba o elija entre las categorías populares a continuación.</div><div id="categories"></div></div><div id="images-grid"></div></div>';
+  '<div id="search-fixed"><p class="property-title">Imágenes</p><img id="collapse" src="../../static/img/Editor/collapse.svg"><div id="browser-search"><input placeholder="Buscar..."><a href="https://pixabay.com" target="_blank" id="pixabay"><img src="../../static/img/Editor/pixabay.svg"></a><img src="../../static/img/Editor/search.svg" id="search-icon"><img src="../../static/img/Editor/delete.svg" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><div id="landing"><div id="landing-text">Explora millones de imágenes de alta calidad de Pixabay. Utilice la barra de búsqueda de arriba o elija entre las categorías populares a continuación.</div><div id="categories"></div></div><div id="images-grid"></div></div>';
 const text_browser =
-  '<div id="search-fixed"><p class="property-title">Texto</p><img id="collapse" src="../assets/collapse.svg"><div id="browser-search"><input placeholder="Buscar..."><img src="../assets/search.svg" id="search-icon"><img src="../assets/delete.svg" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><p class="row-title">Texto Básico</p><div id="heading-text" data-font="Inter" class="add-text noselect">Agregar encabezado</div><div id="subheading-text" data-font="Inter" class="add-text noselect">Añadir un subtítulo</div><div id="body-text" data-font="Inter" class="add-text noselect">Agregar texto al cuerpo</div></div>';
+  '<div id="search-fixed"><p class="property-title">Texto</p><img id="collapse" src="../../static/img/Editor/collapse.svg"><div id="browser-search"><input placeholder="Buscar..."><img src="../../static/img/Editor/search.svg" id="search-icon"><img src="../../static/img/Editor/delete.svg" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><p class="row-title">Texto Básico</p><div id="heading-text" data-font="Inter" class="add-text noselect">Agregar encabezado</div><div id="subheading-text" data-font="Inter" class="add-text noselect">Añadir un subtítulo</div><div id="body-text" data-font="Inter" class="add-text noselect">Agregar texto al cuerpo</div></div>';
 const video_browser =
-  '<div id="search-fixed"><p class="property-title">Videos</p><img id="collapse" src="../assets/collapse.svg"><div id="browser-search"><input placeholder="Buscar..."><a href="https://pixabay.com" target="_blank" id="pixabay"><img src="../assets/pixabay.svg"></a><img src="../assets/search.svg" id="search-icon"><img src="../assets/delete.svg" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><div id="landing"><div id="landing-text">Explora millones de imágenes de alta calidad de Pixabay. Utilice la barra de búsqueda de arriba o elija entre las categorías populares a continuación.</div><div id="categories"></div></div><div id="images-grid"></div></div>';
+  '<div id="search-fixed"><p class="property-title">Videos</p><img id="collapse" src="../../static/img/Editor/collapse.svg"><div id="browser-search"><input placeholder="Buscar..."><a href="https://pixabay.com" target="_blank" id="pixabay"><img src="../../static/img/Editor/pixabay.svg"></a><img src="../../static/img/Editor/search.svg" id="search-icon"><img src="../../static/img/Editor/delete.svg" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><div id="landing"><div id="landing-text">Explora millones de imágenes de alta calidad de Pixabay. Utilice la barra de búsqueda de arriba o elija entre las categorías populares a continuación.</div><div id="categories"></div></div><div id="images-grid"></div></div>';
 const upload_browser =
-  '<div id="search-fixed"><p class="property-title">Subidas</p><div id="upload-button"><img src="../assets/upload.svg"> Subir medios</div><img id="collapse" src="../assets/collapse.svg"><div id="upload-tabs"><div id="images-tab" class="upload-tab upload-tab-active">Imágenes</div><div id="videos-tab" class="upload-tab">Videos</div></div></div><div id="images-grid"></div>';
+  '<div id="search-fixed"><p class="property-title">Subidas</p><div id="upload-button"><img src="../../static/img/Editor/upload.svg"> Subir medios</div><img id="collapse" src="../../static/img/Editor/collapse.svg"><div id="upload-tabs"><div id="images-tab" class="upload-tab upload-tab-active">Imágenes</div><div id="videos-tab" class="upload-tab">Videos</div></div></div><div id="images-grid"></div>';
 const audio_browser =
-  '<div id="search-fixed" class="audio-browser"><p class="property-title">Audio</p><div id="audio-upload-button"><img src="../assets/upload.svg"> Subir audio</div><img id="collapse" src="../assets/collapse.svg"></div><div id="audio-list-parent"><div id="landing-text" class="audio-landing-text">Audio proporcionado por Pixabay. Explora millones de activos de Pixabay por <a href="https://pixabay.com/music/" target="_blank">haciendo clic aquí.</a></div><div id="audio-list"></div></div>';
+  '<div id="search-fixed" class="audio-browser"><p class="property-title">Audio</p><div id="audio-upload-button"><img src="../../static/img/Editor/upload.svg"> Subir audio</div><img id="collapse" src="../../static/img/Editor/collapse.svg"></div><div id="audio-list-parent"><div id="landing-text" class="audio-landing-text">Audio proporcionado por Pixabay. Explora millones de activos de Pixabay por <a href="https://pixabay.com/music/" target="_blank">haciendo clic aquí.</a></div><div id="audio-list"></div></div>';
 
 // Text animation list
 var text_animation_list = [
-  { name: 'fade in', label: 'Fade in', src: '../assets/fade-in.svg' },
+  { name: 'fade in', label: 'Fade in', src: '../../static/img/Editor/fade-in.svg' },
   {
     name: 'typewriter',
     label: 'Typewriter',
-    src: '../assets/typewriter.svg',
+    src: '../../static/img/Editor/typewriter.svg',
   },
   {
     name: 'slide top',
     label: 'Slide top',
-    src: '../assets/slide-top.svg',
+    src: '../../static/img/Editor/slide-top.svg',
   },
   {
     name: 'slide bottom',
     label: 'Slide bottom',
-    src: '../assets/slide-bottom.svg',
+    src: '../../static/img/Editor/slide-bottom.svg',
   },
   {
     name: 'slide left', 
     label: 'Slide left',
-    src: '../assets/slide-left.svg',
+    src: '../../static/img/Editor/slide-left.svg',
   },
   {
     name: 'slide right',
     label: 'Slide right',
-    src: '../assets/slide-right.svg',
+    src: '../../static/img/Editor/slide-right.svg',
   },
-  { name: 'scale', label: 'Scale', src: '../assets/scale.svg' },
-  { name: 'shrink', label: 'Shrink', src: '../assets/shrink.svg' },
+  { name: 'scale', label: 'Scale', src: '../../static/img/Editor/scale.svg' },
+  { name: 'shrink', label: 'Shrink', src: '../../static/img/Editor/shrink.svg' },
 ];
 
 // Shapes list
 var shape_grid_items = [
   '../../static/img/Editor/shapes/rectangle.svg',
-  '{{ url_for(\'static\', filename=\'img/Editor/filters.svg\')}}',
-  '../assets/shapes/triangle.svg',
-  '../assets/shapes/polygon.svg',
-  '../assets/shapes/star.svg',
-  '../assets/thingy.svg',
-  '../assets/shapes/heart.svg',
-  '../assets/shapes/arrow.svg', 
+  '../../static/img/Editor/shapes/hexagon.svg',
+  '../../static/img/Editor/shapes/triangle.svg',
+  '../../static/img/Editor/shapes/polygon.svg',
+  '../../static/img/Editor/shapes/star.svg',
+  '../../static/img/Editor/shapes/circle.svg',
+  '../../static/img/Editor/shapes/heart.svg',
+  '../../static/img/Editor/shapes/arrow.svg', 
 ];
 var emoji_items = [
-  '../assets/twemojis/laughing-emoji.png',
-  '../assets/twemojis/crying-emoji.png',
-  '../assets/twemojis/surprised-emoji.png',
-  '../assets/twemojis/smiling-emoji.png',
-  '../assets/twemojis/tongue-emoji.png',
-  '../assets/twemojis/heart-eyes-emoji.png',
-  '../assets/twemojis/heart-kiss-emoji.png',
-  '../assets/twemojis/sunglasses-cool-emoji.png',
-  '../assets/twemojis/ghost-emoji.png',
-  '../assets/twemojis/skull-emoji.png',
-  '../assets/twemojis/mindblown-emoji.png',
-  '../assets/twemojis/bomb-emoji.png',
-  '../assets/twemojis/hundred-100-points-emoji.png',
-  '../assets/twemojis/thought-balloon-emoji.png',
-  '../assets/twemojis/wave-emoji.png',
-  '../assets/twemojis/point-emoji.png',
-  '../assets/twemojis/thumbs-up-emoji.png',
-  '../assets/twemojis/clap-emoji.png',
-  '../assets/twemojis/raising-hands-emoji.png',
-  '../assets/twemojis/praying-hands-emoji.png',
-  '../assets/twemojis/nail-polish-emoji.png',
-  '../assets/twemojis/eyes-emoji.png',
-  '../assets/twemojis/cat-face-emoji.png',
-  '../assets/twemojis/dog-face-emoji.png',
-  '../assets/twemojis/rose-emoji.png',
-  '../assets/twemojis/tulip-emoji.png',
-  '../assets/twemojis/pizza-emoji.png',
-  '../assets/twemojis/construction-emoji.png',
-  '../assets/twemojis/plane-emoji.png',
-  '../assets/twemojis/rocket-emoji.png',
-  '../assets/twemojis/clock-emoji.png',
-  '../assets/twemojis/star-emoji.png',
-  '../assets/twemojis/sun-emoji.png',
-  '../assets/twemojis/moon-emoji.png',
-  '../assets/twemojis/fire-emoji.png',
-  '../assets/twemojis/sparkles-emoji.png',
-  '../assets/twemojis/party-popper-emoji.png',
-  '../assets/twemojis/gift-emoji.png',
-  '../assets/twemojis/trophy-emoji.png',
-  '../assets/twemojis/target-emoji.png',
-  '../assets/twemojis/gem-emoji.png',
-  '../assets/twemojis/money-emoji.png',
-  '../assets/twemojis/pencil-emoji.png',
-  '../assets/twemojis/graph-emoji.png',
-  '../assets/twemojis/wip-emoji.png',
-  '../assets/twemojis/winking-face-emoji.png',
-  '../assets/twemojis/pleading-face-emoji.png',
-  '../assets/twemojis/thinking-face-emoji.png',
+  '../../static/img/Editor/twemojis/laughing-emoji.png',
+  '../../static/img/Editor/twemojis/crying-emoji.png',
+  '../../static/img/Editor/twemojis/surprised-emoji.png',
+  '../../static/img/Editor/twemojis/smiling-emoji.png',
+  '../../static/img/Editor/twemojis/tongue-emoji.png',
+  '../../static/img/Editor/twemojis/heart-eyes-emoji.png',
+  '../../static/img/Editor/twemojis/heart-kiss-emoji.png',
+  '../../static/img/Editor/twemojis/sunglasses-cool-emoji.png',
+  '../../static/img/Editor/twemojis/ghost-emoji.png',
+  '../../static/img/Editor/twemojis/skull-emoji.png',
+  '../../static/img/Editor/twemojis/mindblown-emoji.png',
+  '../../static/img/Editor/twemojis/bomb-emoji.png',
+  '../../static/img/Editor/twemojis/hundred-100-points-emoji.png',
+  '../../static/img/Editor/twemojis/thought-balloon-emoji.png',
+  '../../static/img/Editor/twemojis/wave-emoji.png',
+  '../../static/img/Editor/twemojis/point-emoji.png',
+  '../../static/img/Editor/twemojis/thumbs-up-emoji.png',
+  '../../static/img/Editor/twemojis/clap-emoji.png',
+  '../../static/img/Editor/twemojis/raising-hands-emoji.png',
+  '../../static/img/Editor/twemojis/praying-hands-emoji.png',
+  '../../static/img/Editor/twemojis/nail-polish-emoji.png',
+  '../../static/img/Editor/twemojis/eyes-emoji.png',
+  '../../static/img/Editor/twemojis/cat-face-emoji.png',
+  '../../static/img/Editor/twemojis/dog-face-emoji.png',
+  '../../static/img/Editor/twemojis/rose-emoji.png',
+  '../../static/img/Editor/twemojis/tulip-emoji.png',
+  '../../static/img/Editor/twemojis/pizza-emoji.png',
+  '../../static/img/Editor/twemojis/construction-emoji.png',
+  '../../static/img/Editor/twemojis/plane-emoji.png',
+  '../../static/img/Editor/twemojis/rocket-emoji.png',
+  '../../static/img/Editor/twemojis/clock-emoji.png',
+  '../../static/img/Editor/twemojis/star-emoji.png',
+  '../../static/img/Editor/twemojis/sun-emoji.png',
+  '../../static/img/Editor/twemojis/moon-emoji.png',
+  '../../static/img/Editor/twemojis/fire-emoji.png',
+  '../../static/img/Editor/twemojis/sparkles-emoji.png',
+  '../../static/img/Editor/twemojis/party-popper-emoji.png',
+  '../../static/img/Editor/twemojis/gift-emoji.png',
+  '../../static/img/Editor/twemojis/trophy-emoji.png',
+  '../../static/img/Editor/twemojis/target-emoji.png',
+  '../../static/img/Editor/twemojis/gem-emoji.png',
+  '../../static/img/Editor/twemojis/money-emoji.png',
+  '../../static/img/Editor/twemojis/pencil-emoji.png',
+  '../../static/img/Editor/twemojis/graph-emoji.png',
+  '../../static/img/Editor/twemojis/wip-emoji.png',
+  '../../static/img/Editor/twemojis/winking-face-emoji.png',
+  '../../static/img/Editor/twemojis/pleading-face-emoji.png',
+  '../../static/img/Editor/twemojis/thinking-face-emoji.png',
 ];
 
 // Image list
 var image_grid_items = [
-  'https://images.unsplash.com/photo-1609153259378-a8b23c766aec?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1866&q=80',
-  'https://images.unsplash.com/photo-1614435082296-ef0cbdb16b70?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80',
-  'https://images.unsplash.com/photo-1614432254115-7e756705e910?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
-  'https://images.unsplash.com/photo-1614423234685-544477464e15?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
-  'https://images.unsplash.com/photo-1614357235247-99fabbee67f9?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
-  'https://images.unsplash.com/photo-1614373371549-c7d2e4885f17?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
+  '../../static/img/Editor/https://images.unsplash.com/photo-1609153259378-a8b23c766aec?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1866&q=80',
+  '../../static/img/Editor/https://images.unsplash.com/photo-1614435082296-ef0cbdb16b70?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80',
+  '../../static/img/Editor/https://images.unsplash.com/photo-1614432254115-7e756705e910?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
+  '../../static/img/Editor/https://images.unsplash.com/photo-1614423234685-544477464e15?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
+  '../../static/img/Editor/https://images.unsplash.com/photo-1614357235247-99fabbee67f9?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
+  '../../static/img/Editor/https://images.unsplash.com/photo-1614373371549-c7d2e4885f17?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
 ];
 var image_categories = [
-  { name: 'Fondo', image: '../assets/background.png' },
-  { name: 'Fondo de pantalla', image: '../assets/wallpaper.png' },
-  { name: 'Naturaleza', image: '../assets/nature.png' },
-  { name: 'Verano', image: '../assets/summer.png' },
-  { name: 'Playa', image: '../assets/beach.png' },
-  { name: 'Espacio', image: '../assets/space.png' },
-  { name: 'Oficina', image: '../assets/office.png' },
-  { name: 'Comida', image: '../assets/food.png' },
+  { name: 'Fondo', image: '../../static/img/Editor/background.png' },
+  { name: 'Fondo de pantalla', image: '../../static/img/Editor/wallpaper.png' },
+  { name: 'Naturaleza', image: '../../static/img/Editor/nature.png' },
+  { name: 'Verano', image: '../../static/img/Editor/summer.png' },
+  { name: 'Playa', image: '../../static/img/Editor/beach.png' },
+  { name: 'Espacio', image: '../../static/img/Editor/space.png' },
+  { name: 'Oficina', image: '../../static/img/Editor/office.png' },
+  { name: 'Comida', image: '../../static/img/Editor/food.png' },
 ];
 
 // Video list
 var video_categories = [
-  { name: 'Lluvia', image: '../assets/rain.png' },
-  { name: 'Carros', image: '../assets/cars.png' },
-  { name: 'Meditación', image: '../assets/meditation.png' },
-  { name: 'Bosque', image: '../assets/forest.png' },
-  { name: 'Animales', image: '../assets/animals.png' },
-  { name: 'Calle', image: '../assets/street.png' },
-  { name: 'Viaje', image: '../assets/travel.png' },
-  { name: 'Trabajo', image: '../assets/work.png' },
+  { name: 'Lluvia', image: '../../static/img/Editor/rain.png' },
+  { name: 'Carros', image: '../../static/img/Editor/cars.png' },
+  { name: 'Meditación', image: '../../static/img/Editor/meditation.png' },
+  { name: 'Bosque', image: '../../static/img/Editor/forest.png' },
+  { name: 'Animales', image: '../../static/img/Editor/animals.png' },
+  { name: 'Calle', image: '../../static/img/Editor/street.png' },
+  { name: 'Viaje', image: '../../static/img/Editor/travel.png' },
+  { name: 'Trabajo', image: '../../static/img/Editor/work.png' },
 ];
 
 // Audio list
@@ -353,64 +353,64 @@ var audio_items = [
     name: 'Lofi Study',
     desc: 'FASSounds',
     duration: '2:27',
-    thumb: '../assets/audio/lofi-thumb.png',
-    src: '../assets/audio/lofi.mp3',
+    thumb: '../../static/img/Editor/audio/lofi-thumb.png',
+    src: '../../static/img/Editor/audio/lofi.mp3',
     link: 'https://pixabay.com/users/fassounds-3433550/',
   },
   {
     name: 'Stomping Rock (Four Shots)',
     desc: 'AlexGrohl',
     duration: '1:59',
-    thumb: '../assets/audio/stomping-rock-thumb.png',
-    src: '../assets/audio/stomping-rock.mp3',
+    thumb: '../../static/img/Editor/audio/stomping-rock-thumb.png',
+    src: '../../static/img/Editor/audio/stomping-rock.mp3',
     link: 'https://pixabay.com/users/alexgrohl-25289918/',
   },
   {
     name: 'Everything Feels New',
     desc: 'EvgenyBardyuzha',
     duration: '1:06',
-    thumb: '../assets/audio/everything-feels-new-thumb.png',
-    src: '../assets/audio/everything-feels-new.mp3',
+    thumb: '../../static/img/Editor/audio/everything-feels-new-thumb.png',
+    src: '../../static/img/Editor/audio/everything-feels-new.mp3',
     link: 'https://pixabay.com/users/evgenybardyuzha-25235210/',
   },
   {
     name: 'Both of Us',
     desc: 'madiRFAN',
     duration: '2:48',
-    thumb: '../assets/audio/both-of-us-thumb.png',
-    src: '../assets/audio/both-of-us.mp3',
+    thumb: '../../static/img/Editor/audio/both-of-us-thumb.png',
+    src: '.../../static/img/Editor/audio/both-of-us.mp3',
     link: 'https://pixabay.com/users/madirfan-50411/',
   },
   {
     name: 'The Podcast Intro',
     desc: 'Music Unlimited',
     duration: '1:51',
-    thumb: '../assets/audio/the-podcast-intro-thumb.png',
-    src: '../assets/audio/the-podcast-intro.mp3',
+    thumb: '../../static/img/Editor/audio/the-podcast-intro-thumb.png',
+    src: '../../static/img/Editor/audio/the-podcast-intro.mp3',
     link: 'https://pixabay.com/users/music_unlimited-27600023/',
   },
   {
     name: 'Epic Cinematic Trailer',
     desc: 'PavelYudin',
     duration: '2:27',
-    thumb: '../assets/audio/epic-cinematic-trailer-thumb.png',
-    src: '../assets/audio/epic-cinematic-trailer.mp3',
+    thumb: '../../static/img/Editor/audio/epic-cinematic-trailer-thumb.png',
+    src: '../../static/img/Editor/audio/epic-cinematic-trailer.mp3',
     link: 'https://pixabay.com/users/pavelyudin-27739282/',
   },
   {
     name: 'Inspirational Background',
     desc: 'AudioCoffee',
     duration: '2:19',
-    thumb: '../assets/audio/inspirational-background-thumb.png',
-    src: '../assets/audio/inspirational-background.mp3',
+    thumb: '../../static/img/Editor/audio/inspirational-background-thumb.png',
+    src: '../../static/img/Editor/audio/inspirational-background.mp3',
     link: 'https://pixabay.com/users/audiocoffee-27005420/',
   },
   {
     name: 'Tropical Summer Music',
     desc: 'Music Unlimited',
     duration: '2:35',
-    thumb: '../assets/audio/tropical-summer-music-thumb.png',
-    src: '../assets/audio/tropical-summer-music.mp3',
+    thumb: '../../static/img/Editor/audio/tropical-summer-music-thumb.png',
+    src: '../../static/img/Editor/audio/tropical-summer-music.mp3',
     link: 'https://pixabay.com/users/music_unlimited-27600023/',
   },
 ];
@@ -581,16 +581,16 @@ canvas.selectionBorderColor = 'rgba(98, 155, 255, 0.81)';
 canvas.selectionLineWidth = 1.5;
 
 var img = document.createElement('img');
-img.src = "{{ url_for('static', filename='Js\Editor\src\../assets\middlecontrol.svg') }}";
+img.src = '../../static/img/Editor/middlecontrol.svg';
 
 var img2 = document.createElement('img');
-img2.src = '../assets/middlecontrolhoz.svg';
+img2.src = '../../static/img/Editor/middlecontrolhoz.svg';
 
 var img3 = document.createElement('img');
-img3.src = '../assets/edgecontrol.svg';
+img3.src = '../../static/img/Editor/edgecontrol.svg';
 
 var img4 = document.createElement('img');
-img4.src = '../assets/rotateicon.svg';
+img4.src = '../../static/img/Editor/rotateicon.svg';
 
 function renderIcon(ctx, left, top, styleOverride, fabricObject) {
   const wsize = 20;
@@ -976,7 +976,7 @@ o_fill
   })
   .on('show', (instance) => {
     $('.pcr-current-color').html(
-      "<img id='eyedropper' src='../assets/eyedropper.svg'>"
+      "<img id='eyedropper' src='../../static/img/Editor/eyedropper.svg'>"
     );
   });
 

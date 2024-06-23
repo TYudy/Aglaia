@@ -85,51 +85,51 @@
 			<p class="header">Importación y exportación</p>
 			<p class="subtitle">Guarde este proyecto localmente o cargue uno existente.</p>
 			<p class="header-2">Importar un proyecto</p>
-			<div id="import-project"><img src="{{ url_for('static', filename='Js/Editor/src/assets/import.svg') }}"> <span>Importación</span></div>
+			<div id="import-project"><img src='../../static/img/Editor/import.svg'> <span>Importación</span></div>
 			<p class="header-2">Exportar este proyecto</p>
-			<div id="export-project"><img src="{{ url_for('static', filename='Js/Editor/src/assets/download-icon.svg') }}"> <span>Exportación</span></div>
+			<div id="export-project"><img src="{{ url_for('static', filename='../../static/img/Editor/download-icon.svg') }}"> <span>Exportación</span></div>
 		</div>
         <div id="background-overlay"></div>
         <div id="color-picker"></div>
         <div id="color-picker-fill"></div>
         <div id="toolbar" class="noselect">
-			<div id="logo"><img src="{{ url_for('static', filename='Js/Editor/src/assets/logo.svg') }}"></div>
+			<div id="logo"><img src="{{ url_for('static', filename='../../static/img/Editor/logo.svg') }}"></div>
 			<div id="tool-wrap">
-				<div class="tool" id="upload-tool"><img src="{{ url_for('static', filename='Js/Editor/src/assets/upload.svg') }}"><p>Subidas</p></div>
-				<div class="tool tool-active" id="shape-tool"><img src="{{ url_for('static', filename='Js/Editor/src/assets/shape-active.svg') }}"><p>Objetos</p></div>
-				<div class="tool" id="image-tool"><img src="{{ url_for('static', filename='Js/Editor/src/assets/image.svg') }}"><p>Imagenes</p></div>
-				<div class="tool" id="text-tool"><img src="{{ url_for('static', filename='Js/Editor/src/assets/text.svg') }}"><p>Texto</p></div>
-				<div class="tool" id="video-tool"><img src="{{ url_for('static', filename='Js/Editor/src/assets/video.svg') }}"><p>Videos</p></div>
-				<div class="tool" id="audio-tool"><img src="{{ url_for('static', filename='Js/Editor/src/assets/audio.svg') }}"><p>Audio</p></div>
-				<div class="tool" id="more-tool"><img src="{{ url_for('static', filename='Js/Editor/src/assets/more-hoz.svg') }}"><p>Mas</p></div>
+				<div class="tool" id="upload-tool"><img src="{{ url_for('static', filename='../../static/img/Editor/upload.svg') }}"><p>Subidas</p></div>
+				<div class="tool tool-active" id="shape-tool"><img src="{{ url_for('static', filename='../../static/img/Editor/shape-active.svg') }}"><p>Objetos</p></div>
+				<div class="tool" id="image-tool"><img src="{{ url_for('static', filename='../../static/img/Editor/image.svg') }}"><p>Imagenes</p></div>
+				<div class="tool" id="text-tool"><img src="{{ url_for('static', filename='../../static/img/Editor/text.svg') }}"><p>Texto</p></div>
+				<div class="tool" id="video-tool"><img src="{{ url_for('static', filename='../../static/img/Editor/video.svg') }}"><p>Videos</p></div>
+				<div class="tool" id="audio-tool"><img src="{{ url_for('static', filename='../../static/img/Editor/audio.svg') }}"><p>Audio</p></div>
+				<div class="tool" id="more-tool"><img src="{{ url_for('static', filename='../../static/img/Editor/more-hoz.svg') }}"><p>Mas</p></div>
 			</div>
 		</div>
 		<div id="more-over">
 			<div id="upload-lottie">
-				<img src="{{ url_for('static', filename='Js/Editor/src/assets/upload-grey.svg') }}"> Subir Lottie
+				<img src="{{ url_for('static', filename='../../static/img/Editor/upload-grey.svg') }}"> Subir Lottie
 			</div>						
 			<div id="clear-project">
-				<img src="{{ url_for('static', filename='Js/Editor/src/assets/clear.svg') }}"> Borrar proyecto
+				<img src="{{ url_for('static', filename='../../static/img/Editor/clear.svg') }}"> Borrar proyecto
 			</div>
 		</div>
 		<div id="behind-browser"></div>
         <div id="browser">
             <div id="browser-container">
-				<div id="search-fixed"><p class="property-title">Objetos</p><img id="collapse" src="{{ url_for('static', filename='Js/Editor/src/assets/collapse.svg') }}"><div id="browser-search"><input placeholder="Search..."><img src="{{ url_for('static', filename='Js/Editor/src/assets/search.svg') }}" id="search-icon"><img src="{{ url_for('static', filename='Js/Editor/src/assets/delete.svg') }}" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><p class="row-title">Formas</p><div class="gallery-row" id="shapes-row"></div><p class="row-title">Emojis</p><div class="gallery-row" id="emojis-row"></div></div>
+				<div id="search-fixed"><p class="property-title">Objetos</p><img id="collapse" src="{{ url_for('static', filename='../../static/img/Editor/collapse.svg') }}"><div id="browser-search"><input placeholder="Search..."><img src="{{ url_for('static', filename='Js/Editor/src/assets/search.svg') }}" id="search-icon"><img src="{{ url_for('static', filename='Js/Editor/src/assets/delete.svg') }}" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><p class="row-title">Formas</p><div class="gallery-row" id="shapes-row"></div><p class="row-title">Emojis</p><div class="gallery-row" id="emojis-row"></div></div>
             </div>
         </div>
         <div id="properties">
         <div id="properties-overlay"></div>
         <div id="align" class="align-off">
             <div id="align-v">
-                <img class="align" id="align-top" src="{{ url_for('static', filename='img/Editor/src/assets/align-top.svg') }}" title="Align to the top">
-                <img class="align" id="align-center-v" src="{{ url_for('static', filename='img/Editor/src/assets/align-center-v.svg') }}" title="Align to the center">
-                <img class="align" id="align-bottom" src="{{ url_for('static', filename='img/Editor/src/assets/align-bottom.svg') }}" title="Align to the bottom">
+                <img class="align" id="align-top" src="{{ url_for('static', filename='../../static/img/Editor/align-top.svg') }}" title="Align to the top">
+                <img class="align" id="align-center-v" src="{{ url_for('static', filename='../../static/img/Editor/align-center-v.svg') }}" title="Align to the center">
+                <img class="align" id="align-bottom" src="{{ url_for('static', filename='../../static/img/Editor/align-bottom.svg') }}" title="Align to the bottom">
             </div>
             <div id="align-h">
-                <img class="align" id="align-left" src="{{ url_for('static', filename='img/Editor/align-left.svg') }}" title="Align to the left">
-                <img class="align" id="align-center-h" src="{{ url_for('static', filename='img/Editor/align-center-h.svg') }}" title="Align to the center">
-                <img class="align" id="align-right" src="{{ url_for('static', filename='img/Editor/align-right.svg') }}" title="Align to the right">
+                <img class="align" id="align-left" src="{{ url_for('static', filename='../../static/img/Editor/align-left.svg') }}" title="Align to the left">
+                <img class="align" id="align-center-h" src="{{ url_for('static', filename='../../static/img/Editor/align-center-h.svg') }}" title="Align to the center">
+                <img class="align" id="align-right" src="{{ url_for('static', filename='../../static/img/Editor/align-right.svg') }}" title="Align to the right">
             </div>
         </div>
         <hr>
@@ -169,7 +169,7 @@
 					<div id="filters-container">
 					<div id="filters-header">
 						<div id="filters-title">Filtros</div>
-						<img src="{{ url_for('static', filename='img/Editor/close.svg') }}" id="filters-close">
+						<img src="{{ url_for('static', filename='../../static/img/Editor/close.svg') }}" id="filters-close">
 					</div>
 					<select id="filters-list">
 						<option value="none">Sin filtro</option>
@@ -184,7 +184,7 @@
 					</select>
 					<hr>
 					<div id="filters-title">Ajustes</div>
-					<div id="reset-filters"><img src="{{ url_for('static', filename='img/Editor/repeat.svg') }}"> Reiniciar</div>
+					<div id="reset-filters"><img src="{{ url_for('static', filename='../../static/img/Editor/repeat.svg') }}"> Reiniciar</div>
 					<div class="filter-row">
 						<th class="name-col">Brillo</th>
 						<th class="value-col">
@@ -259,13 +259,13 @@
 					</div>
 				</div>
 				<div id="top-canvas">
-					<div id="undo"><img src="{{ url_for('static', filename='img/Editor/undo.svg') }}"> Deshacer</div>
-					<div id="redo"><img src="{{ url_for('static', filename='img/Editor/undo.svg') }}"> Rehacer</div>
+					<div id="undo"><img src="{{ url_for('static', filename='../../static/img/Editor/undo.svg') }}"> Deshacer</div>
+					<div id="redo"><img src="{{ url_for('static', filename='../../static/img/Editor/undo.svg') }}"> Rehacer</div>
 					<div id="other-controls">
 						<div title="Hand tool (Space bar)" id="hand-tool">
-							<img src="{{ url_for('static', filename='img/Editor/hand-tool.svg') }}">
+							<img src="{{ url_for('static', filename='../../static/img/Editor/hand-tool.svg') }}">
 						</div>
-						<div id="zoom-level" title="Canvas zoom level"><span>100%</span><img src="{{ url_for('static', filename='img/Editor/arrow.svg') }}"></div>
+						<div id="zoom-level" title="Canvas zoom level"><span>100%</span><img src='../../static/img/Editor/arrow.svg'></div>
 						<div id="zoom-options" class="zoom-hidden">
 							<div class="zoom-options-item" data-zoom="in">Acercarse</div>
 							<div class="zoom-options-item" data-zoom="out">Disminuir el zoom</div>
@@ -276,9 +276,9 @@
 					</div>
 				</div>
 							
-				<img src="{{ url_for('static', filename='img/Editor/replace-image.svg') }}" id="replace-image">
-				<img src="{{ url_for('static', filename='img/Editor/loading-image.svg') }}" id="load-image" class="load-media">
-				<img src="{{ url_for('static', filename='img/Editor/loading-video.svg') }}" id="load-video" class="load-media">
+				<img src="{{ url_for('static', filename='../../static/img/Editor/replace-image.svg') }}" id="replace-image">
+				<img src="{{ url_for('static', filename='../../static/img/Editor/loading-image.svg') }}" id="load-image" class="load-media">
+				<img src="{{ url_for('static', filename='../../static/img/Editor/loading-video.svg') }}" id="load-video" class="load-media">
 				<canvas id="canvas"></canvas>
 			</div>
 			<div id="timeline-handle"></div>
@@ -314,7 +314,7 @@
 				<div id="layer-list">
 					<div id="layerhead">CAPAS</div>
 					<div id="layer-inner-list">
-						<img src="{{ url_for('static', filename='img/Editor/nolayers.svg') }}" id="nolayers">
+						<img src="{{ url_for('static', filename='../../static/img/Editor/nolayers.svg') }}" id="nolayers">
 					</div>
 				</div>
 				<div id="timearea">
@@ -325,13 +325,13 @@
 					</div>
 				</div>
 			</div>
-			<div style="display:none;"">
+			<div style="display:none;">
 				<canvas id="canvasrecord"></canvas>
 			</div>
 			<div id="controls" class="noselect">
-				<img id="timeline-big" src="{{ url_for('static', filename='img/Editor/timeline-big.svg') }}">
+				<img id="timeline-big" src="{{ url_for('static', filename='../../static/img/Editor/timeline-big.svg') }}">
 				<div id="timeline-zoom"></div>
-				<img id="timeline-small" src="{{ url_for('static', filename='img/Editor/timeline-small.svg') }}">
+				<img id="timeline-small" src="{{ url_for('static', filename='../../static/img/Editor/timeline-small.svg') }}">
 				<div id="speed">
 					<div id="speed-settings">
 						<div class="speed" data-speed="4">4.0x</div>
@@ -341,22 +341,22 @@
 						<div class="speed" data-speed="1">1.0x</div>
 						<div class="speed" data-speed="0.5">0.5x</div>
 					</div>
-					<img src="{{ url_for('static', filename='img/Editor/zap.svg') }}"> <span>1.0x</span> <img id="speed-arrow" src="{{ url_for('static', filename='img/Editor/arrow.svg') }}">
+					<img src="{{ url_for('static', filename='../../static/img/Editor/zap.svg') }}"> <span>1.0x</span> <img id="speed-arrow" src="{{ url_for('static', filename='../../static/img/Editor/arrow.svg') }}">
 				</div>
 				<div id="playback">
 					<div id="current-time">
 						<input value="00:00:00" readonly>
 					</div>
-					<img src="{{ url_for('static', filename='img/Editor/skip.svg') }}" id="skip-backward">
-					<img src="{{ url_for('static', filename='img/Editor/play-button.svg') }}" id="play-button">
-					<img src="{{ url_for('static', filename='img/Editor/skip.svg') }}" id="skip-forward">
+					<img src="{{ url_for('static', filename='../../static/img/Editor/skip.svg') }}" id="skip-backward">
+					<img src="{{ url_for('static', filename='../../static/img/Editor/play-button.svg') }}" id="play-button">
+					<img src="{{ url_for('static', filename='../../static/img/Editor/skip.svg') }}" id="skip-forward">
 					<div id="total-time">
 						<input value="00:00:00" readonly>
 					</div>
 				</div>
 				<div id="controls-right">
-					<div id="share"><img src="{{ url_for('static', filename='img/Editor/importexport.svg') }}"> Importación y exportación</div>
-					<div id="download"><img src="{{ url_for('static', filename='img/Editor/download-icon.svg') }}"> Descargar</div>
+					<div id="share"><img src="{{ url_for('static', filename='../../static/img/Editor/importexport.svg') }}"> Importación y exportación</div>
+					<div id="download"><img src="{{ url_for('static', filename='../../static/img/Editor/download-icon.svg') }}"> Descargar</div>
 				</div>
 			</div>
 			<div id="moderationMessage" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); color: white; display: flex; justify-content: center; align-items: center; z-index: 1000;">
