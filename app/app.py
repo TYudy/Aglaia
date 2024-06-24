@@ -1,20 +1,26 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from werkzeug.security import generate_password_hash
 import mysql.connector
+import os
+import subprocess
+from flask_socketio import SocketIO, emit
+
+
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
+socketio = SocketIO(app, cors_allowed_origins="*")
+usuarios = [] 
 
 app.static_folder = 'static'
 
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database = "AGLAIA"
-
-)
-db.close()
-
+def get_db_connection():
+    db = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="AGLAIA"
+    )
+    return db   
 
 def get_db_connection():
     db = mysql.connector.connect(
@@ -271,8 +277,31 @@ def IndexPatro():
 def Chat_bot():
      return render_template('General/chatbot.html')
 
+@app.route('/chat')
+def chat():
+    # La ruta para el archivo index.html del chat
+  return render_template('chatsito.html')
 
-  
+@socketio.on('nuevo usuario')
+def handle_nuevo_usuario(nick, callback):
+    if nick not in usuarios:
+        usuarios.append(nick)
+        emit('usernames', usuarios, broadcast=True)
+        callback(True)
+        emit('redirigir', url_for('chat'), to=request.sid)  # Redirige al usuario al chat
+    else:
+        callback(False)
+
+@socketio.on('disconnect')
+def handle_disconnect():
+    for user in usuarios:
+        if user['sid'] == request.sid:
+            usuarios.remove(user)
+            emit('usernames', usuarios, broadcast=True)
+            break
+
 if __name__ == '__main__':
-    app.add_url_rule('/', view_func=index)
-    app.run(debug=True,port=5000)
+    socketio.run(app, debug=True)
+
+
+

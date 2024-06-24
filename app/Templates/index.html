@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
     <script src="{{ url_for('static', filename='js/buscador.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
  
 </head>
 <body>
@@ -20,6 +21,7 @@
                 
     <li><a  onclick="loadHome()">INICIO</a></li>
                 <li><a   onclick="loadContent('/Editor')">EDITOR</a></li>
+                <li><a   onclick="loadContent('/chat')">CHAT TR</a></li>
                 <li><a  onclick="loadContent('/Premium')">PRECIOS</a></li>
                 <li> <a href="/Login">INICIAR SESIÓN</a></li>
                 <li>
@@ -111,6 +113,12 @@
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
     <ul id="search-results"></ul>
+
+
+    <!-- Scripts al final del body -->
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+    
     
 </body>
 </html>
