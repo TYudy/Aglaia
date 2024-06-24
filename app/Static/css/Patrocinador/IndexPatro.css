@@ -559,7 +559,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-basis: 25rem;
-  height: 25rem;
+  height: 20rem;
   margin-right: 1.5rem;
   margin-bottom: 3rem;
   border-radius: 0.2rem;
@@ -609,7 +609,7 @@ body {
   width: 25rem;
   height: 15rem;
   position: absolute;
-  top: 80px;
+  top: 0;
 
 }
 

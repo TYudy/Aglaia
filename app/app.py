@@ -75,7 +75,7 @@ def registro_usuario():
                     (nombre, apellido, email, contraseña_encriptada, role))
         db.commit()
         cur.close()
-        return redirect(url_for('index'))
+        return redirect(url_for('Login'))
     return render_template('Registro.html')
 
 
@@ -110,100 +110,132 @@ def IndexPatro():
 def Chat_bot():
      return render_template('General/chatbot.html')
 
-@app.route('/registro_patrocinador', methods=['GET', 'POST'])
+# @app.route('/registro_patrocinador', methods=['GET', 'POST'])
 
-def registro_patrocinador():
-    if request.method == 'POST':
-        nombre = request.form['nombre-patrocinador']
-        email = request.form['email']  # Asegúrate de obtener el valor del formulario correctamente
-        telefono = request.form['telefono']
-        fecha_inicio = request.form['fecha-inicio']
-        anos_mercado = request.form['anos-mercado']
-        contraseña = request.form['password']
-        contraseña_confirm = request.form['password-confirm']
+# def registro_patrocinador():
+#     if request.method == 'POST':
+#         nombre = request.form['nombre-patrocinador']
+#         email = request.form['email']  # Asegúrate de obtener el valor del formulario correctamente
+#         telefono = request.form['telefono']
+#         fecha_inicio = request.form['fecha-inicio']
+#         anos_mercado = request.form['anos-mercado']
+#         contraseña = request.form['password']
+#         contraseña_confirm = request.form['password-confirm']
         
-        # Verificar que las contraseñas coincidan
-        if contraseña != contraseña_confirm:
-            return "Las contraseñas no coinciden", 400
+#         # Verificar que las contraseñas coincidan
+#         if contraseña != contraseña_confirm:
+#             return "Las contraseñas no coinciden", 400
         
-        # Encriptar la contraseña antes de almacenarla
-        contraseña_encriptada = generate_password_hash(contraseña)
+#         # Encriptar la contraseña antes de almacenarla
+#         contraseña_encriptada = generate_password_hash(contraseña)
         
-        # Realizar la inserción en la base de datos
-        cur = db.cursor()
-        cur.execute("INSERT INTO Patrocinadores (nombre_empresa, email, telefono, fecha_inicio, fecha_registro, anos_mercado, contraseña) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-                    (nombre, email, telefono, fecha_inicio, fecha_inicio, anos_mercado, contraseña_encriptada))
-        db.commit()
-        cur.close()
+#         # Realizar la inserción en la base de datos
+#         cur = db.cursor()
+#         cur.execute("INSERT INTO Patrocinadores (nombre_empresa, email, telefono, fecha_inicio, fecha_registro, anos_mercado, contraseña) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+#                     (nombre, email, telefono, fecha_inicio, fecha_inicio, anos_mercado, contraseña_encriptada))
+#         db.commit()
+#         cur.close()
         
-        return redirect(url_for('index'))
+#         return redirect(url_for('index'))
     
-    return render_template('Patrocinador/RegistroPatr.html')
+#     return render_template('Patrocinador/RegistroPatr.html')
 
 
 
-@app.route('/registro_emprendimiento', methods=['GET', 'POST'])
-def registro_emprendimiento():
-    if request.method == 'POST':
-        nombre = request.form['nombre']
-        descripcion = request.form['descripcion']
-        categoria = request.form['categoria']
-        fecha_inicio = request.form['fecha']
-        miembros = request.form['miembros']
-        nombre_miembros = request.form['nombre_miembros']
-        logo = request.files['logo']
-        email = request.form['email']
-        contraseña = request.form['contrasena']
-        contraseña_confirm = request.form['confirmar_contrasena']
+# @app.route('/registro_emprendimiento', methods=['GET', 'POST'])
+# def registro_emprendimiento():
+#     if request.method == 'POST':
+#         nombre = request.form['nombre']
+#         descripcion = request.form['descripcion']
+#         categoria = request.form['categoria']
+#         fecha_inicio = request.form['fecha']
+#         miembros = request.form['miembros']
+#         nombre_miembros = request.form['nombre_miembros']
+#         logo = request.files['logo']
+#         email = request.form['email']
+#         contraseña = request.form['contrasena']
+#         contraseña_confirm = request.form['confirmar_contrasena']
         
-        if contraseña != contraseña_confirm:
-            return "Las contraseñas no coinciden", 400
+#         if contraseña != contraseña_confirm:
+#             return "Las contraseñas no coinciden", 400
         
-        # Leer los datos binarios del logo y convertirlos a base64
-        logo_data = base64.b64encode(logo.read()).decode('utf-8')
+#         # Leer los datos binarios del logo y convertirlos a base64
+#         logo_data = base64.b64encode(logo.read()).decode('utf-8')
         
-        contraseña_encriptada = generate_password_hash(contraseña)
+#         contraseña_encriptada = generate_password_hash(contraseña)
         
-        cur = db.cursor()
-        cur.execute("INSERT INTO Emprendimientos (nombre, descripcion, categoria_id, fecha_inicio, miembros, nombre_miembros, logo, usuario_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
-                    (nombre, descripcion, categoria, fecha_inicio, miembros, nombre_miembros, logo_data, email, contraseña_encriptada))
-        db.commit()
-        cur.close()
+#         cur = db.cursor()
+#         cur.execute("INSERT INTO Emprendimientos (nombre, descripcion, categoria_id, fecha_inicio, miembros, nombre_miembros, logo, usuario_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+#                     (nombre, descripcion, categoria, fecha_inicio, miembros, nombre_miembros, logo_data,))
+#         db.commit()
+#         cur.close()
         
-        return redirect(url_for('index'))
+#         return redirect(url_for('index'))
     
-    return render_template('Emprendedor/RegistroEmp.html')
+#     return render_template('Emprendedor/RegistroEmp.html')
 
 
+
+
+# @app.route('/registro_emprendimiento', methods=['GET', 'POST'])
+# def registro_emprendimiento():
+#     if request.method == 'POST':
+#         nombre = request.form['nombre']
+#         descripcion = request.form['descripcion']
+#         categoria = request.form['categoria']
+#         fecha_inicio = request.form['fecha']
+#         miembros = request.form['miembros']
+#         nombre_miembros = request.form['nombre_miembros']
+#         logo = request.files['logo']
+#         email = request.form['email']
+#         contraseña = request.form['contrasena']
+#         contraseña_confirm = request.form['confirmar_contrasena']
+        
+#         if contraseña != contraseña_confirm:
+#             return "Las contraseñas no coinciden", 400
+        
+#         # Leer los datos binarios del logo y convertirlos a base64
+#         logo_data = base64.b64encode(logo.read()).decode('utf-8')
+        
+#         contraseña_encriptada = generate_password_hash(contraseña)
+        
+#         cur = db.cursor()
+#         cur.execute("INSERT INTO Emprendimientos (nombre, descripcion, categoria_id, fecha_inicio, miembros, nombre_miembros, logo, usuario_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+#                     (nombre, descripcion, categoria, fecha_inicio, miembros, nombre_miembros, logo_data,))
+#         db.commit()
+#         cur.close()
+        
+#         return redirect(url_for('index'))
+    
+#     return render_template('Emprendedor/RegistroEmp.html')
 @app.route('/iniciar_sesion', methods=['POST'])
-def iniciar_sesion2():
+def iniciar_sesion():
     if request.method == 'POST':
         email = request.form['email']
         contraseña = request.form['contraseña']
-        db = get_db_connection()
-        cur = db.cursor(dictionary=True)
         
+        cur = db.cursor(dictionary=True)
         cur.execute("SELECT * FROM Usuarios WHERE email = %s", (email,))
         user = cur.fetchone()
-        
+
         if user and check_password_hash(user['contraseña'], contraseña):
+            # Usuario autenticado correctamente, guardar información en la sesión
             session['user_id'] = user['id_usuario']
             session['user_role'] = user['role']
-            
+
+            # Redirigir según el rol
             if user['role'] == 'administrador':
                 return redirect(url_for('IndexAd'))
-            elif user['role'] == 'emprendimiento':
+            elif user['role'] == 'emprendedor':
                 return redirect(url_for('IndexEmp'))
             elif user['role'] == 'patrocinador':
                 return redirect(url_for('IndexPatro'))
             else:
-                return "Rol de usuario no reconocido"
+                return redirect(url_for('login'))
         else:
-            return redirect(url_for('error_inicio_sesion'))
-        
-        cur.close()
-        db.close()
-    return render_template('General/Login.html')
+            # Credenciales incorrectas
+            return render_template('General/Login.html', error="Credenciales incorrectas")
+
 
 if __name__ == '__main__':
     app.add_url_rule('/', view_func=index)
