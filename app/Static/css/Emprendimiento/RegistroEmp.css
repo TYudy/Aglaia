@@ -55,15 +55,34 @@ body {
 .form-group input[type="text"],
 .form-group input[type="password"],
 .form-group input[type="email"],
-.form-group input[type="tel"],
+.form-group textarea,
+.form-group select,
 .form-group input[type="date"],
-.form-group input[type="number"] {
+.form-group input[type="number"],
+.form-group input[type="file"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 16px;
+    color: #333;
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#555" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-position: right 10px top 50%;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+    background-color: #fff;
+}
+
+.form-group input[type="file"] {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 10px;
     color: #333;
 }
 

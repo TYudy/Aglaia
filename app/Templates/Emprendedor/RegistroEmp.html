@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Emprendimiento/RegistroEmp.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="register">
+            <h1 class="register-title">Registro de Emprendimiento</h1>
+            <form action="/registro_emprendimiento" method="POST" enctype="multipart/form-data" id="registrationForm" onsubmit="return validarFormulario()">
+                <div class="form-group"> 
+                    <label for="nombre">Nombre del emprendimiento:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                
+                
+                <div class="form-group"> 
+                    <label for="descripcion">Descripción:</label> :
+                    <textarea id="descripcion" name="descripcion" rows="4" required></textarea> 
+                </div> 
+
+                <div class="form-group">
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="" disabled selected>Selecciona una categoría</option>
+                        <option value="Tecnología">Tecnología</option>
+                        <option value="Educación">Educación</option>
+                        <option value="Salud">Salud</option>
+                        <option value="Arte y Cultura">Arte y Cultura</option>
+                        <option value="Medio Ambiente">Medio Ambiente</option>
+                        <option value="Social y Comunitario">Social y Comunitario</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha de inicio:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="miembros">Número de miembros:</label>
+                    <input type="number" id="miembros" name="miembros" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre_miembros">Nombres de los miembros:</label>
+                    <input type="text" id="nombre_miembros" name="nombre_miembros" placeholder="Separados por comas">
+                </div>
+
+                <div class="form-group">
+                    <label for="logo">Logo:</label>
+                    <input type="file" id="logo" name="logo" accept=".jpg, .png" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmar_contrasena">Confirmar contraseña:</label>
+                    <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
+                </div>
+
+                <button type="submit">Registrarse</button>
+                <div id="registroError" class="mensaje-error"></div>
+            </form>
+            <p>¿Ya tienes una cuenta? <a href="#">Inicia sesión</a></p>
+        </div>
+    </div>
+
+    <script src="Registros.js"></script>
+</body>
+</html>

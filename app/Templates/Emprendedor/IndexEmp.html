@@ -8,9 +8,154 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Emprendimiento/IndexEmp.css') }}">
     <link rel="stylesheet" href="IndexEmp.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-	
+	<main>
+		
+		<div class="bmenu"  >
+			<!-- onclick="flotante()" -->
+			<input class="switch" type="checkbox">
+			<i class="bx bx-menu logo"></i>
+			<i class='bx bx-x cerrar'></i>
+			
+		</div>
+		
+		
+		<div class="menu">
+		<div class="sidebar-left  animationa animationb">
+			<div class="option o1 hidden animationop">
+				<a href=""></a>
+				
+				<i class='bx bx-home-alt'></i>
+				<p class="name">Home</p>
+			</div>
+			<div class="option o2 hidden animationop">
+				<a href=""></a>
+				<!-- <i class="iconop"></i> -->
+				<i class='bx bx-message-alt-detail'></i>
+				<p class="name">Chats</p>
+			</div>
+			<div class="option o3 hidden animationop">
+				<a href=""></a>
+				<i class="iconop"></i>
+				<p class="name"></p>
+			</div>
+			<div class="option o4 hidden animationop">
+				<a href=""></a>
+				<i class="iconop"></i>
+				<p class="name"></p>
+			</div>
+		</div>
+		</div>
+		<!-- <iframe id="iframeContent"></iframe> -->
+		 <section class="Home">
+			<div class="encabezado">
+				<h1>Mis anuncios</h1>
+			<hr>
+			</div>
+			
+			<div class="tarjetas">
+			<div class="tarjeta mas">
+				<i class='bx bx-plus-circle mas'></i>
+				<a href=""></a>
 
+			</div>
+			<div class="tarjeta">
+				<div class="imagen">
+				<img class="tar" src=" https://picsum.photos/70" alt="">
+				<h2>jo</h2>
+			</div>
+
+			</div>
+			<div class="tarjeta">
+				<div class="imagen">
+					<img class="tar" src=" https://picsum.photos/70" alt="">
+					<h2>jo</h2>
+			</div>
+			</div>
+			<div class="tarjeta">
+				<div class="imagen">
+					<img class="tar" src=" https://picsum.photos/70" alt="">
+					<h2>jo</h2>
+			</div>
+			</div>
+		</div>
+
+
+
+		 </section>
+
+		<div class="sidebar-right">
+			<div class="perfil">
+				<div class="fotoperfil">
+				  <img class="imagen-perfil" src="https://picsum.photos/70" alt="hello">
+				  
+				</div>
+			  </div>
+			  <div class="optionsperfil">
+					<div class="optionperfil">
+						<a href="">
+						<i  class='bx bx-dollar iconperfil premium' ></i></a>
+						<p class="nameperfil">Plan premium</p>
+						
+
+					</div>
+					<div class="optionperfil">
+						<a href="">
+						<i class='bx bx-cog iconperfil config' ></i></a>
+						<p class="nameperfil">Configuración</p>
+						
+					</div>
+					<div class="optionperfil">
+						<a href="">
+						<i class='bx bx-power-off iconperfil apagado'  ></i></a>
+						<p class="nameperfil">Cerrar sesión</p>
+						
+					</div>
+				</div>
+				<div class="toggler">
+            
+					<label id="switcht" class="switcht">
+					  <input type="checkbox" onchange="cambiarTema()" id="slider">
+					  <span class="slider round"></span>
+					  <div class="names">
+					   <p class="light">L</p>
+					   <p class="dark">D</p>
+					 </div>
+					  
+				  </label>
+			 </div>
+		</div>
+			
+
+		</div>
+		
+		<!-- <section id="inicio">
+			<h2>Bienvenido EMPRENDEDORES</h2>
+			<p> ¿Qué es Aglaia?
+
+				Aglaia es tu aliado en línea para llevar tu negocio al siguiente nivel.
+				
+				¿Para qué sirve Aglaia?
+				
+				Promociona tus productos o servicios de forma atractiva.
+				Conéctate directamente con tus clientes.
+				Únete a una comunidad de emprendedores que se apoyan mutuamente.
+				¡Haz que tu negocio brille con Aglaia! </p>
+		</section> -->
+		<!-- Agrega más secciones aquí -->
+	</main>
+	<!-- <footer>
+		<div class="social-media">
+			<a href="#"><i class="fab fa-facebook-f"></i></a>
+			<a href="#"><i class="fab fa-twitter"></i></a>
+			<a href="#"><i class="fab fa-instagram"></i></a>
+			<a href="#"><i class="fab fa-linkedin-in"></i></a>
+		</div>
+		<p class="copyright">Copyright © 2024 AGLAIA. Todos los derechos reservados.</p>
+	</footer> -->
+
+    <script src=" {{ url_for('static', filename='Js/Emprendimiento/IndexEmp.js') }}"></script>
 </body>
 </html>

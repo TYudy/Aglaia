@@ -70,7 +70,7 @@ body {
   }
   
   footer a:hover {
-    color: #2CF8C1;  
+    color: var(--letra);  
   }
   
   /* Redes Sociales */  
@@ -410,15 +410,17 @@ body {
 .user-arrow-btn .sub-menu {
   
   margin-top: -10px;
-  background: var(--atras);
+  /* background: var(--fondo2); */
   display: none;
   position: absolute;
-  top: 170%;
+  top: 200%;
   left: -190%;
   z-index: 100; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  */
   height: 6rem;
   width: 7rem;
+  border-radius: 5%;
+  
 }
 
 .user-arrow-btn.showMenu .sub-menu {
@@ -428,11 +430,13 @@ body {
 .user-arrow-btn .sub-menu a {
   color: var(--letra);
   font-size: 1rem;
-  
-  
-  white-space: nowrap;
+  /* white-space: nowrap; */
   opacity: 0.6;
   transition: all 0.3s ease;
+  background: var(--fondo2);
+  padding: 0.5rem;
+  border-radius: 10%;
+
 }
 
 .user-arrow-btn .sub-menu a:hover {
@@ -461,7 +465,7 @@ body {
 }
 
 .user-settings:hover {
-  background: var(--atras);
+  background: var(--fondo2);
 }
 
 .user-image {

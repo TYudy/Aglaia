@@ -22,6 +22,10 @@ CREATE TABLE Emprendimientos (
     id_emprendimiento INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(45) NOT NULL UNIQUE,
     descripcion TEXT,
+    fecha_inicio DATE NOT NULL,
+    miembros INT NOT NULL,
+    nombre_miembros TEXT,
+    logo LONGBLOB,
     categoria_id INT NOT NULL,
     usuario_id INT NOT NULL,
     FOREIGN KEY (categoria_id) REFERENCES Categorias(id_categoria),
@@ -40,8 +44,10 @@ CREATE TABLE Patrocinadores (
     id_patrocinador INT AUTO_INCREMENT PRIMARY KEY,
     nombre_empresa VARCHAR(45) NOT NULL UNIQUE,
     persona_contacto VARCHAR(45) NOT NULL,
-    telefono VARCHAR(20) NOT NULL,
-    fecha_registro DATE,
+    telefono VARCHAR(15) NOT NULL,
+    fecha_inicio DATE NOT NULL,
+    fecha_registro DATE NOT NULL,
+    anos_mercado INT NOT NULL,
     usuario_id INT NOT NULL,
     FOREIGN KEY (usuario_id) REFERENCES Usuarios(id_usuario)
 );
@@ -124,27 +130,7 @@ INSERT INTO Anuncios (titulo, descripcion, usuario_id, fecha_creacion, fecha_exp
 ('¡Lanzamiento exclusivo! Smartphone XYZ', 'Descubre el último modelo de smartphone con nosotros.', 4, '2024-04-25', '2024-05-25', 0.00, 4, 'xyz.jpg'),
 ('Promoción de inscripción gratuita', 'Inscríbete este mes y no pagues la inscripción.', 5, '2024-04-25', '2024-05-25', 0.00, 5, 'promo.jpg');
 
--- Corrección de nombre de base de datos y creación de la tabla en la base correcta
-CREATE DATABASE IF NOT EXISTS Registro_usuarios;
 
-USE Registro_usuarios;
-
-CREATE TABLE Registro_usuarios (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(50) NOT NULL,
-  apellidos VARCHAR(50) NOT NULL,
-  tipo_identificacion VARCHAR(10) NOT NULL,
-  numero_identificacion VARCHAR(20) NOT NULL,
-  correo_electronico VARCHAR(50) NOT NULL,
-  fecha_nacimiento DATE NOT NULL,
-  telefono VARCHAR(20) NOT NULL,
-  direccion VARCHAR(100) NOT NULL,
-  contrasena VARCHAR(50) NOT NULL,
-  confirmacion_contrasena VARCHAR(50) NOT NULL
-);
-
--- Selecciones
-USE AGLAIA;
 
 SELECT * FROM Usuarios;
 SELECT * FROM Administradores;
@@ -157,4 +143,3 @@ SELECT * FROM Emprendimientos;
 ALTER TABLE Usuarios MODIFY contraseña VARCHAR(255);
 
 SELECT email, role FROM Usuarios;
-
