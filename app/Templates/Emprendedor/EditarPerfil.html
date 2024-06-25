@@ -1,0 +1,39 @@
+<!-- templates/editar_emprendimiento.html -->
+{% extends "General/PlantillaEdPerfil.html" %}
+
+{% block user %}
+    {{ user_name }}
+{% endblock %}
+
+{% block empresa %}
+    {{ user_group }}
+{% endblock %}
+
+{% block linkimagenperfil %}
+    {{ user_avatar_url }}
+{% endblock %}
+
+{% block form %}
+<h1>Editar Emprendimiento</h1>
+<form method="POST" action="{{ url_for('editar_emprendimiento', id_emprendimiento=emprendimiento['id_emprendimiento']) }}" enctype="multipart/form-data">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" value="{{ emprendimiento['nombre'] }}"><br><br>
+
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" name="descripcion">{{ emprendimiento['descripcion'] }}</textarea><br><br>
+
+    <label for="fecha_inicio">Fecha de Inicio:</label>
+    <input type="date" id="fecha_inicio" name="fecha_inicio" value="{{ emprendimiento['fecha_inicio'] }}"><br><br>
+
+    <label for="miembros">Miembros:</label>
+    <input type="number" id="miembros" name="miembros" value="{{ emprendimiento['miembros'] }}"><br><br>
+
+    <label for="nombre_miembros">Nombre de los Miembros:</label>
+    <textarea id="nombre_miembros" name="nombre_miembros">{{ emprendimiento['nombre_miembros'] }}</textarea><br><br>
+
+    <label for="logo">Logo:</label>
+    <input type="file" id="logo" name="logo"><br><br>
+
+    <button type="submit">Actualizar</button>
+</form>
+{% endblock %}

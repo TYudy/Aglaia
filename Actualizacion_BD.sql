@@ -26,6 +26,7 @@ CREATE TABLE Emprendimientos (
     miembros INT NOT NULL,
     nombre_miembros TEXT,
     logo LONGBLOB,
+    aprobado BOOLEAN NOT NULL DEFAULT FALSE,
     categoria_id INT NOT NULL,
     usuario_id INT NOT NULL,
     FOREIGN KEY (categoria_id) REFERENCES Categorias(id_categoria),

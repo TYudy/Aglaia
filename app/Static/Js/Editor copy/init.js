@@ -197,7 +197,7 @@ const stroke_panel =
 const shadow_panel =
   '<hr><div id="back-properties" class="panel-section"><p class="property-title">Shadow</p><table><tr><th class="name-col">Offset</th><th class="value-col"><div id="object-shadow-x" class="property-input" data-label="X"><input type="number" value=0></div><div id="object-shadow-y" class="property-input" data-label="Y"><input value=0 type="number"></div></th></tr><tr><th class="name-col">Color</th><th class="value-col"><div id="object-color-shadow" class="object-color"><div id="color-shadow-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-shadow-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Blur</th><th class="value-col" id="duration-cell"><div id="object-blur" class="property-input" data-label="px"><input type="number" value=0 min=0></div></th></tr></table></div>';
 const image_more_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Image</p><div id="image-buttons"><div id="filters-button"><img src="../../static/img/Editor/filters.svg"> Edit filters</div><div id="crop-image"><img src= "../../static/img/Editor/crop-icon.svg""../../static/img/Editor/crop-icon.svg">Crop image</div></div></div></hr>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Image</p><div id="image-buttons"><div id="filters-button"><img src="../../static/img/Editor/filters.svg"> Edit filters</div><div id="crop-image"><img src= "../../static/img/Editor/crop-icon.svg">Crop image</div></div></div></hr>';
 const video_more_panel =
   '<hr><div id="back-properties" class="panel-section"><p class="property-title">Video</p><div id="image-buttons"><div id="filters-button" class="filters-video"><img src="../../static/img/Editor/filters.svg"> Edit filters</div></div></div></hr>';
 const animated_text_panel =
@@ -215,7 +215,7 @@ const image_browser =
 const text_browser =
   '<div id="search-fixed"><p class="property-title">Texto</p><img id="collapse" src="../../static/img/Editor/collapse.svg"><div id="browser-search"><input placeholder="Buscar..."><img src="../../static/img/Editor/search.svg" id="search-icon"><img src="../../static/img/Editor/delete.svg" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><p class="row-title">Texto Básico</p><div id="heading-text" data-font="Inter" class="add-text noselect">Agregar encabezado</div><div id="subheading-text" data-font="Inter" class="add-text noselect">Añadir un subtítulo</div><div id="body-text" data-font="Inter" class="add-text noselect">Agregar texto al cuerpo</div></div>';
 const video_browser =
-  '<div id="search-fixed"><p class="property-title">Videos</p><img id="collapse" src="../../static/img/Editor/collapse.svg"><div id="browser-search"><input placeholder="Buscar..."><a href="https://pixabay.com" target="_blank" id="pixabay"><img src="../../static/img/Editor/pixabay.svg"></a><img src="../../static/img/Editor/search.svg" id="search-icon"><img src="../../static/img/Editor/delete.svg" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><div id="landing"><div id="landing-text">Explora millones de imágenes de alta calidad de Pixabay. Utilice la barra de búsqueda de arriba o elija entre las categorías populares a continuación.</div><div id="categories"></div></div><div id="images-grid"></div></div>';
+  '<div id="search-fixed"><p class="property-title">Videos</p><img id="collapse" src="../../static/img/Editor/collapse.svg"><div id="browser-search"><input placeholder="Buscar..."><a href="https://pixabay.com" target="_blank" id="pixabay"><img src="../../static/img/Editor/pixabay.svg"></a><img src="../assets/search.svg" id="search-icon"><img src="../../static/img/Editor/search.svg" id="delete-search"><div id="search-button">Ir</div></div></div><div id="shapes-cont"><div id="landing"><div id="landing-text">Explora millones de imágenes de alta calidad de Pixabay. Utilice la barra de búsqueda de arriba o elija entre las categorías populares a continuación.</div><div id="categories"></div></div><div id="images-grid"></div></div>';
 const upload_browser =
   '<div id="search-fixed"><p class="property-title">Subidas</p><div id="upload-button"><img src="../../static/img/Editor/upload.svg"> Subir medios</div><img id="collapse" src="../../static/img/Editor/collapse.svg"><div id="upload-tabs"><div id="images-tab" class="upload-tab upload-tab-active">Imágenes</div><div id="videos-tab" class="upload-tab">Videos</div></div></div><div id="images-grid"></div>';
 const audio_browser =
@@ -256,81 +256,82 @@ var text_animation_list = [
 // Shapes list
 var shape_grid_items = [
   '../../static/img/Editor/shapes/rectangle.svg',
-  '../../static/img/Editor/shapes/hexagon.svg',
+  '../../static/img/Editor/shapes/circle.svg',
   '../../static/img/Editor/shapes/triangle.svg',
   '../../static/img/Editor/shapes/polygon.svg',
   '../../static/img/Editor/shapes/star.svg',
-  '../../static/img/Editor/shapes/circle.svg',
+  '../../static/img/Editor/shapes/thingy.svg',,
   '../../static/img/Editor/shapes/heart.svg',
-  '../../static/img/Editor/shapes/arrow.svg', 
+  '../../static/img/Editor/shapes/arrow.svg',
 ];
 var emoji_items = [
-  '../../static/img/Editor/twemojis/laughing-emoji.png',
-  '../../static/img/Editor/twemojis/crying-emoji.png',
-  '../../static/img/Editor/twemojis/surprised-emoji.png',
-  '../../static/img/Editor/twemojis/smiling-emoji.png',
-  '../../static/img/Editor/twemojis/tongue-emoji.png',
-  '../../static/img/Editor/twemojis/heart-eyes-emoji.png',
-  '../../static/img/Editor/twemojis/heart-kiss-emoji.png',
-  '../../static/img/Editor/twemojis/sunglasses-cool-emoji.png',
-  '../../static/img/Editor/twemojis/ghost-emoji.png',
-  '../../static/img/Editor/twemojis/skull-emoji.png',
-  '../../static/img/Editor/twemojis/mindblown-emoji.png',
-  '../../static/img/Editor/twemojis/bomb-emoji.png',
-  '../../static/img/Editor/twemojis/hundred-100-points-emoji.png',
-  '../../static/img/Editor/twemojis/thought-balloon-emoji.png',
-  '../../static/img/Editor/twemojis/wave-emoji.png',
-  '../../static/img/Editor/twemojis/point-emoji.png',
-  '../../static/img/Editor/twemojis/thumbs-up-emoji.png',
-  '../../static/img/Editor/twemojis/clap-emoji.png',
-  '../../static/img/Editor/twemojis/raising-hands-emoji.png',
-  '../../static/img/Editor/twemojis/praying-hands-emoji.png',
-  '../../static/img/Editor/twemojis/nail-polish-emoji.png',
-  '../../static/img/Editor/twemojis/eyes-emoji.png',
-  '../../static/img/Editor/twemojis/cat-face-emoji.png',
-  '../../static/img/Editor/twemojis/dog-face-emoji.png',
-  '../../static/img/Editor/twemojis/rose-emoji.png',
-  '../../static/img/Editor/twemojis/tulip-emoji.png',
-  '../../static/img/Editor/twemojis/pizza-emoji.png',
-  '../../static/img/Editor/twemojis/construction-emoji.png',
-  '../../static/img/Editor/twemojis/plane-emoji.png',
-  '../../static/img/Editor/twemojis/rocket-emoji.png',
-  '../../static/img/Editor/twemojis/clock-emoji.png',
-  '../../static/img/Editor/twemojis/star-emoji.png',
-  '../../static/img/Editor/twemojis/sun-emoji.png',
-  '../../static/img/Editor/twemojis/moon-emoji.png',
-  '../../static/img/Editor/twemojis/fire-emoji.png',
-  '../../static/img/Editor/twemojis/sparkles-emoji.png',
-  '../../static/img/Editor/twemojis/party-popper-emoji.png',
-  '../../static/img/Editor/twemojis/gift-emoji.png',
-  '../../static/img/Editor/twemojis/trophy-emoji.png',
-  '../../static/img/Editor/twemojis/target-emoji.png',
-  '../../static/img/Editor/twemojis/gem-emoji.png',
-  '../../static/img/Editor/twemojis/money-emoji.png',
-  '../../static/img/Editor/twemojis/pencil-emoji.png',
-  '../../static/img/Editor/twemojis/graph-emoji.png',
-  '../../static/img/Editor/twemojis/wip-emoji.png',
-  '../../static/img/Editor/twemojis/winking-face-emoji.png',
-  '../../static/img/Editor/twemojis/pleading-face-emoji.png',
-  '../../static/img/Editor/twemojis/thinking-face-emoji.png',
+'../../static/img/Editor/twemojis/bomb-emoji.png',
+'../../static/img/Editor/twemojis/cat-face-emoji.png',
+'../../static/img/Editor/twemojis/clap-emoji.png',
+'../../static/img/Editor/twemojis/clock-emoji.png',
+'../../static/img/Editor/twemojis/construction-emoji.png',
+'../../static/img/Editor/twemojis/crying-emoji.png',
+'../../static/img/Editor/twemojis/dog-face-emoji.png',
+'../../static/img/Editor/twemojis/eyes-emoji.png',
+'../../static/img/Editor/twemojis/fire-emoji.png',
+'../../static/img/Editor/twemojis/gem-emoji.png',
+'../../static/img/Editor/twemojis/ghost-emoji.png',
+'../../static/img/Editor/twemojis/gift-emoji.png',
+'../../static/img/Editor/twemojis/graph-emoji.png',
+'../../static/img/Editor/twemojis/heart-eyes-emoji.png',
+'../../static/img/Editor/twemojis/heart-kiss-emoji.png',
+'../../static/img/Editor/twemojis/hundred-100-points-emoji.png',
+'../../static/img/Editor/twemojis/laughing-emoji.png',
+'../../static/img/Editor/twemojis/mindblown-emoji.png',
+'../../static/img/Editor/twemojis/money-emoji.png',
+'../../static/img/Editor/twemojis/moon-emoji.png',
+'../../static/img/Editor/twemojis/nail-polish-emoji.png',
+'../../static/img/Editor/twemojis/party-popper-emoji.png',
+'../../static/img/Editor/twemojis/pencil-emoji.png',
+'../../static/img/Editor/twemojis/pizza-emoji.png',
+'../../static/img/Editor/twemojis/plane-emoji.png',
+'../../static/img/Editor/twemojis/pleading-face-emoji.png',
+'../../static/img/Editor/twemojis/point-emoji.png',
+'../../static/img/Editor/twemojis/praying-hands-emoji.png',
+'../../static/img/Editor/twemojis/raising-hands-emoji.png',
+'../../static/img/Editor/twemojis/rocket-emoji.png',
+'../../static/img/Editor/twemojis/rose-emoji.png',
+'../../static/img/Editor/twemojis/skull-emoji.png',
+'../../static/img/Editor/twemojis/smiling-emoji.png',
+'../../static/img/Editor/twemojis/sparkles-emoji.png',
+'../../static/img/Editor/twemojis/star-emoji.png',
+'../../static/img/Editor/twemojis/sun-emoji.png',
+'../../static/img/Editor/twemojis/sunglasses-cool-emoji.png',
+'../../static/img/Editor/twemojis/surprised-emoji.png',
+'../../static/img/Editor/twemojis/target-emoji.png',
+'../../static/img/Editor/twemojis/thinking-face-emoji.png',
+'../../static/img/Editor/twemojis/thought-balloon-emoji.png',
+'../../static/img/Editor/twemojis/thumbs-up-emoji.png',
+'../../static/img/Editor/twemojis/tongue-emoji.png',
+'../../static/img/Editor/twemojis/trophy-emoji.png',
+'../../static/img/Editor/twemojis/tulip-emoji.png',
+'../../static/img/Editor/twemojis/wave-emoji.png',
+'../../static/img/Editor/twemojis/winking-face-emoji.png',
+'../../static/img/Editor/twemojis/wip-emoji.png'
+
 ];
 
 // Image list
 var image_grid_items = [
-  '../../static/img/Editor/https://images.unsplash.com/photo-1609153259378-a8b23c766aec?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1866&q=80',
-  '../../static/img/Editor/https://images.unsplash.com/photo-1614435082296-ef0cbdb16b70?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80',
-  '../../static/img/Editor/https://images.unsplash.com/photo-1614432254115-7e756705e910?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
-  '../../static/img/Editor/https://images.unsplash.com/photo-1614423234685-544477464e15?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
-  '../../static/img/Editor/https://images.unsplash.com/photo-1614357235247-99fabbee67f9?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
-  '../../static/img/Editor/https://images.unsplash.com/photo-1614373371549-c7d2e4885f17?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
+  'https://images.unsplash.com/photo-1609153259378-a8b23c766aec?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1866&q=80',
+  'https://images.unsplash.com/photo-1614435082296-ef0cbdb16b70?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80',
+  'https://images.unsplash.com/photo-1614432254115-7e756705e910?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
+  'https://images.unsplash.com/photo-1614423234685-544477464e15?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
+  'https://images.unsplash.com/photo-1614357235247-99fabbee67f9?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
+  'https://images.unsplash.com/photo-1614373371549-c7d2e4885f17?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
 ];
 var image_categories = [
-  { name: 'Fondo', image: '../../static/img/Editor/background.png' },
+  { name: 'Fondo', image: '../../static/img/Editor/background.png'},
   { name: 'Fondo de pantalla', image: '../../static/img/Editor/wallpaper.png' },
   { name: 'Naturaleza', image: '../../static/img/Editor/nature.png' },
-  { name: 'Verano', image: '../../static/img/Editor/summer.png' },
-  { name: 'Playa', image: '../../static/img/Editor/beach.png' },
-  { name: 'Espacio', image: '../../static/img/Editor/space.png' },
+  { name: 'Verano', image: '../../static/img/Editor/summer.png'},
+  { name: 'Playa', image: '../../static/img/Editor/beach.png'},
+  { name: 'Espacio', image: '../../static/img/Editor/space.png'},
   { name: 'Oficina', image: '../../static/img/Editor/office.png' },
   { name: 'Comida', image: '../../static/img/Editor/food.png' },
 ];
@@ -344,7 +345,7 @@ var video_categories = [
   { name: 'Animales', image: '../../static/img/Editor/animals.png' },
   { name: 'Calle', image: '../../static/img/Editor/street.png' },
   { name: 'Viaje', image: '../../static/img/Editor/travel.png' },
-  { name: 'Trabajo', image: '../../static/img/Editor/work.png' },
+  { name: 'Trabajo', image: '../../static/img/Editor/work.png'},
 ];
 
 // Audio list
@@ -378,7 +379,7 @@ var audio_items = [
     desc: 'madiRFAN',
     duration: '2:48',
     thumb: '../../static/img/Editor/audio/both-of-us-thumb.png',
-    src: '.../../static/img/Editor/audio/both-of-us.mp3',
+    src: '../../static/img/Editor/audio/both-of-us.mp3',
     link: 'https://pixabay.com/users/madirfan-50411/',
   },
   {

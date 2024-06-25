@@ -10,39 +10,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
     <script src="{{ url_for('static', filename='js/buscador.js') }}"></script>
- 
 </head>
 <body>
     <div class="container">
         <nav>
             <span class="logo">AGLAIA</span>
             <ul>
-                
-    <li><a  onclick="loadHome()">INICIO</a></li>
-                <li><a   onclick="loadContent('/Editor')">EDITOR</a></li>
-                <li><a  onclick="loadContent('/Plantillas')">PLANTILLAS</a></li>
-                <li><a  onclick="loadContent('/Premium')">PRECIOS</a></li>
-                <li> <a href="/Login">INICIAR SESIÓN</a></li>
-                <li>
-                    <!-- <a href="javascript:void(0);" onclick="toggleRegisterMenu()">REGISTRO</a>
-                    <div id="register-menu" class="register-menu">
-                        <a onclick="loadContent('/registro_emprendimiento')">EMPRENDEDOR</a>
-                        <a onclick="loadContent('/registro_patrocinador')">PATROCINADOR</a>
-                    </div> -->
-                    <a  onclick="loadContent('/regtemp')">REGISTRO</a>
-                </li>
-                <li> <a href="/Bot">AYUDAS</a></li>
+                <li><a onclick="loadHome()">INICIO</a></li>
+                <li><a onclick="loadContent('/chati')">CHAT TR</a></li>
+                <li><a onclick="loadContent('/Plantillas')">PLANTILLAS</a></li>
+                <li><a onclick="loadContent('/Premium')">PRECIOS</a></li>
+                <li><a href="/Login">INICIAR SESIÓN</a></li>
+                <li><a onclick="loadContent('/regtemp')">REGISTRO</a></li>
+                <li><a href="/Bot">AYUDAS</a></li>
             </ul>
         </nav>
 
         <section id="Home">
-
             <header>
                 <h1>BIENVENIDOS</h1>
                 <h2>Somos lo que tu emprendimiento necesita</h2>
                 <p>Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA</p>
-                
-                
                 <button id="infoButton" type="button">
                     Más Información
                     <img src="icono/bxs-right-arrow-alt.svg" alt="">
@@ -51,60 +39,80 @@
                     <p>
                         Estaremos dispuestos a brindarte la mejor experiencia <br>Crea tus anuncios con AGLAIA ADS <br> Diseña, publica y distribuye anuncios personalizados para impulsar tu pequeño emprendimiento de manera fácil y económica. <br>
                         Nuestra plataforma ofrece plantillas prediseñadas que puedes personalizar con tu logo, colores y mensajes únicos. <br>
-                         Con herramientas de edición intuitivas y previsualización en tiempo real, verás exactamente cómo quedará tu anuncio antes de publicarlo. <br>
-                          Además, podrás distribuir tus anuncios a través de redes sociales, correo electrónico y medios locales, segmentando tu audiencia según ubicación, edad e intereses. <br>
-                           Los análisis detallados del rendimiento te permitirán ajustar y mejorar tus campañas publicitarias para obtener los mejores resultados.                </div>
+                        Con herramientas de edición intuitivas y previsualización en tiempo real, verás exactamente cómo quedará tu anuncio antes de publicarlo. <br>
+                        Además, podrás distribuir tus anuncios a través de redes sociales, correo electrónico y medios locales, segmentando tu audiencia según ubicación, edad e intereses. <br>
+                        Los análisis detallados del rendimiento te permitirán ajustar y mejorar tus campañas publicitarias para obtener los mejores resultados.
+                    </p>
+                </div>
             </header>
-
             <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }}" alt="">
-           
         </section>
 
         <iframe id="iframeContent"></iframe>
-
     </div>
 
-   <section id="buscador">
-    
-    <form id="search-form" action="/buscar" method="GET">
-        <input type="text" id="busqueda" name="q" placeholder="Ingresa tu búsqueda...">
-        <button type="submit">Buscar</button>
-    </form>
-
-    <div class="columns-container">
-        <div class="column">
-            <img src="https://picsum.photos/70" alt="Imagen 1">
-            <h2>EMPRENDIMIENTO 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla odio eget ligula fermentum, et viverra risus aliquam.</p>
+    <section id="buscador">
+        <form id="search-form" action="/buscar" method="GET">
+            <input type="text" id="busqueda" name="q" placeholder="Ingresa tu búsqueda...">
+            <button type="submit">Buscar</button>
+        </form>
+        <div class="columns-container">
+            <div class="column">
+                <img src="https://picsum.photos/70" alt="Imagen 1">
+                <h2>EMPRENDIMIENTO 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla odio eget ligula fermentum, et viverra risus aliquam.</p>
+            </div>
+            <div class="column">
+                <img src="https://picsum.photos/70" alt="Imagen 2">
+                <h2>EMPRENDIMIENTO 2</h2>
+                <p>Phasellus imperdiet mauris id luctus elementum. Nunc nec ipsum vel libero interdum mattis sed eget nulla.</p>
+            </div>
+            <div class="column">
+                <img src="https://picsum.photos/70" alt="Imagen 3">
+                <h2>EMPRENDIMIENTO 3</h2>
+                <p>Vestibulum in volutpat justo. Duis auctor, eros a tempus condimentum, lorem odio rhoncus dolor, vel convallis nunc eros id sem.</p>
+            </div>
         </div>
-        <div class="column">
-            <img src="https://picsum.photos/70" alt="Imagen 2">
-            <h2>EMPRENDIMIENTO 2</h2>
-            <p>Phasellus imperdiet mauris id luctus elementum. Nunc nec ipsum vel libero interdum mattis sed eget nulla.</p>
+    </section>
+
+    <footer>
+        <div class="icons">
+            <a href="https://www.facebook.com/profile.php?id=61560555698181&" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="https://whatsapp.com" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+            <a href="https://www.instagram.com/aglaia_ads/" target="_blank"><i class='bx bxl-instagram'></i></a>
+            <a href="https://x.com/AglaiaAds" target="_blank"><i class='bx bxl-twitter'></i></a>
         </div>
-        <div class="column">
-            <img src="https://picsum.photos/70" alt="Imagen 3">
-            <h2>EMPRENDIMIENTO 3</h2>
-            <p>Vestibulum in volutpat justo. Duis auctor, eros a tempus condimentum, lorem odio rhoncus dolor, vel convallis nunc eros id sem.</p>
+        <p>&copy; 2024 ACJO SOFT. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Chatbot Burbuja Flotante -->
+    <div class="chatbot-container">
+        <div class="chatbot-bubble" onclick="toggleChat()">
+            💬
+        </div>
+        <div class="chatbot-window" id="chatWindow">
+            <div class="chatbot-header">
+                Chatbot
+                <span class="close-btn" onclick="toggleChat()">✖</span>
+            </div>
+            <div class="chatbot-content">
+                <!-- Aquí va tu chatbot -->
+                <iframe src="index.html" frameborder="0" width="100%" height="100%"></iframe>
+
+            </div>
         </div>
     </div>
 
-   </section>
-
-   <footer>
-    <div class="icons">
-        <a href="https://www.facebook.com/profile.php?id=61560555698181&" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
-        <a href="https://whatsapp.com" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-        <a href="https://www.instagram.com/aglaia_ads/" target="_blank"><i class='bx bxl-instagram'></i></a>
-        <a href="https://x.com/AglaiaAds" target="_blank"><i class='bx bxl-twitter'></i></a>
-    </div>
-    <p>&copy; 2024 ACJO SOFT. Todos los derechos reservados.</p>
-</footer>
-        <iframe id="iframeContent" ></iframe>
-    </div>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
-
-    <ul id="search-results"></ul>
-    
+    <script>
+        function toggleChat() {
+            var chatWindow = document.getElementById("chatWindow");
+            if (chatWindow.style.display === "none" || chatWindow.style.display === "") {
+                chatWindow.style.display = "block";
+            } else {
+                chatWindow.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

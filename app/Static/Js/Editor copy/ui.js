@@ -2030,7 +2030,7 @@ function replaceAudioBackground() {
 		var src = $(this).attr("data-src");
 		if (background_audio != false) {
 			$("#audio-upload-button").removeClass("remove-audio");
-			$("#audio-upload-button").html('<img src="../../static/img/Editor/upload.svg"> Upload audio');
+			$("#audio-upload-button").html('<img src='../../static/img/Editor/upload.svg'> Upload audio');
 		}
 		db.collection("projects").doc({id: 1}).update({
 			audiosrc: src,

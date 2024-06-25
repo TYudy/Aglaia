@@ -1,0 +1,38 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href=" ../../Static/css/General/EdPerfil.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/General/EdPerfil.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+      <div id="perfilusuario">
+        <div id="cosanegra">{% block user %}
+            {% endblock %}
+          <div id="datosrandom">
+            <div id="estadusuario" style="display: none;">conectado</div>
+            {% block empresa %}
+        {% endblock %}
+          </div>
+          <div id="imagenrango">
+
+            <img src="{% block linkimagenperfil %}
+        {% endblock %}"/>
+          </div>
+        </div>
+        
+        <div id="sontainer">
+    
+              <div id="sontent">
+                {% block form %}
+                {% endblock %}
+              </div>
+          </div>
+        
+      </div>
+</body>
+</html>

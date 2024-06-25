@@ -414,15 +414,19 @@ body {
   display: none;
   position: absolute;
   top: 200%;
-  left: -190%;
+  left: -200%;
   z-index: 100; 
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  */
   height: 6rem;
-  width: 7rem;
+  width: 8.5rem;
   border-radius: 5%;
+  padding: 5px;
   
 }
 
+.p{
+  margin-left: 1rem;
+}
 .user-arrow-btn.showMenu .sub-menu {
   display: block;
 }
@@ -436,19 +440,25 @@ body {
   background: var(--fondo2);
   padding: 0.5rem;
   border-radius: 10%;
-
+  margin: 0.5rem;
+  display: none;
+  position: absolute;
+  right: 8rem;
+  width: 8rem;
 }
-
 .user-arrow-btn .sub-menu a:hover {
   opacity: 1;
 }
 
-.user-arrow-btn.showMenu .bx {
+.user-arrow-btn.showMenu .flecha {
   transform: rotate(-180deg); 
 }
-.p{
-  transform: rotate(-180deg); 
+.p:hover{
+  transform: rotate(-120deg); 
 
+}
+.sub-menu li:hover a{
+  display: block;
 }
 
 

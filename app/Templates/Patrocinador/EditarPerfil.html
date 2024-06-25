@@ -1,0 +1,21 @@
+<!-- templates/editar_patrocinador.html -->
+{% extends "General/PlantillaEdPerfil.html" %}
+
+{% block user %}
+    {{ user_name }}
+{% endblock %}
+
+{% block empresa %}
+    {{ user_group }}
+{% endblock %}
+
+{% block linkimagenperfil %}
+    {{ user_avatar_url }}
+{% endblock %}
+
+{% block form %}
+
+
+    <button type="submit">Actualizar</button>
+</form>
+{% endblock %}

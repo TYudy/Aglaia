@@ -1179,13 +1179,13 @@ function keyframeChanges(object, type, id, selection) {
 function play() {
   paused = false;
   animate(true, currenttime);
-  $('#play-button').attr('src', '../../static/img/Editor/pause-button.svg');
+  $('#play-button').attr('src', 'assets/pause-button.svg');
 }
 
 // Pause video
 function pause() {
   paused = true;
-  $('#play-button').attr('src', '../../static/img/Editor/play-button.svg');
+  $('#play-button').attr('src', 'assets/play-button.svg');
 }
 
 // Set object value (while animating)
@@ -2400,12 +2400,12 @@ function toggleAnimate(e) {
   // Turn off clock -> Stop animation
   if ($(this).hasClass('frozen')) {
     $(this).removeClass('frozen');
-    $(this).attr('src', '../../static/img/Editor/freeze.svg');
+    $(this).attr('src', 'assets/freeze.svg');
     objects.find((x) => x.id == object.get('id')).animate = [];
     // Turn on clock -> Start animation
   } else {
     $(this).addClass('frozen');
-    $(this).attr('src', '../../static/img/Editor/frozen.svg');
+    $(this).attr('src', 'assets/frozen.svg');
     objects.find((x) => x.id == object.get('id')).animate = [];
     if (object.get('assetType') == 'audio') {
       objects
@@ -2902,12 +2902,12 @@ function toggleAnimateProp(e) {
   // Turn off clock -> Stop animating
   if ($(this).hasClass('frozen')) {
     $(this).removeClass('frozen');
-    $(this).attr('src', '../../static/img/Editor/freeze.svg');
+    $(this).attr('src', 'assets/freeze.svg');
     freezeProp(prop, object);
     // Turn on clock -> Animate
   } else {
     $(this).addClass('frozen');
-    $(this).attr('src', '../../static/img/Editor/frozen.svg');
+    $(this).attr('src', 'assets/frozen.svg');
     animateProp(prop, object);
   }
   save();
@@ -2922,12 +2922,12 @@ function lockLayer(e) {
   );
   if ($(this).hasClass('locked')) {
     $(this).removeClass('locked');
-    $(this).attr('src', '../../static/img/Editor/lock.svg');
+    $(this).attr('src', 'assets/lock.svg');
     object.selectable = true;
     $(this).parent().parent().parent().attr('draggable', true);
   } else {
     $(this).addClass('locked');
-    $(this).attr('src', '../../static/img/Editor/locked.svg');
+    $(this).attr('src', 'assets/locked.svg');
     object.selectable = false;
     if (canvas.getActiveObject() == object) {
       canvas.discardActiveObject();
@@ -2959,33 +2959,33 @@ function renderLayer(object, animate = false) {
   var srclock = 'lock';
   var freeze = 'freeze';
   if (object.get('type') == 'textbox') {
-    src = '../../static/img/Editor/text.svg';
+    src = 'assets/text.svg';
   } else if (
     object.get('type') == 'rect' ||
     object.get('type') == 'group' ||
     object.get('type') == 'circle' ||
     object.get('type') == 'path'
   ) {
-    src = '../../static/img/Editor/star.svg';
+    src = 'assets/star.svg';
     if (object.get('assetType') == 'animatedText') {
-      src = '../../static/img/Editor/text.svg';
+      src = 'assets/text.svg';
     }
     if (object.get('assetType') == 'audio') {
-      src = '../../static/img/Editor/audio/audio.svg';
+      src = 'assets/audio.svg';
     }
   } else if (object.get('type') == 'image') {
     if (
       object.get('assetType') &&
       object.get('assetType') == 'video'
     ) {
-      src = '../../static/img/Editor/video.svg';
+      src = 'assets/video.svg';
     } else {
-      src = '../../static/img/Editor/image.svg';
+      src = 'assets/image.svg';
     }
   } else if (object.get('type') == 'lottie') {
-    src = '../../static/img/Editor/zappy.svg';
+    src = 'assets/zappy.svg';
   } else if (object.get('assetType') == 'audio') {
-    src = '../../static/img/Editor/audio/audio.svg';
+    src = 'assets/audio.svg';
   }
   if (object.selectable == false) {
     classlock = 'locked';
@@ -3026,13 +3026,13 @@ function renderLayer(object, animate = false) {
     $('#layer-inner-list').prepend(
       "<div class='layer' data-object='" +
         object.get('id') +
-        "'><div class='layer-name'><img class='droparrow' src='../../static/img/Editor/drop-arrow.svg' ><img class='layer-icon' src=" +
+        "'><div class='layer-name'><img class='droparrow' src='assets/drop-arrow.svg' ><img class='layer-icon' src=" +
         src +
         "><input class='layer-custom-name' value='" +
         objects.find((x) => x.id == object.get('id')).label +
         "' readonly></span><div class='layer-options'><img class='" +
         freeze +
-        "' src='../../static/img/Editor/" +
+        "' src='assets/" +
         freeze +
         ".svg' title='Toggle animation'></div></div><div class='properties'></div></div>"
     );
@@ -3040,17 +3040,17 @@ function renderLayer(object, animate = false) {
     $('#layer-inner-list').prepend(
       "<div class='layer' data-object='" +
         object.get('id') +
-        "'><div class='layer-name'><img class='droparrow' src='../../static/img/Editor/drop-arrow.svg' ><img class='layer-icon' src=" +
+        "'><div class='layer-name'><img class='droparrow' src='assets/drop-arrow.svg' ><img class='layer-icon' src=" +
         src +
         "><input class='layer-custom-name' value='" +
         objects.find((x) => x.id == object.get('id')).label +
         "' readonly></span><div class='layer-options'><img class='lock " +
         classlock +
-        "' src='../../static/img/Editor/" +
+        "' src='assets/" +
         srclock +
         ".svg' title='Lock layer'><img class='" +
         freeze +
-        "' src='../../static/img/Editor/" +
+        "' src='assets/" +
         freeze +
         ".svg' title='Toggle animation'></div></div><div class='properties'></div></div>"
     );
@@ -3107,7 +3107,7 @@ function renderProp(prop, object) {
       .append(
         "<div class='property-name' data-property='position'><span class='property-keyframe' title='Create a new keyframe'></span>Position<img class='freeze-prop " +
           classfreeze +
-          "' src='../../static/img/Editor/" +
+          "' src='assets/" +
           srcfreeze +
           ".svg' title='Toggle animation'></div>"
       );
@@ -3117,7 +3117,7 @@ function renderProp(prop, object) {
       .append(
         "<div class='property-name' data-property='scale'><span class='property-keyframe' title='Create a new keyframe'></span>Scale<img class='freeze-prop " +
           classfreeze +
-          "' src='../../static/img/Editor/" +
+          "' src='assets/" +
           srcfreeze +
           ".svg' title='Toggle animation'></div>"
       );
@@ -3127,7 +3127,7 @@ function renderProp(prop, object) {
       .append(
         "<div class='property-name' data-property='stroke'><span class='property-keyframe' title='Create a new keyframe'></span>Stroke<img class='freeze-prop " +
           classfreeze +
-          "' src='../../static/img/Editor/" +
+          "' src='assets/" +
           srcfreeze +
           ".svg' title='Toggle animation'></div>"
       );
@@ -3137,7 +3137,7 @@ function renderProp(prop, object) {
       .append(
         "<div class='property-name' data-property='shadow'><span class='property-keyframe' title='Create a new keyframe'></span>Shadow<img class='freeze-prop " +
           classfreeze +
-          "' src='../../static/img/Editor/" +
+          "' src='assets/" +
           srcfreeze +
           ".svg' title='Toggle animation'></div>"
       );
@@ -3147,7 +3147,7 @@ function renderProp(prop, object) {
       .append(
         "<div class='property-name' data-property='text'><span class='property-keyframe' title='Create a new keyframe'></span>Texto<img class='freeze-prop " +
           classfreeze +
-          "' src='../../static/img/Editor/" +
+          "' src='assets/" +
           srcfreeze +
           ".svg' title='Toggle animation'></div>"
       );
@@ -3161,7 +3161,7 @@ function renderProp(prop, object) {
           prop +
           "<img class='freeze-prop " +
           classfreeze +
-          "' src='../../static/img/Editor/" +
+          "' src='assets/" +
           srcfreeze +
           ".svg' title='Toggle animation'></div>"
       );
@@ -3603,13 +3603,13 @@ function crop(obj) {
 }
 
 var tlcrop = new Image();
-tlcrop.src = '../../static/img/Editor/tlcrop.svg';
+tlcrop.src = 'assets/tlcrop.svg';
 var trcrop = new Image();
-trcrop.src = '../../static/img/Editor/trcrop.svg';
+trcrop.src = 'assets/trcrop.svg';
 var blcrop = new Image();
-blcrop.src = '../../static/img/Editor/blcrop.svg';
+blcrop.src = 'assets/blcrop.svg';
 var brcrop = new Image();
-brcrop.src = '../../static/img/Editor/brcrop.svg';
+brcrop.src = 'assets/brcrop.svg';
 
 function overlay() {
   canvas.add(
@@ -3981,7 +3981,7 @@ function handleUpload(custom = false) {
       uploading = true;
       if (file.size / 1024 / 1024 <= 500) {
         $('#upload-button').html(
-          "<img src='../../static/img/Editor/upload.svg'> Uploading..."
+          "<img src='assets/upload.svg'> Uploading..."
         );
         $('#upload-button').addClass('uploading');
         if (file['type'].split('/')[0] === 'image') {
@@ -4104,22 +4104,22 @@ function formatText() {
   }
   if ($(this).hasClass('format-text-active')) {
     if ($(this).attr('id') == 'format-bold') {
-      $(this).find('img').attr('src', '../../static/img/Editor/bold.svg');
+      $(this).find('img').attr('src', 'assets/bold.svg');
       canvas
         .getActiveObject()
         .setSelectionStyles({ fontWeight: 'normal' });
     } else if ($(this).attr('id') == 'format-italic') {
-      $(this).find('img').attr('src', '../../static/img/Editor/italic.svg');
+      $(this).find('img').attr('src', 'assets/italic.svg');
       canvas
         .getActiveObject()
         .setSelectionStyles({ fontStyle: 'normal' });
     } else if ($(this).attr('id') == 'format-underline') {
-      $(this).find('img').attr('src', '../../static/img/Editor/underline.svg');
+      $(this).find('img').attr('src', 'assets/underline.svg');
       canvas
         .getActiveObject()
         .setSelectionStyles({ underline: false });
     } else {
-      $(this).find('img').attr('src', '../../static/img/Editor/strike.svg');
+      $(this).find('img').attr('src', 'assets/strike.svg');
       canvas
         .getActiveObject()
         .setSelectionStyles({ linethrough: false });
@@ -4128,22 +4128,22 @@ function formatText() {
   } else {
     $(this).addClass('format-text-active');
     if ($(this).attr('id') == 'format-bold') {
-      $(this).find('img').attr('src', '../../static/img/Editor/bold-active.svg');
+      $(this).find('img').attr('src', 'assets/bold-active.svg');
       canvas
         .getActiveObject()
         .setSelectionStyles({ fontWeight: 'bold' });
     } else if ($(this).attr('id') == 'format-italic') {
-      $(this).find('img').attr('src', '../../static/img/Editor/italic-active.svg');
+      $(this).find('img').attr('src', 'assets/italic-active.svg');
       canvas
         .getActiveObject()
         .setSelectionStyles({ fontStyle: 'italic' });
     } else if ($(this).attr('id') == 'format-underline') {
-      $(this).find('img').attr('src', '../../static/img/Editor/underline-active.svg');
+      $(this).find('img').attr('src', 'assets/underline-active.svg');
       canvas
         .getActiveObject()
         .setSelectionStyles({ underline: true });
     } else {
-      $(this).find('img').attr('src', '../../static/img/Editor/strike-active.svg');
+      $(this).find('img').attr('src', 'assets/strike-active.svg');
       canvas
         .getActiveObject()
         .setSelectionStyles({ linethrough: true });
@@ -4162,31 +4162,31 @@ function lineJoin() {
   if ($('.line-join-active').attr('id') == 'miter') {
     $('.line-join-active')
       .find('img')
-      .attr('src', '../../static/img/Editor/miter.svg');
+      .attr('src', 'assets/miter.svg');
   } else if ($('.line-join-active').attr('id') == 'bevel') {
     $('.line-join-active')
       .find('img')
-      .attr('src', '../../static/img/Editor/bevel.svg');
+      .attr('src', 'assets/bevel.svg');
   } else if ($('.line-join-active').attr('id') == 'round') {
     $('.line-join-active')
       .find('img')
-      .attr('src', '../../static/img/Editor/round.svg');
+      .attr('src', 'assets/round.svg');
   } else if ($('.line-join-active').attr('id') == 'small-dash') {
     $('.line-join-active')
       .find('img')
-      .attr('src', '../../static/img/Editor/dash2.svg');
+      .attr('src', 'assets/dash2.svg');
   }
   $('.line-join-active').removeClass('line-join-active');
   $(this).addClass('line-join-active');
   if ($(this).attr('id') == 'miter') {
-    $(this).find('img').attr('src', '../../static/img/Editor/miter-active.svg');
+    $(this).find('img').attr('src', 'assets/miter-active.svg');
     canvas
       .getActiveObject()
       .set({ strokeWidth: 0, strokeDashArray: false });
     canvas.renderAll();
     updatePanelValues();
   } else if ($(this).attr('id') == 'bevel') {
-    $(this).find('img').attr('src', '../../static/img/Editor/bevel-active.svg');
+    $(this).find('img').attr('src', 'assets/bevel-active.svg');
     canvas.getActiveObject().set({ strokeDashArray: false });
     if (canvas.getActiveObject().get('strokeWidth') == 0) {
       canvas.getActiveObject().set({ strokeWidth: 1 });
@@ -4194,7 +4194,7 @@ function lineJoin() {
       updatePanelValues();
     }
   } else if ($(this).attr('id') == 'round') {
-    $(this).find('img').attr('src', '../../static/img/Editor/round-active.svg');
+    $(this).find('img').attr('src', 'assets/round-active.svg');
     canvas.getActiveObject().set({ strokeDashArray: [10, 5] });
     if (canvas.getActiveObject().get('strokeWidth') == 0) {
       canvas.getActiveObject().set({ strokeWidth: 1 });
@@ -4202,7 +4202,7 @@ function lineJoin() {
       updatePanelValues();
     }
   } else {
-    $(this).find('img').attr('src', '../../static/img/Editor/dash2-active.svg');
+    $(this).find('img').attr('src', 'assets/dash2-active.svg');
     canvas.getActiveObject().set({ strokeDashArray: [3, 3] });
     if (canvas.getActiveObject().get('strokeWidth') == 0) {
       canvas.getActiveObject().set({ strokeWidth: 1 });
@@ -4221,23 +4221,23 @@ function alignText() {
   if ($('.align-text-active').attr('id') == 'align-text-left') {
     $('.align-text-active')
       .find('img')
-      .attr('src', '../../static/img/Editor/align-text-left.svg');
+      .attr('src', 'assets/align-text-left.svg');
   } else if (
     $('.align-text-active').attr('id') == 'align-text-center'
   ) {
     $('.align-text-active')
       .find('img')
-      .attr('src', '../../static/img/Editor/align-text-center.svg');
+      .attr('src', 'assets/align-text-center.svg');
   } else if (
     $('.align-text-active').attr('id') == 'align-text-right'
   ) {
     $('.align-text-active')
       .find('img')
-      .attr('src', '../../static/img/Editor/align-text-right.svg');
+      .attr('src', 'assets/align-text-right.svg');
   } else {
     $('.align-text-active')
       .find('img')
-      .attr('src', '../../static/img/Editor/align-text-justify.svg');
+      .attr('src', 'assets/align-text-justify.svg');
   }
   $('.align-text-active').removeClass('align-text-active');
   $(this).addClass('align-text-active');
@@ -4245,22 +4245,22 @@ function alignText() {
     textalign = 'left';
     $(this)
       .find('img')
-      .attr('src', '../../static/img/Editor/align-text-left-active.svg');
+      .attr('src', 'assets/align-text-left-active.svg');
   } else if ($(this).attr('id') == 'align-text-center') {
     textalign = 'center';
     $(this)
       .find('img')
-      .attr('src', '../../static/img/Editor/align-text-center-active.svg');
+      .attr('src', 'assets/align-text-center-active.svg');
   } else if ($(this).attr('id') == 'align-text-right') {
     textalign = 'right';
     $(this)
       .find('img')
-      .attr('src', '../../static/img/Editor/align-text-right-active.svg');
+      .attr('src', 'assets/align-text-right-active.svg');
   } else {
     textalign = 'justify';
     $(this)
       .find('img')
-      .attr('src', '../../static/img/Editor/align-text-justify-active.svg');
+      .attr('src', 'assets/align-text-justify-active.svg');
   }
   canvas.getActiveObject().set({ textAlign: textalign });
   canvas.renderAll();
@@ -5953,13 +5953,13 @@ function orderLayers() {
 function handTool() {
   if ($(this).hasClass('hand-active')) {
     $(this).removeClass('hand-active');
-    $(this).find('img').attr('src', '../../static/img/Editor/hand-tool.svg');
+    $(this).find('img').attr('src', 'assets/hand-tool.svg');
     handtool = false;
     canvas.defaultCursor = 'default';
     canvas.renderAll();
   } else {
     $(this).addClass('hand-active');
-    $(this).find('img').attr('src', '../../static/img/Editor/hand-tool-active.svg');
+    $(this).find('img').attr('src', 'assets/hand-tool-active.svg');
     handtool = true;
     canvas.defaultCursor = 'grab';
     canvas.renderAll();

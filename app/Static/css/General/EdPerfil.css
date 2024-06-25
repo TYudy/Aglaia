@@ -1,0 +1,357 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+    
+    margin: 0 auto;
+    background: #f1f1f1;
+  }
+  
+  #perfilusuario {
+    width: 100%;
+    height: 548px;
+    position: relative;
+  }
+  
+  #perfilusuario #cosanegra:last-child {
+      border: 0;
+      position: absolute;
+      top: 448px;
+  }
+  
+  #cosanegra {
+    background: #050503;
+    width: 880px;
+    height: 90px;
+    color: #d7d7d7;
+    cursor: default;
+    font-family: Raleway;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 5px;
+    text-decoration: none;
+    text-transform: uppercase!important;
+    text-align: right;
+    line-height: 80px;
+    border-bottom: #E6BC53 solid 10px;
+    position: relative;
+  }
+  
+  #cuadradogris {
+    height: 100px;
+    width: 100px;
+    float: left;
+    background: #E6BC53;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  #datosrandom {
+      font-size: 10px;
+      color: #E6BC53;
+      height: 0px;
+      line-height: 0px;
+      padding-right: 2px;
+      text-transform: lowercase;
+      font-style: italic;
+      margin-top: -20px;
+  }
+  
+  #datosrandom img {
+    display: none;
+  }
+  
+  #imagenrango {
+      width: 80px;
+      height: 80px;
+      overflow: hidden;
+      border-radius: 100%;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 0;
+  }
+  
+  #imagenrango img {
+      width: 100%;
+      height: 100%;
+      -webkit-filter: invert(1);
+      filter: invert(1);
+  }
+  
+  #rectanguloperfil {
+      width: 100px;
+      height: 318px;
+      position: absolute;
+      top: 120px;
+      background: #050503;
+      left: 0px;
+  }
+  
+  #cierculoh {
+      float: left;
+      width: 52px;
+      height: 52px;
+      margin: 7px 20px;
+      color: #d7d7d7;
+      text-align: center;
+      border: 4px solid #d7d7d7;
+      border-radius: 100%;
+      font-size: 0;
+    font-family: 'Raleway';
+    cursor: pointer;
+  }
+  
+  #cierculoh * {
+    transition: .2s;
+      -webkit-transition: .2s;
+      -moz-transition: .2s;
+      -o-transition: .2s;
+      -ms-transition: .2s;
+    display: block;
+  }
+  
+  #cierculoh > span:nth-child(1) {
+      font-size: 22px;
+      line-height: 52px;
+  }
+  
+  #cierculoh:hover {
+      color: #E6BC53;
+      width: 56px;
+      height: 56px;
+      border: 2px solid #E6BC53;
+  }
+  
+  #cierculoh:hover span:nth-child(1) {
+      font-size: 14px;
+      line-height: 35px;
+  }
+  
+  #cierculoh:hover span:nth-child(2) {
+      font-size: 10px;
+    line-height: 0px;
+      text-transform: lowercase;
+  }
+  
+  #rectanguloperfil > #cierculoh:nth-child(1) {
+    margin-top: 18px;
+  }
+  
+  #sontainer input {
+      height: 0;
+      visibility: hidden;
+  }
+  
+  #sontainer label {
+      background: #050503;
+      cursor: pointer;
+      display: block;
+      float: left;
+      text-align: center;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      border-radius: 100%;
+      bottom: -353px;
+      position: relative;
+      left: 15px;
+      z-index: 6;
+      font-family: 'FontAwesome';
+      text-align: center;
+      line-height: 19px;
+    color: transparent;
+      transition: .3s;
+      -webkit-transition: .3s;
+      -moz-transition: .3s;
+      -o-transition: .3s;
+      -ms-transition: .3s;
+  }
+  
+  #sontainer label:nth-child(2) {
+    margin-left: 0;
+  }
+  
+  #sontainer label:nth-child(4) {
+      left: 45px;
+  }
+  
+  #sontainer label:nth-child(6) {
+      left: -25px;
+      bottom: -403px;
+  }
+  
+  #sontainer label:nth-child(8) {
+      bottom: -403px;
+      left: 5px;
+  }
+  
+  #sontainer input:checked + label {
+      position: relative;
+    color: #d7d7d7;
+  }
+  
+  #sontainer input:checked + label:before {
+      content: "\f00d";
+  }
+  
+  #sontent {
+      height: 316px;
+      border: 1px solid #e6e6e6;
+      width: 80%;
+      position: absolute;
+    background: #a32020;
+      z-index: 5;
+  }
+  
+  #sontent > div {
+      opacity: 0;
+      padding: 10px;
+      position: absolute;
+      z-index: -100;
+      transition: all linear 0.1s;
+      height: 296px;
+      width: 758px;
+  }
+  
+  #sontainer input#abb-1:checked ~ #sontent #sontent-1,
+  #sontainer input#abb-2:checked ~ #sontent #sontent-2,
+  #sontainer input#abb-3:checked ~ #sontent #sontent-3,
+  #sontainer input#abb-4:checked ~ #sontent #sontent-4 {
+      opacity: 1;
+      z-index: 100;
+  }
+  
+  input.visible {
+    visibility: visible !important;
+  }
+  
+  .avatardelpejota {
+      border: 10px solid #E6BC53;
+      position: absolute;
+      right: 5px;
+      top: 23px;
+  }
+  
+  .campodedatos {
+      width: 190px;
+      position: absolute;
+      margin: 0;
+      height: 30px;
+  }
+  
+  .campodedatos > * {
+      float: left;
+      height: 100%;
+      line-height: 30px;
+      font-family: 'Raleway';
+      font-size: 13px;
+  }
+  
+  .campodedatos > dt {
+      width: 80px;
+      text-align: center;
+      font-weight: bolder;
+      text-transform: uppercase;
+      color: #d7d7d7;
+      background: #050503;
+  }
+  
+  .campodedatos > dd {
+      margin-left: 5px;
+      width: 105px;
+      text-transform: uppercase;
+      text-align: center;
+      background-color: #e5bb53;
+      color: #050503;
+      font-weight: bolder;
+  }
+  
+  .campodedatos:nth-child(2) {
+      top: 332px;
+      font-weight: normal;
+      font-size: 13px;
+      text-transform: lowercase;
+      font-style: italic;
+      float: left;
+      text-align: justify;
+      position: absolute;
+      left: -6px;
+      line-height: normal;
+      display: table;
+      width: 780px;
+      height: 90px;
+  }
+  
+  .campodedatos:nth-child(3) {
+      left: 60px;
+      top: 65px;
+  }
+  
+  .campodedatos:nth-child(4) {
+      left: 60px;
+      top: 145px;
+  }
+  
+  .campodedatos:nth-child(5) {
+      left: 295px;
+      top: 145px;
+  }
+  
+  .campodedatos:nth-child(6) {
+      top: 65px;
+      left: 295px;
+  }
+  
+  .campodedatos:nth-child(7) {
+      left: 568px;
+      top: 243px;
+  }
+  
+  .campodedatos:nth-child(8) {
+      left: 60px;
+      top: 225px;
+  }
+  
+  .campodedatos:nth-child(9) {
+      left: 295px;
+      top: 225px;
+  }
+  
+  .campodedatos:nth-child(2) > dt {
+      display: none;
+  }
+  
+  .campodedatos:nth-child(2) > dd {
+      max-width: 780px;
+      max-height: 90px;
+      display: table-cell!important;
+      vertical-align: middle;
+      font-weight: normal;
+      text-transform: none;
+      background: transparent;
+      margin: 0;
+      color: #d7d7d7;
+      cursor: default;
+      font-family: Raleway;
+      width: initial;
+      text-align: center;
+      float: none;
+  }
+  
+  .campodedatos:nth-child(2) > dd:after,
+  .campodedatos:nth-child(2) > dd:before {
+    font-family: 'FontAwesome';
+  }
+  
+  .campodedatos:nth-child(2) > dd:before {
+    content: "\f10d ";
+  }
+  
+  .campodedatos:nth-child(2) > dd:after {
+    content: " \f10e";
+  }

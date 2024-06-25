@@ -267,7 +267,7 @@ $(document).ready(function () {
             $('#hand-tool').removeClass('hand-active');
             $('#hand-tool')
               .find('img')
-              .attr('src', '../../static/img/Editor/hand-tool.svg');
+              .attr('src', 'assets/hand-tool.svg');
           }
         }
         spacehold = false;
@@ -315,7 +315,7 @@ $(document).ready(function () {
               $('#hand-tool').addClass('hand-active');
               $('#hand-tool')
                 .find('img')
-                .attr('src', '../../static/img/Editor/hand-tool-active.svg');
+                .attr('src', 'assets/hand-tool-active.svg');
             }
           }
         }, 1000);
