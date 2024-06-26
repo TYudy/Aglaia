@@ -2,6 +2,7 @@
 {% extends "General/PlantillaEdPerfil.html" %}
 
 {% block user %}
+<h1>Editar Perfil</h1>
     {{ user_name }}
 {% endblock %}
 
@@ -9,31 +10,97 @@
     {{ user_group }}
 {% endblock %}
 
-{% block linkimagenperfil %}
-    {{ user_avatar_url }}
-{% endblock %}
+
 
 {% block form %}
-<h1>Editar Emprendimiento</h1>
-<form method="POST" action="{{ url_for('editar_emprendimiento', id_emprendimiento=emprendimiento['id_emprendimiento']) }}" enctype="multipart/form-data">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" value="{{ emprendimiento['nombre'] }}"><br><br>
+<form>
+    <div class="etiqueta">
+    <label for="nombre" >Nombre</label>
+    <p>j</p>
+    <input type="checkbox">
+    <input type="text" id="nombre" name="nombre" value="" class="ver oculto"><br><br>
+    </div>
+    
+    
 
-    <label for="descripcion">Descripción:</label>
-    <textarea id="descripcion" name="descripcion">{{ emprendimiento['descripcion'] }}</textarea><br><br>
 
-    <label for="fecha_inicio">Fecha de Inicio:</label>
-    <input type="date" id="fecha_inicio" name="fecha_inicio" value="{{ emprendimiento['fecha_inicio'] }}"><br><br>
 
-    <label for="miembros">Miembros:</label>
-    <input type="number" id="miembros" name="miembros" value="{{ emprendimiento['miembros'] }}"><br><br>
 
-    <label for="nombre_miembros">Nombre de los Miembros:</label>
-    <textarea id="nombre_miembros" name="nombre_miembros">{{ emprendimiento['nombre_miembros'] }}</textarea><br><br>
+    <div class="etiqueta">
+    <label for="descripcion">Descripción</label>
+    <p>j</p>
+    <input type="checkbox">
+    <textarea id="descripcion" name="descripcion" class="ver oculto"></textarea><br><br>
+    </div>
 
-    <label for="logo">Logo:</label>
-    <input type="file" id="logo" name="logo"><br><br>
 
+
+
+
+
+
+    <div class="etiqueta" >
+        <label for="fecha_inicio">Fecha de Inicio</label>
+        <p>j</p>
+        <input type="checkbox">
+    <input type="date" id="fecha_inicio" name="fecha_inicio"  class="ver oculto" value=""><br><br>
+    </div>
+    
+
+
+
+
+
+
+    <div class="etiqueta">
+       
+    <label for="miembros"># Miembros</label>
+    <p>j</p>
+    <input type="checkbox">
+    <input type="number" id="miembros" name="miembros" class="ver oculto" value=""><br><br>
+</div>
+
+
+
+
+
+
+    <div class="etiqueta">
+        
+    <label for="nombre_miembros">Nombres Miembros</label>
+    <p>j</p>
+    <input type="checkbox">
+    <textarea id="nombre_miembros" name="nombre_miembros" class="ver oculto"></textarea><br><br>
+</div>
+
+    
+    
+
+  
     <button type="submit">Actualizar</button>
 </form>
+{% endblock %}
+
+{% block imagen %}
+    <img src="https://picsum.photos/70" alt="Logo">
+     
+    <label for="logo" class="subir">Cambiar foto de perfil</label>
+    <input type="file" id="logo" name="logo"><br><br>
+
+    {% endblock %}
+
+
+{% block nombre %}
+Julio
+{% endblock %}
+
+{% block apellido %}
+Beltran
+{% endblock %}
+                
+{% block correo %}  
+Julio@gmail.com  
+{% endblock %}
+                
+{% block editprofile %}
 {% endblock %}

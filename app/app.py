@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for, s
 import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
 import base64
+from functools import wraps
 # from flask_socketio import SocketIO, emit
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -31,8 +32,9 @@ def login():
 @app.route('/iniciar_sesion', methods=['POST'])
 def iniciar_sesion():
     if request.method == 'POST': 
-        email = request.form['email']
-        contraseña = request.form['contraseña']
+        email = request.form.get('email')
+        contraseña = request.form.get('contraseña')
+
         
         cur = db.cursor(dictionary=True)
         cur.execute("SELECT * FROM Usuarios WHERE email = %s", (email,))
@@ -112,10 +114,54 @@ def regtemporal():
 @app.route('/EditarPatro')
 def Editar_P():
     return render_template('Patrocinador/EditarPerfil.html')
-@app.route('/EditarEmp')
+@app.route('/EditarEmp') 
 def Editar_E():
     return render_template('Emprendedor/EditarPerfil.html')
 
+#------------------------------------------------------------#
+@app.route('/usuarios')
+def lista_usuarios():
+    cur = db.cursor(dictionary=True)
+    cur.execute("SELECT * FROM Usuarios")
+    usuarios = cur.fetchall()
+    cur.close()
+    return render_template('Administrador/lista_usuarios.html', usuarios=usuarios)
+
+@app.route('/editar_usuario/<int:user_id>', methods=['GET', 'POST'])
+def editar_usuario(user_id):
+    cur = db.cursor(dictionary=True)
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        email = request.form['email']
+        role = request.form['role']
+        
+        cur.execute("UPDATE Usuarios SET nombre=%s, apellido=%s, email=%s, role=%s WHERE id_usuario=%s",
+                    (nombre, apellido, email, role, user_id))
+        db.commit()
+        return redirect(url_for('lista_usuarios'))
+
+        # Reordenar los IDs
+    for index, user in enumerate(usuarios):
+        new_id = index + 1
+        cur.execute("UPDATE Usuarios SET id_usuario = %s WHERE id_usuario = %s", (new_id, user['id_usuario']))
+    
+
+    else:
+        cur.execute("SELECT * FROM Usuarios WHERE id_usuario = %s", (user_id,))
+        user = cur.fetchone()
+        cur.close()
+        return render_template('Administrador/editar_usuario.html', user=user)
+
+@app.route('/eliminar_usuario/<int:user_id>')
+def eliminar_usuario(user_id):
+    cur = db.cursor()
+    cur.execute("DELETE FROM Usuarios WHERE id_usuario = %s", (user_id,))
+    db.commit()
+    cur.close()
+    return redirect(url_for('lista_usuarios'))
+
+#---------------------------------------------------------------#
 
 @app.route('/registro_usuario', methods=['POST'])
 def registro_usuario():
@@ -288,6 +334,41 @@ def registro_emprendimiento():
     
 #     return render_template('Emprendedor/RegistroEmp.html')
 
+
+@app.route('/upgrade-to-premium', methods=['POST'])
+def upgrade_to_premium():
+    if request.method == 'POST':
+        user_id = session.get('user_id')
+
+        if user_id:
+            # Aquí podrías actualizar el usuario en la base de datos a premium
+            cur = db.cursor()
+            cur.execute("UPDATE Usuarios SET role = 'premium' WHERE id_usuario = %s", (user_id,))
+            db.commit()
+            cur.close()
+
+            # Redirigir a una página de confirmación o a donde sea necesario
+            return redirect(url_for('index'))
+
+        # Manejar el caso en que no haya sesión o el usuario no esté identificado
+        return redirect(url_for('login'))
+
+
+def premium_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if session.get('premium_user') is not True:
+            return redirect(url_for('Premium'))  # Redirige a la página de compra premium si no tiene acceso
+        return f(*args, **kwargs)
+    return decorated_function
+
+
+@app.route('/check_premium')
+def check_premium():
+    if session.get('premium_user'):
+        return {'premium': True}
+    else:
+        return {'premium': False}
 
 if __name__ == '__main__':
     app.add_url_rule('/', view_func=index)

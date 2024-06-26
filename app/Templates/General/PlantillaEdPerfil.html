@@ -9,30 +9,56 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
-    
-      <div id="perfilusuario">
-        <div id="cosanegra">{% block user %}
+    <div class="container">
+      <div id="usuario">
+        <div id="encabezado">{% block user %}
             {% endblock %}
-          <div id="datosrandom">
-            <div id="estadusuario" style="display: none;">conectado</div>
-            {% block empresa %}
-        {% endblock %}
-          </div>
-          <div id="imagenrango">
-
-            <img src="{% block linkimagenperfil %}
-        {% endblock %}"/>
-          </div>
+            <div id="Estado" style="display: none;"> {% block estado %}
+              {% endblock %}</div>
+          
         </div>
         
         <div id="sontainer">
     
-              <div id="sontent">
-                {% block form %}
-                {% endblock %}
+          <div id="form">
+            {% block form %}
+
+           
+
+
+            {% endblock %}
+
+          </div>
+          </div>
+          <div class="info">
+            <div id="imagenperfil">
+              {% block imagen %}
+              {%endblock%}
+              </div>
+              
+
+              <div class="pieimagen">
+                <div class="username">{% block nombre %}
+                  {% endblock %}</div>
+                  <div class="username">{% block apellido %}
+                    {% endblock %}</div>
+                  <div class="correo">{% block correo %}
+                    {% endblock %}</div>
+                    <div class="editprofile">
+                      {% block editprofile %}
+                    {% endblock %}
+                    </div>
+                
               </div>
           </div>
         
       </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/General/PlantillaEdPerfil.js') }}">
+    
+    </script>
+
+
 </body>
 </html>

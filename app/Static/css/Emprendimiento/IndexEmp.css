@@ -685,7 +685,14 @@ width: 20px; */
 
 
 
-
+iframe {
+	width: calc(100% - 8rem);
+	height: 100vh;
+	display: block;
+	border: none;
+	z-index: 500;
+	background-color: #1e1c1b;
+  }
 
 
 

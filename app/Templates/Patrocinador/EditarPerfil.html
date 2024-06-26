@@ -1,7 +1,9 @@
 <!-- templates/editar_patrocinador.html -->
+
 {% extends "General/PlantillaEdPerfil.html" %}
 
 {% block user %}
+<h1>Editar Perfil</h1>
     {{ user_name }}
 {% endblock %}
 
@@ -9,13 +11,105 @@
     {{ user_group }}
 {% endblock %}
 
-{% block linkimagenperfil %}
-    {{ user_avatar_url }}
-{% endblock %}
+
 
 {% block form %}
+<form>
+    <div class="etiqueta">
+    <label for="Nombre" >Nombre</label>
+    <p>j</p>
+    <input type="checkbox">
+    <input type="text" id="Nombre" name="Nombre" value="" class="ver oculto"><br><br>
+    </div>
+    
+    
 
 
+
+
+    <div class="etiqueta">
+    <label for="contacto" >Persona de contacto</label>
+    <p>j</p>
+    <input type="checkbox">
+    <input type="text" id="contacto" name="contacto" value="" class="ver oculto"><br><br>
+    </div>
+
+
+
+
+
+
+
+    <div class="etiqueta" >
+        <label for="telefono">Telefono</label>
+        <p>j</p>
+        <input type="checkbox">
+    <input type="number" id="telefono" name="telefono"  class="ver oculto" value=""><br><br>
+    </div>
+    
+
+
+
+
+
+
+    <div class="etiqueta">
+       
+    <label for="registro">Registro</label>
+    <p>j</p>
+    <input type="checkbox">
+    <input type="date" id="registro" name="registro" class="ver oculto" value=""><br><br>
+</div>
+
+
+
+
+
+
+    <div class="etiqueta">
+        
+    <label for="feinicio">Fecha de inicio</label>
+    <p>j</p>
+    <input type="checkbox">
+    <input type="date" id="feinicio" name="feinicio" class="ver oculto" value=""><br><br>
+</div>
+
+<div class="etiqueta">
+        
+    <label for="Años">Años en el mercado</label>
+    <p>j</p>
+    <input type="checkbox">
+    <input type="number" id="Años" name="Años" class="ver oculto" value=""><br><br>
+</div>
+
+    
+    
+
+  
     <button type="submit">Actualizar</button>
 </form>
+{% endblock %}
+
+{% block imagen %}
+    <img src="https://picsum.photos/70" alt="Logo">
+     
+    <label for="logo" class="subir">Cambiar foto de perfil</label>
+    <input type="file" id="logo" name="logo"><br><br>
+
+    {% endblock %}
+
+
+{% block nombre %}
+Julio
+{% endblock %}
+
+{% block apellido %}
+Beltran
+{% endblock %}
+                
+{% block correo %}  
+Julio@gmail.com  
+{% endblock %}
+                
+{% block editprofile %}
 {% endblock %}

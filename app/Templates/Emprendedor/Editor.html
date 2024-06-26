@@ -384,6 +384,92 @@
 					document.getElementById("moderationMessage").style.display = "flex";
 				};
 			</script>
+
+<script>
+    // Función para verificar si el usuario es premium
+    function verificarPremium() {
+        fetch('/check_premium')
+            .then(response => response.json())
+            .then(data => {
+                if (data.premium) {
+                    // El usuario es premium, muestra las funciones avanzadas
+                    mostrarFuncionesPremium();
+                } else {
+                    // El usuario no es premium, oculta las funciones avanzadas
+                    ocultarFuncionesPremium();
+                }
+            })
+            .catch(error => {
+                console.error('Error al verificar premium:', error);
+                // Maneja el error adecuadamente, por ejemplo, mostrando un mensaje de error o comportamiento alternativo
+            });
+    }
+
+    // Función para mostrar funciones premium
+    function mostrarFuncionesPremium() {
+        document.querySelectorAll('.premium-feature-blocked').forEach(el => {
+            el.style.display = 'none';  // Oculta los mensajes de funciones bloqueadas
+        });
+        // Aquí puedes implementar lógica adicional para mostrar las funciones específicas
+    }
+
+    // Función para ocultar funciones premium
+    function ocultarFuncionesPremium() {
+        document.querySelectorAll('.premium-feature-blocked').forEach(el => {
+            el.style.display = 'block';  // Muestra los mensajes de funciones bloqueadas
+        });
+        // Aquí puedes implementar lógica adicional para ocultar las funciones específicas
+    }
+
+    // Verificar el estado premium al cargar la página
+    window.onload = function() {
+        verificarPremium();
+    };
+</script>
+
+
+<script>
+    // Función para verificar si el usuario es premium
+    function verificarPremium() {
+        fetch('/check_premium')
+            .then(response => response.json())
+            .then(data => {
+                if (data.premium) {
+                    // El usuario es premium, muestra las opciones de descarga
+                    habilitarDescargas();
+                } else {
+                    // El usuario no es premium, oculta las opciones de descarga
+                    deshabilitarDescargas();
+                }
+            })
+            .catch(error => {
+                console.error('Error al verificar premium:', error);
+                // Maneja el error adecuadamente, por ejemplo, mostrando un mensaje de error o comportamiento alternativo
+            });
+    }
+
+    // Función para habilitar las opciones de descarga
+    function habilitarDescargas() {
+        document.querySelectorAll('.download-option').forEach(el => {
+            el.style.display = 'block';  // Muestra las opciones de descarga
+            el.removeAttribute('disabled'); // Habilita las opciones de descarga
+        });
+    }
+
+    // Función para deshabilitar las opciones de descarga
+    function deshabilitarDescargas() {
+        document.querySelectorAll('.download-option').forEach(el => {
+            el.style.display = 'none';  // Oculta las opciones de descarga
+            el.setAttribute('disabled', 'disabled'); // Deshabilita las opciones de descarga
+        });
+    }
+
+    // Verificar el estado premium al cargar la página
+    window.onload = function() {
+        verificarPremium();
+    };
+</script>
+
 			
 			
 			<video id="test-video"></video>

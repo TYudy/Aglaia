@@ -25,13 +25,13 @@
 		<div class="menu">
 		<div class="sidebar-left  animationa animationb">
 			<div class="option o1 hidden animationop">
-				<a href=""></a>
+				<a onclick="loadHome()"></a>
 				
 				<i class='bx bx-home-alt'></i>
 				<p class="name">Home</p>
 			</div>
 			<div class="option o2 hidden animationop">
-				<a href=""></a>
+				<a href="#"></a>
 				<!-- <i class="iconop"></i> -->
 				<i class='bx bx-message-alt-detail'></i>
 				<p class="name">Chats</p>
@@ -48,7 +48,7 @@
 			</div>
 		</div>
 		</div>
-		<!-- <iframe id="iframeContent"></iframe> -->
+		
 		 <section class="Home">
 			<div class="encabezado">
 				<h1>Mis anuncios</h1>
@@ -85,6 +85,7 @@
 
 
 		 </section>
+		 <iframe id="iframeContent"></iframe>
 
 		<div class="sidebar-right">
 			<div class="perfil">
@@ -95,14 +96,14 @@
 			  </div>
 			  <div class="optionsperfil">
 					<div class="optionperfil">
-						<a href="">
+						<a  onclick="loadContent('/Premium')">
 						<i  class='bx bx-dollar iconperfil premium' ></i></a>
 						<p class="nameperfil">Plan premium</p>
 						
 
 					</div>
 					<div class="optionperfil">
-						<a href="">
+						<a onclick="loadContent('/EditarEmp')">
 						<i class='bx bx-cog iconperfil config' ></i></a>
 						<p class="nameperfil">Configuración</p>
 						

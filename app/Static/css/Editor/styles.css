@@ -2814,3 +2814,8 @@ layer:nth-child(even) .properties {
 		display: none;
 	}
 }
+
+.download-option[disabled] {
+  opacity: 0.5; /* Opacidad reducida para indicar que está deshabilitado */
+  pointer-events: none; /* Evita que se interactúe con los elementos deshabilitados */
+}

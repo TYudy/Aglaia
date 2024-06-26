@@ -15,40 +15,56 @@
                 <div class="line"></div>
                 <div class="order-item">
                     <h2>Anuncio</h2>
-                    <div class="price">$49,990</div>
+                    <div class="price">$49,990</div> <!-- Precio de la suscripción premium -->
                 </div>
                 <div class="line"></div>
                 <div class="total">
                     <span>TOTAL</span>
-                    <span>$49,990</span>
+                    <span>$49,990</span> <!-- Precio total -->
                 </div>
                 <button class="back-btn" onclick="window.location.href='/Premium'">Volver a Precios</button>
             </div>
             <div class="payment-info">
                 <h1>Información de Pago</h1>
                 <div class="line"></div>
-                <label for="payment-method">Seleccione método de pago:</label>
-                <select id="payment-method" class="input-field" onchange="changeCardImage()">
-                    <option value="nequi">Nequi</option>
-                    <option value="visa">Visa</option>
-                    <option value="pse">PSE</option>
-                </select>
-                <img src="{{ url_for('static', filename='img/nequi.png') }}" height="80" class="credit-card-image" id="credit-card-image">
-                <label for="card-number">Número de Tarjeta</label>
-                <input id="card-number" class="input-field" placeholder="1234 5678 9101 1121">
-                <label for="card-name">Nombre en la Tarjeta</label>
-                <input id="card-name" class="input-field" placeholder="John Doe">
-                <div class="half-input-table">
-                    <div>
-                        <label for="expiry-date">Fecha de Vencimiento</label>
-                        <input id="expiry-date" class="input-field" placeholder="MM/AA">
+                <!-- Formulario para enviar datos al servidor Flask -->
+                <form action="/iniciar_sesion" method="POST">
+                    <!-- Campo oculto para enviar el ID de usuario -->
+                    <input type="hidden" name="user_id" value="{{ session.user_id }}">
+                    
+                    <!-- Selección del método de pago y otros campos necesarios -->
+                    <label for="payment-method">Seleccione método de pago:</label>
+                    <select id="payment-method" class="input-field" onchange="changeCardImage()">
+                        <option value="nequi">Nequi</option>
+                        <option value="visa">Visa</option>
+                        <option value="pse">PSE</option>
+                    </select>
+                    <img src="{{ url_for('static', filename='img/nequi.png') }}" height="80" class="credit-card-image" id="credit-card-image">
+                    <label for="card-number">Número de Tarjeta</label>
+                    <input id="card-number" class="input-field" placeholder="1234 5678 9101 1121">
+                    <label for="card-name">Nombre en la Tarjeta</label>
+                    <input id="card-name" class="input-field" placeholder="John Doe">
+                    <div class="half-input-table">
+                        <div>
+                            <label for="expiry-date">Fecha de Vencimiento</label>
+                            <input id="expiry-date" class="input-field" placeholder="MM/AA">
+                        </div>
+                        <div>
+                            <label for="cvc">CVC</label>
+                            <input id="cvc" class="input-field" placeholder="123">
+                        </div>
                     </div>
-                    <div>
-                        <label for="cvc">CVC</label>
-                        <input id="cvc" class="input-field" placeholder="123">
-                    </div>
-                </div>
-                <button class="pay-btn">Comprar</button>
+                    {% block estado %}
+                        {% if session.premium_user %}
+                            <p>Usuario premium</p>
+                        {% else %}
+                            <p>Usuario no premium</p>
+                        {% endif %}
+                    {% endblock %}
+                    <button type="submit" class="pay-btn">Comprar</button>
+                    
+                </form>
+                
             </div>
         </div>
     </div>
