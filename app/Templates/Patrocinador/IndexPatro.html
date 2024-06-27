@@ -34,8 +34,8 @@
           <img src="https://picsum.photos/70" alt="profileImg">
         </div>
         <ul class="user-info">
-          <li class="user-email">email@example.com</li>
-          <li class="user-type">Premium User</li>
+          <li class="user-email">{{ patro['email']}}</li>
+          <li class="user-type">{{ patro['nombre'] }} {{ patro['apellido'] }}</li>
         </ul>
         <div class="user-arrow-btn">
           <i class='bx bx-down-arrow flecha' ></i>
@@ -100,9 +100,9 @@
   <section id="Home"> 
     <div class="vault-items-controls">
 
-      <h2>All items</h2>
+      <h2>Emprendimientos</h2>
   
-      <button class="vault-items-controls-btn btn" aria-label="Collapse Items" title="Collapse Items">
+      <!-- <button class="vault-items-controls-btn btn" aria-label="Collapse Items" title="Collapse Items">
                   <i class="fas fa-caret-up" aria-hidden="true"></i>
               </button>
   
@@ -118,49 +118,31 @@
   
         <button class="vault-items-controls-btn btn" aria-label="List View" title="List View">
                       <i class="fas fa-list" aria-hidden="true"></i>
-                  </button>
+                  </button> -->
   
-      </div>
+      <!-- </div> -->
   
-      <button class="vault-items-controls-btn btn" aria-label="Sort Options" title="Sort Options">
+      <!-- <button class="vault-items-controls-btn btn" aria-label="Sort Options" title="Sort Options">
                   <i class="fas fa-sort" aria-hidden="true"></i>
-              </button>
+              </button> -->
   
     </div>
 
-
+    {% for emp in emp %}
     <div class="container-info" >
     <div class="vault-item password-item" tabindex="0">
 			<div class="vault-item-img">
 				<img src="https://picsum.photos/70" alt="">
 			</div>
 			<div class="vault-item-info">
-				<h3 class="vault-item-name">Amazon</h3>
-				<h4 class="vault-item-summary">email@example.com</h4>
+				<h3 class="vault-item-name"> {{ emp.nombre }}</h3>
+				<h4 class="vault-item-summary"> {{ emp.descripcion }}</h4>
 			</div>
 		</div>
 
-		<div class="vault-item password-item" tabindex="0">
-			<div class="vault-item-img">
-				<img src="https://picsum.photos/70" alt="">
-			</div>
-			<div class="vault-item-info">
-				<h3 class="vault-item-name">Apple ID</h3>
-				<h4 class="vault-item-summary">email@example.com</h4>
-			</div>
-		</div>
-
-		<div class="vault-item bank-account-item" tabindex="0">
-			<div class="vault-item-img">
-				<img src="https://picsum.photos/70" alt="">
-			</div>
-			<div class="vault-item-info">
-				<h3 class="vault-item-name">Bank Account</h3>
-				<h4 class="vault-item-summary">Ending in 1234</h4>
-			</div>
-		</div>
+		
   </div>
-
+  {% endfor %}
   </section>
   
   <iframe id="iframeContent"></iframe>

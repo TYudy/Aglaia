@@ -7,8 +7,9 @@ CREATE TABLE Usuarios (
     nombre VARCHAR(45) NOT NULL,
     apellido VARCHAR(45) NOT NULL,
     email VARCHAR(45) NOT NULL UNIQUE,
-    contraseña VARCHAR(45) NOT NULL UNIQUE,
-    role VARCHAR(45) NOT NULL
+    contraseña VARCHAR(255) NOT NULL UNIQUE,
+    role VARCHAR(45) NOT NULL,
+    premium boolean not null DEFAULT FALSE
 );
 
 CREATE TABLE Categorias (
@@ -26,9 +27,10 @@ CREATE TABLE Emprendimientos (
     miembros INT NOT NULL,
     nombre_miembros TEXT,
     logo LONGBLOB,
-    aprobado BOOLEAN NOT NULL DEFAULT FALSE,
     categoria_id INT NOT NULL,
     usuario_id INT NOT NULL,
+	ReLleno boolean  not null default false,
+	aprobado BOOLEAN NOT NULL DEFAULT FALSE,
     FOREIGN KEY (categoria_id) REFERENCES Categorias(id_categoria),
     FOREIGN KEY (usuario_id) REFERENCES Usuarios(id_usuario)
 );
@@ -50,8 +52,10 @@ CREATE TABLE Patrocinadores (
     fecha_registro DATE NOT NULL,
     anos_mercado INT NOT NULL,
     usuario_id INT NOT NULL,
-    ReLleno boolean  default not null false,
+    ReLleno boolean  not null default  false,
     logo blob not null,
+    
+   
     FOREIGN KEY (usuario_id) REFERENCES Usuarios(id_usuario)
 );
 
@@ -65,6 +69,7 @@ CREATE TABLE Productos (
     imagen VARCHAR(255),
     stock INT,
     fecha_publicacion DATE,
+    
     FOREIGN KEY (emprendimiento_id) REFERENCES Emprendimientos(id_emprendimiento),
     FOREIGN KEY (categoria_id) REFERENCES Categorias(id_categoria)
 );
@@ -98,6 +103,8 @@ INSERT INTO Categorias (nombre_categoria, descripcion) VALUES
 ('Juguetes', 'Juguetes y juegos para todas las edades'),
 ('Arte', 'Obras de arte y artesanías'),
 ('Instrumentos Musicales', 'Instrumentos musicales y accesorios');
+
+
 
 
 INSERT INTO Emprendimientos (nombre, descripcion, categoria_id, usuario_id) VALUES

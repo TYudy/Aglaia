@@ -15,7 +15,7 @@
 <body>
 <div class="sidebar close">
     <div class="logo-details">
-      <i class='bx bxl-bitcoin logo'></i>
+      <i class='bx bx-menu logo ' ></i>
       <span class="logo_name">Menu</span>
     </div>
     <div class="toggler">
@@ -47,16 +47,16 @@
           <li><a class="link_name">Editar perfil</a></li>
         </ul>
       </li>
-      <li>
+      <!-- <li>
         <a href="#">
-            <i class='bx bx-message-alt-detail'></i>
+            <i  class='bx bx-message-alt-detail'></i>
           <span class="link_name">Chats</span>
         </a>
         <ul class="sub-menu blank">
           <li><a class="link_name" href="#">Chats</a></li>
         </ul>
-      </li>
-      <li>
+      </li> -->
+      <!-- <li>
         <div class="icon-link">
           <a href="#">
             <i class='bx bx-store'></i>
@@ -70,8 +70,8 @@
           <li><a href="#">Proyectos</a></li>
           <li><a href="#">Anuncios</a></li>
         </ul>
-      </li>
-      <li>
+      </li> -->
+      <!-- <li>
         <a href="#">
             <i class='bx bx-credit-card'></i>
           <span class="link_name">Premium</span>
@@ -88,8 +88,8 @@
         <ul class="sub-menu blank">
           <li><a class="link_name" href="#">Blog</a></li>
         </ul>
-      </li>
-      <li>
+      </li>-->
+      <li> 
         <div class="profile-details">
           <div class="profile-content">
             <img src="https://picsum.photos/70">
@@ -98,7 +98,7 @@
             <div class="profile_name">John Doe</div>
             <div class="job">Admin</div>
           </div>
-          <i class='bx bx-power-off'><a href="/logout"></a></i>
+          <a href=""></a><i class='bx bx-power-off'></i></a>
         </div>
       </li>
     </ul>
@@ -107,8 +107,8 @@
     <div class="container">
         <div class="GestionP option" onclick="loadContent('/usuarios')"> <i class='bx bxs-cabinet'></i><h3>Gestión de perfiles</h3></div>
         <div class="AprobarA option" onclick="loadContent('/AP')"> <i class='bx bxs-user-check'></i> <h3>Aprobar proyectos</h3></div>
-        <div class="AprobarP option"> <i class='bx bxs-select-multiple'></i><h3>Aprobar anuncios</h3></div>
-        <div class="Editor option"> <i class='bx bx-help-circle'></i><h3>Soporte</h3></div>
+        <!-- <div class="AprobarP option"> <i class='bx bxs-select-multiple'></i><h3>Aprobar anuncios</h3></div> -->
+        <div class="Editor option"  onclick="loadContent('/Bot')"> <i class='bx bx-help-circle'></i><h3>Soporte</h3></div>
     </div>
   </section>
   <iframe id="iframeContent"></iframe>

@@ -1,5 +1,5 @@
 
-from flask import Flask, render_template, request, jsonify, redirect, url_for, session
+from flask import Flask, render_template, request, jsonify, redirect, url_for, session, flash
 import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
 import base64
@@ -74,11 +74,11 @@ def iniciar_sesion():
                     cur.execute("SELECT ReLleno FROM Emprendimientos WHERE usuario_id = %s", (id,))
                     form = cur.fetchone()
                     if form :
-                        cur.execute("SELECT Aprobado FROM Emprendimientos WHERE usuario_id = %s", (id,))
+                        cur.execute("SELECT aprobado FROM Emprendimientos WHERE usuario_id = %s and aprobado is True;", (id,))
                         form2 = cur.fetchone()
-                        if form2:
+                        if form2 is not None:
                              return redirect(url_for('IndexEmp'))
-                        else:
+                        else :
                             return render_template('Emprendedor/Espera.html')
                     else:
                         return redirect(url_for('registro_emprendimiento'))
@@ -129,13 +129,34 @@ def form():
 def AprobarP():
     #if 'user_id' in session and session['user_rol'] == 'administrador':
     #    print("Estado de la sesión:", session) 
-    return render_template('Administrador/AprobarP.html')
-    
+    cursor = db.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM Emprendimientos where aprobado = False")
+    emprendimientos = cursor.fetchall()
+    return render_template('Administrador/AprobarP.html', emprendimientos=emprendimientos)
+
     #else:
     #    print("Condición de sesión no cumplida. user_id en sesión:", 'user_id' in session)
     #    print("Condición de sesión no cumplida. user_rol en sesión:", session.get('user_rol'))
 
     #return render_template('General/Error.html')
+
+
+@app.route('/Aceptar/<int:user_id>', methods=['GET', 'POST'])
+def aceptar(user_id):
+    cursor = db.cursor()
+    cursor.execute('UPDATE Emprendimientos SET aprobado = 1 WHERE id_emprendimiento = %s', (user_id,))
+    db.commit()  # 
+    return redirect(url_for('AprobarP'))
+
+# @app.route('/Rechazar/<int:user_id>', methods=['GET', 'POST'])
+# def rechazar(user_id):
+#     c = db.cursor
+#     c.execute('UPDATE Emprendimientos SET aprobado = True WHERE id_emprendimiento = %s', (user_id,))
+#     return redirect(url_for('AprobarP')) 
+
+
+
+
 
 @app.route('/Editor')
 def editor():
@@ -406,9 +427,11 @@ def registro_usuario():
         # Verificar que la contraseña no esté vacía
         if not contraseña:
             return "La contraseña no puede estar vacía", 400
-
+        print("Contraseña:", contraseña)
+        print(email)
         # Encriptar la contraseña antes de almacenarla en la base de datos
         contraseña_encriptada = generate_password_hash(str(contraseña))
+        
 
         cur = db.cursor()
         cur.execute("INSERT INTO Usuarios (nombre, apellido, email, contraseña, role) VALUES (%s, %s, %s, %s, %s)",
@@ -452,7 +475,25 @@ def aprobar_anuncio(anuncio_id):
 # Asegúrate de tener las rutas IndexAd, IndexEmp e IndexPatro configuradas
 @app.route('/IndexAd')
 def IndexAd():
-    return render_template('Administrador/IndexAd.html')
+    cursor = db.cursor(dictionary=True)
+
+    id = session['user_id']
+    cursor.execute(
+                """SELECT 
+                    u.nombre, 
+                    u.apellido, 
+                    u.email  
+                FROM Administradores AS a 
+                INNER JOIN Usuarios AS u 
+                ON u.id_usuario = a.usuario_id
+                WHERE a.usuario_id = %s""",
+                (id,)
+            )
+    Admin = cursor.fetchone()
+
+    
+
+    return render_template('Administrador/IndexAd.html', Admin = Admin)
 
 #---------------------------------------------------------------#
 
@@ -460,7 +501,24 @@ def IndexAd():
 def IndexEmp():
     if 'user_id' in session and session['user_rol'] == 'emprendimiento':
         print("Estado de la sesión:", session)
-        return render_template('Emprendedor/IndexEmp.html')
+
+        cursor = db.cursor(dictionary=True)
+
+        id = session['user_id']
+        cursor.execute(
+                    """SELECT 
+                        e.nombre, 
+                        e.apellido, 
+                        e.email  
+                    FROM Emprendimientos AS e 
+                    INNER JOIN Usuarios AS u 
+                    ON u.id_usuario = e.usuario_id
+                    WHERE p.usuario_id = %s""",
+                    (id,)
+                )
+        Emp = cursor.fetchone()
+
+        return render_template('Emprendedor/IndexEmp.html', Emp = Emp)
     else:
         print("Condición de sesión no cumplida. user_id en sesión:", 'user_id' in session)
         print("Condición de sesión no cumplida. user_rol en sesión:", session.get('user_rol'))
@@ -473,7 +531,28 @@ def IndexEmp():
 def IndexPatro():
     if 'user_id' in session and session['user_rol'] == 'patrocinador':
         print("Estado de la sesión:", session)
-        return render_template('Patrocinador/IndexPatro.html')
+        cursor = db.cursor(dictionary=True)
+
+        id = session['user_id']
+        cursor.execute(
+                    """SELECT 
+
+                        u.nombre, 
+                        u.apellido, 
+                        u.email  
+                    FROM Patrocinadores AS p 
+                    INNER JOIN Usuarios AS u 
+                    ON u.id_usuario = p.usuario_id
+                    WHERE p.usuario_id = %s""",
+                    (id,)
+                )
+        patro = cursor.fetchone()
+
+
+        cursor.execute("SELECT * FROM Emprendimientos")
+        emp = cursor.fetchall()
+        cursor.close()
+        return render_template('Patrocinador/IndexPatro.html', patro = patro, emp = emp)
     else:
         print("Condición de sesión no cumplida. user_id en sesión:", 'user_id' in session)
         print("Condición de sesión no cumplida. user_rol en sesión:", session.get('user_rol'))
