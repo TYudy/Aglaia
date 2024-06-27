@@ -16,7 +16,8 @@ sidebarBtn.addEventListener("click", ()=>{
 function ponerTema(nombreTema) {
     localStorage.setItem('tema', nombreTema);
     document.documentElement.className = nombreTema;
-
+    var iframe = document.getElementById('iframeContent');
+    iframe.src = iframe.src;
 }
 
 
@@ -52,3 +53,21 @@ function cambiarTema() {
       
     }
 })();
+
+
+function loadContent(page) {
+  var iframe = document.getElementById('iframeContent');
+  iframe.src = page;
+  iframe.style.display = 'block';
+  document.getElementById('Home').style.display = 'none';
+}
+
+function loadHome() {
+  var iframe = document.getElementById('iframeContent');
+  iframe.style.display = 'none';
+  document.getElementById('Home').style.display = 'block';
+}
+
+window.onload = function() {
+  loadHome();
+}

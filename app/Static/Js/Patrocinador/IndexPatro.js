@@ -21,7 +21,8 @@ arrowIcon.addEventListener('click', function() {
 function ponerTema(nombreTema) {
   localStorage.setItem('tema', nombreTema);
   document.documentElement.className = nombreTema;
-
+  var iframe = document.getElementById('iframeContent');
+  iframe.src = iframe.src;
 }
 
 
@@ -45,15 +46,32 @@ function cambiarTema() {
 }
 
 
-(function () {
 
+function loadContent(page) {
+  var iframe = document.getElementById('iframeContent');
+  iframe.src = page;
+  iframe.style.display = 'block';
+  document.getElementById('Home').style.display = 'none';
+   document.querySelector('form').style.display="none"
+}
+
+function loadHome() {
+  var iframe = document.getElementById('iframeContent');
+  iframe.style.display = 'none';
+  document.getElementById('Home').style.display = 'block';
+  document.querySelector('form').style.display="block"
+}
+
+window.onload = function() {
   if (localStorage.getItem('tema') === 'Oscuro') {
       ponerTema('Oscuro');
       document.getElementById('slider').checked = false;
-      
   } else {
       ponerTema('Claro');
-    document.getElementById('slider').checked = true;
-    
+      document.getElementById('slider').checked = true;
   }
-})();
+
+
+  loadHome();
+
+};

@@ -1,0 +1,65 @@
+<!-- templates/editar_patrocinador.html -->
+
+{% extends "General/PlantillaEdPerfil.html" %}
+
+{% block user %}
+<h1>Editar Perfil</h1>
+    {{ user_name }}
+{% endblock %}
+
+{% block empresa %}
+    {{ user_group }}
+{% endblock %}
+
+
+
+{% block form %}
+<form>
+    <div class="etiqueta">
+    <label for="Nombre" >Nombre</label>
+    <p>j</p>
+    <input type="checkbox">
+    <input type="text" id="Nombre" name="Nombre" value="" class="ver oculto"><br><br>
+    </div>
+    
+    
+
+
+
+
+    <div class="etiqueta">
+    <label for="Apellido" >Apellido</label>
+    <p>j</p>
+    <input type="checkbox">
+    <input type="text" id="Apellido" name="Apellido" value="" class="ver oculto"><br><br>
+    </div>
+
+
+
+
+
+
+    
+
+  
+    <button type="submit">Actualizar</button>
+</form>
+{% endblock %}
+
+{% block imagen %}
+    <img src="https://picsum.photos/70" alt="Logo">
+     
+    <label for="logo" class="subir">Cambiar foto de perfil</label>
+    <input type="file" id="logo" name="logo"><br><br>
+
+    {% endblock %}
+
+
+
+                
+{% block correo %}  
+Julio@gmail.com  
+{% endblock %}
+                
+{% block editprofile %}
+{% endblock %}

@@ -10,17 +10,15 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='img/Logos/Logo.ico') }}">
 </head>
 <body>
-       
-
 <div class="sidebar close">
     <div class="logo-details">
       <i class='bx bxl-bitcoin logo'></i>
       <span class="logo_name">Menu</span>
     </div>
     <div class="toggler">
-            
         <label id="switch" class="switch">
           <input type="checkbox" onchange="cambiarTema()" id="slider">
           <span class="slider round"></span>
@@ -28,38 +26,27 @@
            <p class="light">Light</p>
            <p class="dark">Dark</p>
          </div>
-          
       </label>
- </div>
+    </div>
     <ul class="nav-links">
       <li>
-        <a href="#">
+        <a href="#" onclick="loadHome()">
           <i class='bx bx-home'></i>
           <span class="link_name">Home</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Home</a></li>
+          <li><a class="link_name">Home</a></li>
         </ul>
       </li>
       <li>
-        <a href="#">
+        <a onclick="loadContent('/EditarAd')">
             <i class='bx bxs-user-detail'></i>
           <span class="link_name">Editar perfil</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Editar perfil</a></li>
+          <li><a class="link_name">Editar perfil</a></li>
         </ul>
       </li>
-      <li>
-        <!-- <a href="#">
-            <i class='bx bx-movie-play'></i>
-          <span class="link_name">Anuncios</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Anuncios</a></li>
-        </ul>
-      </li> -->
-
       <li>
         <a href="#">
             <i class='bx bx-message-alt-detail'></i>
@@ -69,7 +56,6 @@
           <li><a class="link_name" href="#">Chats</a></li>
         </ul>
       </li>
-
       <li>
         <div class="icon-link">
           <a href="#">
@@ -85,9 +71,6 @@
           <li><a href="#">Anuncios</a></li>
         </ul>
       </li>
-      
-      
-      
       <li>
         <a href="#">
             <i class='bx bx-credit-card'></i>
@@ -106,23 +89,6 @@
           <li><a class="link_name" href="#">Blog</a></li>
         </ul>
       </li>
-      <!-- <li>
-        <a href="#">
-            <i class='bx bx-help-circle'></i>
-          <span class="link_name">Soporte</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Soporte</a></li>
-        </ul>
-      </li> -->
-      
-
-
-
-
-
-
-
       <li>
         <div class="profile-details">
           <div class="profile-content">
@@ -130,23 +96,22 @@
           </div>
           <div class="name-job">
             <div class="profile_name">John Doe</div>
-            <div class="job">Crypto Expert</div>
+            <div class="job">Admin</div>
           </div>
           <i class='bx bx-power-off'><a href="/logout"></a></i>
         </div>
       </li>
     </ul>
   </div>
-  
+  <section id="Home">
     <div class="container">
-        <div class="GestionP option"> <i class='bx bxs-cabinet'></i><h3>Gestión de perfiles</h3></div>
-        <div class="AprobarA option"> <i class='bx bxs-user-check'></i> <h3>Aprobar proyectos</h3></div>
+        <div class="GestionP option" onclick="loadContent('/usuarios')"> <i class='bx bxs-cabinet'></i><h3>Gestión de perfiles</h3></div>
+        <div class="AprobarA option" onclick="loadContent('/AP')"> <i class='bx bxs-user-check'></i> <h3>Aprobar proyectos</h3></div>
         <div class="AprobarP option"> <i class='bx bxs-select-multiple'></i><h3>Aprobar anuncios</h3></div>
         <div class="Editor option"> <i class='bx bx-help-circle'></i><h3>Soporte</h3></div>
-        
-
-
     </div>
-    <script src=" {{ url_for('static', filename='js/Admin/IndexAd.js') }}"></script>
+  </section>
+  <iframe id="iframeContent"></iframe>
+    <script src="{{ url_for('static', filename='js/Admin/IndexAd.js') }}"></script>
 </body>
 </html>

@@ -38,12 +38,12 @@
           <li class="user-type">Premium User</li>
         </ul>
         <div class="user-arrow-btn">
-          <i class='bx bx-down-arrow flecha'></i>
+          <i class='bx bx-down-arrow flecha' ></i>
           <ul class="sub-menu">
-            <li><a href="#">Editar perfil</a><i class='bx bx-user p'></i></li>
+            <li onclick="loadContent('/EditarPatro')"><a href="#"  >Editar perfil</a><i class='bx bx-user p'></i></li>
             <!-- <li><a href="#">Proyectos</a><i class='bx bx-message-alt-detail p'></i></li>
             <li><a href="#">Anuncios</a><i class='bx bx-message-alt-detail p'></i></li> -->
-            <li><a href="/logout">Cerrar sesion</a><i class='bx bx-power-off p'></i></li>
+            <li ><a href="/logout">Cerrar sesion</a><i class='bx bx-power-off p'></i></li>
           </ul>
         </div>
       </div>
@@ -54,7 +54,7 @@
   <aside class="app-sidebar">
     <ul class="app-menu">
       <li class="app-menu__item">
-        <a href="#">
+        <a  onclick="loadHome()">
             <i class='bx bx-home-alt app-menu__item icon'></i>
           <span class="link_name">Inicio</span>
         </a>
@@ -97,7 +97,7 @@
   <main class="app-content">
     
   </main>
-  <!-- <section id="Home"> -->
+  <section id="Home"> 
     <div class="vault-items-controls">
 
       <h2>All items</h2>
@@ -161,7 +161,9 @@
 		</div>
   </div>
 
-  <!-- </section> -->
+  </section>
+  
+  <iframe id="iframeContent"></iframe>
 
   <!-- <footer>
     <div class="social">

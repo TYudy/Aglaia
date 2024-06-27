@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/General/premium.css') }}">
     <title>Pago de Suscripción</title>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="{{ url_for('static', filename='img/Logos/Logo.ico') }}">
 </head>
 <body>
     <div class="container">
@@ -15,12 +16,12 @@
                 <div class="line"></div>
                 <div class="order-item">
                     <h2>Anuncio</h2>
-                    <div class="price">$49,990</div> <!-- Precio de la suscripción premium -->
+                    <div class="price">$29,990</div> <!-- Precio de la suscripción premium -->
                 </div>
                 <div class="line"></div>
                 <div class="total">
                     <span>TOTAL</span>
-                    <span>$49,990</span> <!-- Precio total -->
+                    <span>$29,990</span> <!-- Precio total -->
                 </div>
                 <button class="back-btn" onclick="window.location.href='/Premium'">Volver a Precios</button>
             </div>
@@ -28,7 +29,7 @@
                 <h1>Información de Pago</h1>
                 <div class="line"></div>
                 <!-- Formulario para enviar datos al servidor Flask -->
-                <form action="/iniciar_sesion" method="POST">
+                <form action="/procesar_compra" method="POST">  <!-- Cambia a /procesar_compra -->
                     <!-- Campo oculto para enviar el ID de usuario -->
                     <input type="hidden" name="user_id" value="{{ session.user_id }}">
                     
@@ -54,17 +55,8 @@
                             <input id="cvc" class="input-field" placeholder="123">
                         </div>
                     </div>
-                    {% block estado %}
-                        {% if session.premium_user %}
-                            <p>Usuario premium</p>
-                        {% else %}
-                            <p>Usuario no premium</p>
-                        {% endif %}
-                    {% endblock %}
                     <button type="submit" class="pay-btn">Comprar</button>
-                    
                 </form>
-                
             </div>
         </div>
     </div>

@@ -1,54 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprobar proyectos</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Admin/Aprobarp.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/Admin/Aprobarp.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/Logos/Logo.ico') }}">
+
+  <title>Administrador de Proyectos</title>
 </head>
 <body>
     
-    <div class="container">
-       
-        <div class="aprobar">
-             <div class="titulo"><h2>The mistery</h2></div>
-            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil non fuga, ullam rerum esse ad eligendi libero omnis dolore nobis. Dolorum voluptates modi reiciendis sequi minima minus numquam inventore deleniti. Dolorum voluptates modi reiciendis sequi minima minus numquam inventore deleniti. Dolorum voluptates modi reiciendis sequi minima minus numquam inventore deleniti!</p>
-            
-            <section class="imagenes">
-   
-            <img src="https://ih1.redbubble.net/image.12211554.4154/raf,750x1000,075,t,322e3f:696a94a5d4.jpg" alt="">
-            <img src="https://i.pinimg.com/originals/c6/ce/d6/c6ced6ce5a784b7b61dca65218057a67.jpg" alt="">
-            <img src="https://ih1.redbubble.net/image.12211554.4154/raf,750x1000,075,t,322e3f:696a94a5d4.jpg" alt="">
-            <img src="https://i.pinimg.com/originals/c6/ce/d6/c6ced6ce5a784b7b61dca65218057a67.jpg" alt="">
-            
-          </section>
-          <div class="iconos"><div class="aceptar">
-            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M22.4462 7.38104L10.9916 19.381C10.6142 19.7764 10.0915 20.0001 9.5449 20.0001C8.99833 20.0001 8.47558 19.7764 8.09819 19.381L1.55273 12.5239L4.44616 9.762L9.5449 15.1035L19.5527 4.61914L22.4462 7.38104Z" /></svg>
+  <main>
+    <ul class='slider'>
+      <li class='item' style="background-image: url('https://cdn.mos.cms.futurecdn.net/dP3N4qnEZ4tCTCLq59iysd.jpg')">
+        <div class='content'>
+          <h2 class='title'>"Lossless Youths"</h2>
+          <p class='description'> Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+          praesentium nisi. Id laboriosam ipsam enim.  </p>
+          <button class='read-more'>Read More</button>
+          <div class='actions'>
+            <button class='accept'>Accept</button>
+            <button class='reject'>Reject</button>
+          </div>
         </div>
-        <div class="negar">
-            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 16 16" fill="none"><path d="M6.13656 7.99626L1.00131 1H4.72271L7.99789 5.46211L11.2753 1H14.9976L9.8584 7.99687L14.9987 15H11.2773L7.99706 10.531L4.7146 15H1L6.13656 7.99626Z" /></svg>
+      </li>
+      <li class='item' style="background-image: url('https://i.redd.it/tc0aqpv92pn21.jpg')">
+        <div class='content'>
+          <h2 class='title'>"Estrange Bond"</h2>
+          <p class='description'> Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+          praesentium nisi. Id laboriosam ipsam enim.  </p>
+          <button class='read-more'>Read More</button>
+          <div class='actions'>
+            <button class='accept'>Accept</button>
+            <button class='reject'>Reject</button>
+          </div>
         </div>
+      </li>
+      <li class='item' style="background-image: url('https://wharferj.files.wordpress.com/2015/11/bio_north.jpg')">
+        <div class='content'>
+          <h2 class='title'>"The Gate Keeper"</h2>
+          <p class='description'> Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+          praesentium nisi. Id laboriosam ipsam enim.  </p>
+          <button class='read-more'>Read More</button>
+          <div class='actions'>
+            <button class='accept'>Accept</button>
+            <button class='reject'>Reject</button>
+          </div>
         </div>
+      </li>
+      <li class='item' style="background-image: url('https://images7.alphacoders.com/878/878663.jpg')">
+        <div class='content'>
+          <h2 class='title'>"Last Trace Of Us"</h2>
+          <p class='description'>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
+          </p>
+          <button class='read-more'>Read More</button>
+          <div class='actions'>
+            <button class='accept'>Accept</button>
+            <button class='reject'>Reject</button>
+          </div>
         </div>
-        <div class="lista">
-            <div class="header">
-                <h2>Entradas</h2>
-            </div>
-            <div class="proyectos"><span class="circulo">1</span><h4>Proyecto A</h4></div>
-            <div class="proyectos"><span class="circulo">2</span><h4>Proyecto B</h4></div>
-            <div class="proyectos"><span class="circulo">3</span><h4>Proyecto C</h4></div>
-            <div class="proyectos"><span class="circulo">4</span><h4>Proyecto X</h4></div>
-            <div class="proyectos"><span class="circulo">5</span><h4>Proyecto Y</h4></div>
-            <div class="proyectos"><span class="circulo">6</span><h4>Proyecto Z</h4></div>
-            <div class="proyectos"><span class="circulo">7</span><h4>Proyecto Alpha</h4></div>
-            <div class="proyectos"><span class="circulo">8</span><h4>Proyecto Beta</h4></div>
-            <div class="proyectos"><span class="circulo">9</span><h4>Proyecto Gamma</h4></div>
-            <div class="proyectos"><span class="circulo">10</span><h4>Proyecto Delta</h4></div>
+      </li>
+      <li class='item' style="background-image: url('https://theawesomer.com/photos/2017/07/simon_stalenhag_the_electric_state_6.jpg')">
+        <div class='content'>
+          <h2 class='title'>"Urban Decay"</h2>
+          <p class='description'>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
+          </p>
+          <button class='read-more'>Read More</button>
+          <div class='actions'>
+            <button class='accept'>Accept</button>
+            <button class='reject'>Reject</button>
+          </div>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('https://da.se/app/uploads/2015/09/simon-december1994.jpg')">
+        <div class='content'>
+          <h2 class='title'>"The Migration"</h2>
+          <p class='description'> Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+          praesentium nisi. Id laboriosam ipsam enim.  </p>
+          <button class='read-more'>Read More</button>
+          <div class='actions'>
+            <button class='accept'>Accept</button>
+            <button class='reject'>Reject</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <nav class='nav'>
+      <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+      <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+    </nav>
+    <button onclick="window.location.href='index_admin.html'">Regresar</button>
+  </main>
 
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src=" {{ url_for('static', filename='js/Admin/AprobarP.js') }}"></script>
 
+ 
 
-        </div>
-    </div>
-    
 </body>
 </html>

@@ -466,13 +466,34 @@ label {
 
 
 
-@media (max-width: 720px) {
+/* @media (max-width: 720px) {
   .sidebar.close .nav-links li .sub-menu {
     display: none;
   }
   *{
     display: none;
   }
-}
+} */
 
 
+/* contenido dinamico */
+
+iframe {
+	width: 100% ;
+	height: 100vh;
+	display: block;
+	border: none;
+	z-index: 90;
+	
+  
+  
+  }
+  section.Home {
+    height: 100vh;
+    width: 100vw ; 
+    
+    z-index: 200;
+  
+    overflow-x: hidden;
+    
+    }

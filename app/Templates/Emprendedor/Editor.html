@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/Editor/styles.css') }}">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/Editor/favicon.ico') }}">
+		<link rel="icon" href="{{ url_for('static', filename='img/Logos/Logo.ico') }}">
 		<!-- Primary Meta Tags -->
 		<title>Aglaia Ads: el editor de anuncios alucinantes para todos</title>
 		<meta name="title" content="Motionity - The web-based motion graphics editor for everyone">
@@ -66,21 +66,30 @@
 			</div>
 			<div id="upload-overlay"></div>
 		</div>
-        <div id="download-modal">
-            <p class="header">Descargar configuración</p>
-            <p class="subheader">Formatos</p>
-            <div id="radio">
-              <input class="magic-radio" type="radio" name="radio" id="webm-format" value="webm" checked>
-              <label for="webm-format">WEBM video <span>(Más rápido)</span></label>
-            	<input class="magic-radio" type="radio" name="radio" value="mp4" id="mp4-format">
-              <label for="mp4-format">MP4 video</label>
-              <input class="magic-radio" type="radio" name="radio" value="gif" id="gif-format">
-              <label for="gif-format">GIF animado</label>
-			  <input class="magic-radio" type="radio" name="radio" value="image" id="image-format">
-              <label for="image-format">Imagen</label>
-            </div>
-            <div id="download-real">Descargar</div>
-        </div>
+		<div id="download-modal">
+			<p class="header">Descargar configuración</p>
+			<p class="subheader">Formatos</p>
+			<div id="radio">
+				<input class="magic-radio" type="radio" name="radio" id="webm-format" value="webm" checked>
+				<label for="webm-format">WEBM video <span>(Más rápido)</span></label>
+				<input class="magic-radio" type="radio" name="radio" value="mp4" id="mp4-format">
+				<label for="mp4-format">MP4 video</label>
+				<input class="magic-radio" type="radio" name="radio" value="gif" id="gif-format">
+				<label for="gif-format">GIF animado</label>
+				<input class="magic-radio" type="radio" name="radio" value="image" id="image-format">
+				<label for="image-format">Imagen</label>
+			</div>
+			<!-- Bloque condicional para mostrar solo si el usuario es premium -->
+			{% if premium %}
+			<div id="download-real">Descargar</div>
+			{% else %}
+			<div id="premium-required">
+				<p class="premium-message">Esta función está disponible solo para usuarios Premium.</p>
+				<button class="upgrade-btn" onclick="window.location.href='/Premium'">Actualizar a Premium</button>
+			</div>
+			{% endif %}
+		</div>
+		
 		<div id="import-export-modal">
 			<p class="header">Importación y exportación</p>
 			<p class="subtitle">Guarde este proyecto localmente o cargue uno existente.</p>

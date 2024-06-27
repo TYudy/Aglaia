@@ -136,3 +136,14 @@ form button {
         max-width: 80%;
     }
 }
+
+/* Login.css */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    text-align: center;
+}

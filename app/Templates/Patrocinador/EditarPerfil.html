@@ -14,12 +14,12 @@
 
 
 {% block form %}
-<form>
+<form method="POST"  action="/EditarPatro" enctype="multipart/form-data">
     <div class="etiqueta">
     <label for="Nombre" >Nombre</label>
-    <p>j</p>
+    <p>{{ usuario[0] }}</p>
     <input type="checkbox">
-    <input type="text" id="Nombre" name="Nombre" value="" class="ver oculto"><br><br>
+    <input type="text" id="Nombre" name="Nombre" value="{{ usuario[1] }}" class="ver oculto"><br><br>
     </div>
     
     
@@ -29,9 +29,9 @@
 
     <div class="etiqueta">
     <label for="contacto" >Persona de contacto</label>
-    <p>j</p>
+    <p>{{ usuario[1] }}</p>
     <input type="checkbox">
-    <input type="text" id="contacto" name="contacto" value="" class="ver oculto"><br><br>
+    <input type="text" id="contacto" name="contacto" value="{{ usuario[1] }}" class="ver oculto"><br><br>
     </div>
 
 
@@ -42,9 +42,9 @@
 
     <div class="etiqueta" >
         <label for="telefono">Telefono</label>
-        <p>j</p>
+        <p>{{ usuario[2] }}</p>
         <input type="checkbox">
-    <input type="number" id="telefono" name="telefono"  class="ver oculto" value=""><br><br>
+    <input type="number" id="telefono" name="telefono"  class="ver oculto" value="{{ usuario[2] }}"><br><br>
     </div>
     
 
@@ -56,9 +56,9 @@
     <div class="etiqueta">
        
     <label for="registro">Registro</label>
-    <p>j</p>
+    <p>{{ usuario[3] }}</p>
     <input type="checkbox">
-    <input type="date" id="registro" name="registro" class="ver oculto" value=""><br><br>
+    <input type="date" id="registro" name="registro" class="ver oculto" value="{{ usuario[3] }}" disabled><br><br>
 </div>
 
 
@@ -69,20 +69,26 @@
     <div class="etiqueta">
         
     <label for="feinicio">Fecha de inicio</label>
-    <p>j</p>
+    <p>{{ usuario[4] }}</p>
     <input type="checkbox">
-    <input type="date" id="feinicio" name="feinicio" class="ver oculto" value=""><br><br>
+    <input type="date" id="feinicio" name="feinicio" class="ver oculto" value="{{ usuario[4] }}"><br><br>
 </div>
 
 <div class="etiqueta">
         
     <label for="Años">Años en el mercado</label>
-    <p>j</p>
+    <p>{{ usuario[5] }}</p>
     <input type="checkbox">
-    <input type="number" id="Años" name="Años" class="ver oculto" value=""><br><br>
+    <input type="number" id="Años" name="Años" class="ver oculto" value=" {{ usuario[5] }}"><br><br>
 </div>
 
-    
+{% block imagen %}
+<img src="data:image/jpeg;base64,{{ imagen_base64 }}" alt="Logo">
+ 
+<label for="logo" class="subir">Cambiar foto de perfil</label>
+<input type="file" id="logo" name="logo"><br><br>
+
+{% endblock %} 
     
 
   
@@ -90,25 +96,19 @@
 </form>
 {% endblock %}
 
-{% block imagen %}
-    <img src="https://picsum.photos/70" alt="Logo">
-     
-    <label for="logo" class="subir">Cambiar foto de perfil</label>
-    <input type="file" id="logo" name="logo"><br><br>
 
-    {% endblock %}
 
 
 {% block nombre %}
-Julio
+{{ usuario[7] }}
 {% endblock %}
 
 {% block apellido %}
-Beltran
+{{ usuario[8] }}
 {% endblock %}
                 
 {% block correo %}  
-Julio@gmail.com  
+{{ usuario[9] }} 
 {% endblock %}
                 
 {% block editprofile %}

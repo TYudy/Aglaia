@@ -2819,3 +2819,26 @@ layer:nth-child(even) .properties {
   opacity: 0.5; /* Opacidad reducida para indicar que está deshabilitado */
   pointer-events: none; /* Evita que se interactúe con los elementos deshabilitados */
 }
+
+/* Estilos para el mensaje de premium */
+.premium-message {
+  color: #FF5733; /* Cambia el color del texto a naranja */
+  font-size: 16px; /* Tamaño de fuente */
+  margin-bottom: 10px; /* Espacio inferior */
+}
+
+/* Estilos para el botón de actualización a premium */
+.upgrade-btn {
+  background-color: #FF5733; /* Color de fondo naranja */
+  color: white; /* Color de texto blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  cursor: pointer; /* Cambiar cursor a mano */
+  font-size: 16px; /* Tamaño de fuente */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos cuando se pasa el mouse sobre el botón */
+.upgrade-btn:hover {
+  background-color: #E65100; /* Color de fondo naranja más oscuro */
+}

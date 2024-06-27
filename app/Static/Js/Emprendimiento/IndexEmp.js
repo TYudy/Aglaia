@@ -174,6 +174,8 @@ function flotante() {
 function ponerTema(nombreTema) {
     localStorage.setItem('tema', nombreTema);
     document.documentElement.className = nombreTema;
+    var iframe = document.getElementById('iframeContent');
+    iframe.src = iframe.src;
 }
 
 function cambiarTema() {

@@ -6,8 +6,7 @@
 	
 }
 html{
-	
-	
+
 	--color-primario: #7a00dc;
 	--color-secundario: #2CF8C1;
 }
@@ -696,6 +695,16 @@ iframe {
 
 
 
+  .premium-message {
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.icon-premium {
+    font-size: 24px;
+    color: #FFD700; /* Color dorado o de tu elección */
+    margin-right: 5px;
+}
 
 
 

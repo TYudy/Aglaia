@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AGLAIA</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Login.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='img/Logos/Logo.ico') }}">
+
 </head>
 <body>
     <div class="container">
         <form action="{{ url_for('iniciar_sesion') }}" method="POST">
             <h1 class="title">AGLAIA</h1>
+            {% if error %}
+            <div class="error-message">{{ error }}</div>
+            {% endif %}
             <label>
                 <i class="fa-solid fa-user"></i>
                 <input placeholder="Email" type="email" name="email" required>
@@ -26,9 +32,9 @@
         </form>
         <img class="emp" src="{{ url_for('static', filename='img/Logo.png') }}" alt="Logo de AGLAIA">
     </div>
-    
-    <script src="/app/Static/Js/General/login.js"></script>
 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="/app/Static/Js/General/login.js"></script>
 </body>
 </html>

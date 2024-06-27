@@ -9,9 +9,11 @@ html {
   font-size: 62.5%;
   background: linear-gradient(to right, #7a00dc, #2CF8C1);
 }
-html::-webkit-scrollbar{
+
+html::-webkit-scrollbar {
   display: none;
 }
+
 .container {
   width: 100%;
   min-height: 100vh;
@@ -165,7 +167,7 @@ button:hover {
 
 .dropdown {
   z-index: 5;
-  position: relative; /* Añadido para que funcione el desplegable */
+  position: relative;
 }
 
 .dropdown a {
@@ -225,7 +227,6 @@ iframe {
   background-color: #f9f9f9;
 }
 
-/* Estilos para el formulario de búsqueda */
 #search-form {
   position: absolute;
   top: 900px;
@@ -260,16 +261,14 @@ iframe {
   transition: background-color 0.3s ease;
 }
 
-
 #search-form button:hover {
   background-color: #25c2a7;
 }
 
-/* Estilos para las secciones de columnas */
 .columns-container {
   display: flex;
   justify-content: space-around;
-  margin-top: 50px; /* Espacio entre la barra de búsqueda y las columnas */
+  margin-top: 50px;
 }
 
 .column {
@@ -284,7 +283,7 @@ iframe {
 }
 
 .column:hover {
-  transform: translateY(-5px); /* Efecto de levantar ligeramente al pasar el mouse */
+  transform: translateY(-5px);
 }
 
 .column img {
@@ -306,6 +305,92 @@ iframe {
   line-height: 1.6;
 }
 
+footer {
+  background-color: #7a00dc;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.385);
+}
+
+.icons {
+  margin-bottom: 20px;
+}
+
+.icons a {
+  color: #fff;
+  font-size: 2.5rem;
+  margin: 0 15px;
+}
+
+.icons a:hover {
+  color: #ff4321;
+}
+
+.footer-text {
+  font-size: 100rem;
+  margin-top: 10px;
+}
+
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chatbot-bubble {
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot-window {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.chatbot-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  cursor: pointer;
+}
+
+.chatbot-content {
+  width: 100%;
+  height: calc(100% - 40px);
+}
+
+/* Media queries */
+
+/* Para pantallas de tamaño máximo de 768px */
 @media (max-width: 768px) {
   .container {
     padding: 10px;
@@ -361,11 +446,42 @@ iframe {
     display: none;
   }
 
-  #search-form {
-    top: 80%;
+  .icons {
+    bottom: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  .icons i {
+    font-size: 2rem;
+  }
+
+  .icons a {
+    font-size: 2rem;
+  }
+
+  .chatbot-container {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .chatbot-bubble {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .chatbot-window {
+    bottom: 60px;
+    right: 10px;
+    width: 250px;
+    height: 350px;
   }
 }
 
+/* Para pantallas de tamaño máximo de 480px */
 @media (max-width: 480px) {
   header h1 {
     font-size: 3rem;
@@ -387,89 +503,38 @@ iframe {
   button:hover {
     width: 140px;
   }
-}
 
-/* Estilos para el pie de página */
-footer {
-  background-color: #7a00dc;
-  color: #fff;
-  text-align: center;
-  padding: 30px 0; /* Aumentar el padding vertical para hacer el pie de página más grande */
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 7px 7px 12px 0rgba(20,20,20,rgba(20, 20, 20, 0.385));
-}
+  .icons {
+    bottom: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
 
-.icons {
-  margin-bottom: 20px; /* Aumentar el margen inferior de los íconos */
-}
+  .icons i {
+    font-size: 1.8rem;
+  }
 
-.icons a {
-  color: #fff;
-  font-size: 2.5rem; /* Aumentar el tamaño de los íconos */
-  margin: 0 15px; /* Aumentar el margen horizontal de los íconos */
-}
+  .icons a {
+    font-size: 1.8rem;
+  }
 
-.icons a:hover {
-  color: #ff4321;
-}
+  .chatbot-container {
+    bottom: 10px;
+    right: 10px;
+  }
 
-.footer-text {
-  font-size: 100rem; /* Ajustar el tamaño de la letra del texto del pie de página */
-  margin-top: 10px; /* Agregar un margen superior al texto del pie de página */
-}
+  .chatbot-bubble {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
 
-
-.chatbot-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.chatbot-bubble {
-  width: 50px;
-  height: 50px;
-  background-color: #007bff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: white;
-  font-size: 24px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.chatbot-window {
-  display: none;
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 300px;
-  height: 400px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  z-index: 1001;
-}
-
-.chatbot-header {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.close-btn {
-  cursor: pointer;
-}
-
-.chatbot-content {
-  width: 100%;
-  height: calc(100% - 40px);
+  .chatbot-window {
+    bottom: 60px;
+    right: 10px;
+    width: 220px;
+    height: 300px;
+  }
 }

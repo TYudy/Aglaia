@@ -13,12 +13,12 @@
 
 
 {% block form %}
-<form>
+<form method="POST"  action="/EditarEmp" enctype="multipart/form-data">
     <div class="etiqueta">
     <label for="nombre" >Nombre</label>
-    <p>j</p>
+    <p>{{ usuario[0] }}</p>
     <input type="checkbox">
-    <input type="text" id="nombre" name="nombre" value="" class="ver oculto"><br><br>
+    <input type="text" id="nombre" name="nombre" value="{{ usuario[0] }}" class="ver oculto"><br><br>
     </div>
     
     
@@ -28,9 +28,9 @@
 
     <div class="etiqueta">
     <label for="descripcion">Descripción</label>
-    <p>j</p>
+    <p>{{ usuario[1] }}</p>
     <input type="checkbox">
-    <textarea id="descripcion" name="descripcion" class="ver oculto"></textarea><br><br>
+    <textarea id="descripcion" name="descripcion" class="ver oculto"  value="{{ usuario[1] }}"></textarea><br><br>
     </div>
 
 
@@ -41,9 +41,9 @@
 
     <div class="etiqueta" >
         <label for="fecha_inicio">Fecha de Inicio</label>
-        <p>j</p>
+        <p>{{ usuario[2] }}</p>
         <input type="checkbox">
-    <input type="date" id="fecha_inicio" name="fecha_inicio"  class="ver oculto" value=""><br><br>
+    <input type="date" id="fecha_inicio" name="fecha_inicio"  class="ver oculto"  value="{{ usuario[2] }}"><br><br>
     </div>
     
 
@@ -55,9 +55,9 @@
     <div class="etiqueta">
        
     <label for="miembros"># Miembros</label>
-    <p>j</p>
+    <p>{{ usuario[3] }}</p>
     <input type="checkbox">
-    <input type="number" id="miembros" name="miembros" class="ver oculto" value=""><br><br>
+    <input type="number" id="miembros" name="miembros" class="ver oculto"  value="{{ usuario[3] }}"><br><br>
 </div>
 
 
@@ -68,12 +68,18 @@
     <div class="etiqueta">
         
     <label for="nombre_miembros">Nombres Miembros</label>
-    <p>j</p>
+    <p>{{ usuario[4] }}</p>
     <input type="checkbox">
-    <textarea id="nombre_miembros" name="nombre_miembros" class="ver oculto"></textarea><br><br>
+    <textarea id="nombre_miembros" name="nombre_miembros" class="ver oculto"  value="{{ usuario[4] }}"></textarea><br><br>
 </div>
 
-    
+    {% block imagen %}
+    <img src="https://picsum.photos/70" alt="Logo">
+     
+    <label for="logo" class="subir">Cambiar foto de perfil</label>
+    <input type="file" id="logo" name="logo"><br><br>
+
+    {% endblock %}
     
 
   
@@ -81,25 +87,19 @@
 </form>
 {% endblock %}
 
-{% block imagen %}
-    <img src="https://picsum.photos/70" alt="Logo">
-     
-    <label for="logo" class="subir">Cambiar foto de perfil</label>
-    <input type="file" id="logo" name="logo"><br><br>
 
-    {% endblock %}
 
 
 {% block nombre %}
-Julio
+{{ usuario[6] }}
 {% endblock %}
 
 {% block apellido %}
-Beltran
+{{ usuario[7] }}
 {% endblock %}
                 
 {% block correo %}  
-Julio@gmail.com  
+{{ usuario[8] }}
 {% endblock %}
                 
 {% block editprofile %}

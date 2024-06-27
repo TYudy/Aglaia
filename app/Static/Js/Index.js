@@ -1,12 +1,10 @@
-function toggleRegisterMenu() {
-    var menu = document.getElementById('register-menu');
-    if (menu.style.display === 'block') {
-        menu.style.display = 'none';
-    } else {
-        menu.style.display = 'block';
-    }
+// Función para mostrar/ocultar el menú de navegación en dispositivos móviles
+function toggleMenu() {
+    var ul = document.querySelector('nav ul');
+    ul.classList.toggle('active');
 }
 
+// Función para cargar contenido en el iframe y mostrar/ocultar secciones
 function loadContent(page) {
     var iframe = document.getElementById('iframeContent');
     iframe.src = page;
@@ -15,28 +13,22 @@ function loadContent(page) {
     document.getElementById('buscador').style.display = 'none';
 }
 
+// Función para cargar la sección de inicio
 function loadHome() {
+    var iframe = document.getElementById('iframeContent');
+    iframe.style.display = 'none';
     document.getElementById('Home').style.display = 'block';
     document.getElementById('buscador').style.display = 'block';
-    document.getElementById('iframeContent').style.display = 'none';
 }
 
-window.onload = function() {
-    loadHome(); 
-};
-
-// Cierra el menú de registro si se hace clic fuera de él
-window.onclick = function(event) {
-    var menu = document.getElementById('register-menu');
-    if (!event.target.matches('#register-menu') && !event.target.closest('#register-menu') && !event.target.closest('a')) {
-        menu.style.display = 'none';
+// Función para abrir/cerrar la ventana del chatbot
+function toggleChat() {
+    var chatWindow = document.getElementById("chatWindow");
+    if (chatWindow.style.display === "none" || chatWindow.style.display === "") {
+        chatWindow.style.display = "block";
+    } else {
+        chatWindow.style.display = "none";
     }
-}
-
-// Función para mostrar/ocultar el menú desplegable
-function toggleMenu() {
-    var ul = document.querySelector('nav ul');
-    ul.classList.toggle('active');
 }
 
 // Asegurar que el pie de página esté siempre al final de la página
@@ -55,39 +47,19 @@ function adjustFooterPosition() {
     } else {
       footer.style.position = 'relative';
     }
-  }
-  
-  // Ejecutar la función cuando se carga la página y cuando se redimensiona la ventana
-  window.addEventListener('load', adjustFooterPosition);
-  window.addEventListener('resize', adjustFooterPosition);
-  
-
-function loadContent(page) {
-    var iframe = document.getElementById('iframeContent');
-    iframe.src = page;
-    iframe.style.display = 'block'; 
-    document.getElementById('Home').style.display = 'none';
-    document.getElementById('buscador').style.display = 'none'; 
 }
 
-function loadHome() {
-    var iframe = document.getElementById('iframeContent');
-    iframe.style.display = 'none'; 
-    document.getElementById('Home').style.display = 'block';
-    document.getElementById('buscador').style.display = 'block'; 
-}
+// Ejecutar la función cuando se carga la página y cuando se redimensiona la ventana
+window.addEventListener('load', adjustFooterPosition);
+window.addEventListener('resize', adjustFooterPosition);
 
+// Mostrar el pie de página al cargar la página
 window.onload = function() {
+    adjustFooterPosition();
     loadHome(); 
 };
 
-window.onload = function() {
-    var home = document.getElementById("Home");
-    if (home) {
-        home.scrollIntoView();
-    }
-};
-
+// Mostrar/ocultar el contenido informativo en la sección de inicio
 document.getElementById('infoButton').addEventListener('click', function() {
     var infoContainer = document.getElementById('infoContainer');
     if (infoContainer.style.display === 'none') {
@@ -96,3 +68,11 @@ document.getElementById('infoButton').addEventListener('click', function() {
         infoContainer.style.display = 'none';
     }
 });
+
+// Cerrar el menú de registro si se hace clic fuera de él
+window.onclick = function(event) {
+    var menu = document.getElementById('register-menu');
+    if (!event.target.matches('#register-menu') && !event.target.closest('#register-menu') && !event.target.closest('a')) {
+        menu.style.display = 'none';
+    }
+}
